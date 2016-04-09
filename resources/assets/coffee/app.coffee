@@ -2,6 +2,7 @@ $ ->
 
     $('.Nav__item--hamburger').click ->
         $('.Nav__list').toggle()
+        $('.Search__input').focus().select()
 
     isScreenLarge = window.innerWidth > 768 ? true : false
     $(window).resize ->

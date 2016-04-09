@@ -2,7 +2,8 @@
   $(function() {
     var isScreenLarge, ref;
     $('.Nav__item--hamburger').click(function() {
-      return $('.Nav__list').toggle();
+      $('.Nav__list').toggle();
+      return $('.Search__input').focus().select();
     });
     isScreenLarge = (ref = window.innerWidth > 768) != null ? ref : {
       "true": false
