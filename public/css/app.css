@@ -1,3 +1,4 @@
+@import 'https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin,cyrillic';
 .Nav {
   height: 100px;
   background: #808080;
@@ -11,6 +12,10 @@
 .Logo {
   color: #f00;
   font-size: 48px;
+  font-weight: bold;
+}
+body {
+  font-family: 'PT Sans', sans-serif;
 }
 
 /*# sourceMappingURL=app.css.map */
