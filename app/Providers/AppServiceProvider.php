@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace Gym\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
