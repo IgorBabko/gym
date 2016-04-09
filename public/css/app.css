@@ -100,6 +100,10 @@
     top: 19px;
   }
 }
+.Footer {
+  background: #000;
+  height: 500px;
+}
 body {
   font-family: 'PT Sans', sans-serif;
 }
