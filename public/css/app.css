@@ -100,11 +100,18 @@
     top: 19px;
   }
 }
+.Footer:after{
+  content: '';
+  display: table;
+  clear: both;
+}
 .Footer {
   background: #000;
-  height: 500px;
-  color: #fff;
+  color: #b3b3b3;
   padding: 30px 50px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
 .Footer__heading {
   text-transform: uppercase;
@@ -115,6 +122,13 @@
 }
 .Footer__item {
   padding: 5px;
+}
+.Footer__link {
+  color: #b3b3b3;
+}
+.Footer__link:hover {
+  text-decoration: none;
+  color: #fff;
 }
 .Footer > div {
   width: calc(99.99% * 1/4 - (30px - 30px * 1/4));
@@ -140,6 +154,32 @@
   background: #b30000;
   color: #fff;
   font-size: 22px;
+  margin-top: 10px;
+}
+.Social {
+  list-style: none;
+  padding: 0;
+}
+.Social__item {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  display: inline-block;
+  margin: 2px;
+}
+.Social__link {
+  color: #fff;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+      align-items: center;
+  height: 100%;
 }
 body {
   font-family: 'PT Sans', sans-serif;
