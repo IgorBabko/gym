@@ -5,6 +5,11 @@
       $('.Nav__list').toggle();
       return $('.Search__input').focus().select();
     });
+    $(window).keyup(function(e) {
+      if (window.innerWidth <= 768 && e.keyCode === 27) {
+        return $('.Nav__list').toggle();
+      }
+    });
     isScreenLarge = (ref = window.innerWidth > 768) != null ? ref : {
       "true": false
     };
