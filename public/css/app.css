@@ -112,6 +112,7 @@
   position: fixed;
   bottom: 0;
   left: 0;
+  text-align: center;
 }
 .Footer__heading {
   text-transform: uppercase;
@@ -131,7 +132,8 @@
   color: #fff;
 }
 .Footer > div {
-  width: calc(99.99% * 1/4 - (30px - 30px * 1/4));
+  text-align: left;
+  width: calc(99.99% * 1/1 - (30px - 30px * 1/1));
 }
 .Footer > div:nth-child(1n){
   float: left;
@@ -141,12 +143,52 @@
 .Footer > div:last-child{
   margin-right: 0;
 }
-.Footer > div:nth-child(4n){
+.Footer > div:nth-child(1n){
   margin-right: 0;
   float: right;
 }
-.Footer > div:nth-child(4n + 1){
+.Footer > div:nth-child(1n + 1){
   clear: left;
+}
+@media screen and (min-width: 768px) {
+  .Footer > div {
+    width: calc(99.99% * 1/2 - (30px - 30px * 1/2));
+  }
+  .Footer > div:nth-child(1n){
+    float: left;
+    margin-right: 30px;
+    clear: none;
+  }
+  .Footer > div:last-child{
+    margin-right: 0;
+  }
+  .Footer > div:nth-child(2n){
+    margin-right: 0;
+    float: right;
+  }
+  .Footer > div:nth-child(2n + 1){
+    clear: left;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .Footer > div {
+    width: calc(99.99% * 1/4 - (30px - 30px * 1/4));
+  }
+  .Footer > div:nth-child(1n){
+    float: left;
+    margin-right: 30px;
+    clear: none;
+  }
+  .Footer > div:last-child{
+    margin-right: 0;
+  }
+  .Footer > div:nth-child(4n){
+    margin-right: 0;
+    float: right;
+  }
+  .Footer > div:nth-child(4n + 1){
+    clear: left;
+  }
 }
 .Footer__copyright {
   display: inline-block;
