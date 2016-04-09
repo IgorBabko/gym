@@ -1,2 +1,25 @@
 .Search
-    color: white
+    position: relative
+
+    &__input
+        background: $lightGray
+        border: none
+        padding: 10px
+        outline: none
+        width: 250px
+        color: white
+        font-weight: 100
+    
+    &__button
+        position: absolute
+        right: 30px
+        top: 26px
+
+    @media screen and (max-width: 768px)
+        padding: 0
+        &__input
+            width: 100%
+            padding: 15px 30px
+        
+        &__button
+            top: 19px

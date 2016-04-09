@@ -17,11 +17,13 @@ require('laravel-elixir-stylus');
 
 elixir(function(mix) {
 
-    mix.stylus('app.styl', null, {
-        use: [
-            postStylus( [ 'autoprefixer', 'lost', 'rucksack-css' ] )
-        ]
-    });
+    mix
+        .coffee('app.coffee')
+        .stylus('app.styl', null, {
+            use: [
+                postStylus( [ 'autoprefixer', 'lost', 'rucksack-css' ] )
+            ]
+        });
 
     mix
         .copy('node_modules/jquery/dist/jquery.min.js', 'public/js/jquery.min.js')
