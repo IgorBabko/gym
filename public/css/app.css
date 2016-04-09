@@ -1,2 +1,16 @@
+.Nav {
+  height: 100px;
+  background: #808080;
+}
+.Nav__list {
+  list-style: none;
+}
+.Nav__link {
+  color: #008000;
+}
+.Logo {
+  color: #f00;
+  font-size: 48px;
+}
 
 /*# sourceMappingURL=app.css.map */
