@@ -12,17 +12,27 @@
   -ms-flex-align: center;
       align-items: center;
   padding: 0 50px;
+  color: #fff;
 }
 .Nav__list {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   list-style: none;
   margin: 0;
+  padding: 0;
+  height: 100%;
 }
-.Nav__link {
-  color: #fff;
+.Nav__item {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+      align-items: center;
   font-size: 18px;
-  margin: 0 10px;
   font-weight: 100;
-  display: inline-block;
+  padding: 0 10px;
 }
 .Logo {
   color: #fff;
