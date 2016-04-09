@@ -103,6 +103,43 @@
 .Footer {
   background: #000;
   height: 500px;
+  color: #fff;
+  padding: 30px 50px;
+}
+.Footer__heading {
+  text-transform: uppercase;
+}
+.Footer__list {
+  list-style: none;
+  padding: 0 0 0 10px;
+}
+.Footer__item {
+  padding: 5px;
+}
+.Footer > div {
+  width: calc(99.99% * 1/4 - (30px - 30px * 1/4));
+}
+.Footer > div:nth-child(1n){
+  float: left;
+  margin-right: 30px;
+  clear: none;
+}
+.Footer > div:last-child{
+  margin-right: 0;
+}
+.Footer > div:nth-child(4n){
+  margin-right: 0;
+  float: right;
+}
+.Footer > div:nth-child(4n + 1){
+  clear: left;
+}
+.Footer__copyright {
+  display: inline-block;
+  padding: 5px 10px;
+  background: #b30000;
+  color: #fff;
+  font-size: 22px;
 }
 body {
   font-family: 'PT Sans', sans-serif;
