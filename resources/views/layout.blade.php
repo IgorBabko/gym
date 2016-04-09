@@ -12,6 +12,7 @@
         @endif
     </head>
     <body>
+        @include('partials.nav')
         @yield('content')
         <script src="/js/jquery.min.js"></script>
         <script src="/js/app.js"></script>
