@@ -30,9 +30,14 @@
   -webkit-align-items: center;
   -ms-flex-align: center;
       align-items: center;
+  cursor: pointer;
   font-size: 18px;
   font-weight: 100;
-  padding: 0 10px;
+  padding: 0 20px;
+  transition: background 0.2s ease-in-out;
+}
+.Nav__item:hover {
+  background: #b30000;
 }
 .Logo {
   color: #fff;
