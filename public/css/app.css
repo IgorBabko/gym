@@ -29,6 +29,9 @@
   font-size: 48px;
   font-weight: bold;
 }
+.Search {
+  color: #fff;
+}
 body {
   font-family: 'PT Sans', sans-serif;
 }
