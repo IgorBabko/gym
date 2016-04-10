@@ -335,6 +335,24 @@
 .Media:nth-child(2n + 1){
   clear: left;
 }
+.Media--gender {
+  width: calc(99.99% * 1/2 - (200px - 200px * 1/2));
+}
+.Media--gender:nth-child(1n){
+  float: left;
+  margin-right: 200px;
+  clear: none;
+}
+.Media--gender:last-child{
+  margin-right: 0;
+}
+.Media--gender:nth-child(2n){
+  margin-right: 0;
+  float: right;
+}
+.Media--gender:nth-child(2n + 1){
+  clear: left;
+}
 @media screen and (max-width: 768px) {
   .Media {
     width: calc(99.99% * 1/1 - (30px - 30px * 1/1));
@@ -354,24 +372,6 @@
   .Media:nth-child(1n + 1){
     clear: left;
   }
-}
-.Media--gender {
-  width: calc(99.99% * 1/2 - (200px - 200px * 1/2));
-}
-.Media--gender:nth-child(1n){
-  float: left;
-  margin-right: 200px;
-  clear: none;
-}
-.Media--gender:last-child{
-  margin-right: 0;
-}
-.Media--gender:nth-child(2n){
-  margin-right: 0;
-  float: right;
-}
-.Media--gender:nth-child(2n + 1){
-  clear: left;
 }
 .Media * {
   margin: 10px 0;
