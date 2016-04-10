@@ -1,5 +1,5 @@
 <nav class="Nav">
-    <div class="Logo">GYM</div>
+    <a href="/" class="Logo">GYM</a>
     <ul class="Nav__list">
         <li class="Nav__item Search">
             <input type="text" class="Search__input" placeholder="search">

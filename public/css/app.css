@@ -71,6 +71,11 @@
   font-size: 48px;
   font-weight: bold;
 }
+.Logo:hover,
+.Logo:focus {
+  color: #fff;
+  text-decoration: none;
+}
 .Search {
   position: relative;
 }
