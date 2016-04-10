@@ -16,6 +16,7 @@
     $('.Search__input').blur(function() {
       return $(this).removeClass('Search__input--expanded');
     });
+    $('.Search__input').focus();
     isScreenLarge = (ref = window.innerWidth > 768) != null ? ref : {
       "true": false
     };
