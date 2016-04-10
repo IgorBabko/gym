@@ -2,7 +2,9 @@
     <div class="Subscription">
         <div class="Subscription__label">Subscribe to get latest updates</div>
         <div>
-            <input type="text" class="Subscription__input" placeholder="your email"><button type="submit" class="Subscription__button">Subscribe</button>
+            <form action="#" method="POST">
+                <input type="text" class="Subscription__input" placeholder="your email"><i class="fa fa-check Subscription__button"></i>
+            </form>
         </div>
     </div>
     <div class="Footer__content">
