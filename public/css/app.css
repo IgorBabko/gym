@@ -309,7 +309,7 @@
   }
 }
 .Header {
-  padding-top: 100px;
+  padding: 70px 0 30px;
   text-align: center;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -323,6 +323,7 @@
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
+  min-height: 100vh;
 }
 .Header__content {
   max-width: 800px;
@@ -396,6 +397,9 @@
 }
 .Section * {
   margin: 10px 0;
+}
+.Section__description {
+  font-size: 18px;
 }
 .Section__picture {
   width: 350px;
