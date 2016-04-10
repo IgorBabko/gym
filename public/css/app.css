@@ -2,6 +2,10 @@
 .Nav {
   height: 70px;
   background: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -51,7 +55,7 @@
   }
   .Nav__list {
     padding: 0;
-    background: #2b2b2b;
+    background: #333;
     display: none;
     position: fixed;
     top: 70px;
@@ -106,7 +110,7 @@
   }
 }
 .Footer {
-  background: #000;
+  background: #262626;
   color: #b3b3b3;
   text-align: center;
 }
@@ -250,7 +254,7 @@
   -webkit-justify-content: center;
   -ms-flex-pack: center;
       justify-content: center;
-  background: #2b2b2b;
+  background: #333;
   -webkit-align-items: center;
   -ms-flex-align: center;
       align-items: center;
