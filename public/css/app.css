@@ -1,7 +1,7 @@
 @import 'https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin,cyrillic';
 .Nav {
   height: 70px;
-  background: #000;
+  background: rgba(0,0,0,0.8);
   position: fixed;
   top: 0;
   left: 0;
@@ -373,10 +373,11 @@
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
   min-height: calc(100vh - 70px);
+  padding: 50px;
 }
 .Section--header {
   min-height: 100vh;
-  padding: 70px 0 30px;
+  padding: 70px 0 50px;
 }
 .Section--dark {
   background: #f7f7f7;
