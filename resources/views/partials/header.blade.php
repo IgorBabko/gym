@@ -14,6 +14,6 @@
                 <div class="Media__body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, eum.</div>
             </div>
         </div>
-        <button class="Button Button--red">Let's start</button>
+        <button class="Button Button--yellow">Let's start</button>
     </div>
 </header>
