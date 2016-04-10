@@ -1,11 +1,6 @@
 .Footer
     background: black
     color: $lightestGray
-    padding: 30px 50px
-    clear: fix
-    // position: fixed
-    // bottom: 0
-    // left: 0
     text-align: center
 
     &__heading
@@ -24,13 +19,16 @@
             text-decoration: none
             color: white
     
-    > div
-        text-align: left
-        lost-column: 1/1
-        @media screen and (min-width: 768px)
-            lost-column: 1/2
-        @media screen and (min-width: 1200px)
-            lost-column: 1/4
+    &__content
+        clear: fix
+        padding: 30px 50px
+        > div
+            text-align: left
+            lost-column: 1/1
+            @media screen and (min-width: 768px)
+                lost-column: 1/2
+            @media screen and (min-width: 1200px)
+                lost-column: 1/4
     
     &__copyright
         display: inline-block

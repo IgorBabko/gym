@@ -1,0 +1,41 @@
+.Subscription
+    display: flex
+    justify-content: center
+    background: $gray
+    align-items: center
+    padding: 30px 50px
+    
+    
+    &__label
+        font-size: 24px
+    
+    &__input
+        height: 45px
+        border: none
+        outline: none
+        background: $lightGray
+        width: 300px
+        color: white
+        padding: 0 10px
+        font-size: 22px
+    
+    &__button
+        border: none
+        height: 45px
+        color: white
+        background: $yellow
+        font-size: 20px
+        margin-bottom: 5px
+        
+
+    > div
+        padding: 0 20px
+        text-align: left
+    
+    @media screen and (max-width: 768px)
+        &__label
+            margin-bottom: 20px
+        flex-wrap: wrap
+        > div
+            text-align: center
+            flex-basis: 100%

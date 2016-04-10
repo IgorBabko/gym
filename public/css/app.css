@@ -51,7 +51,7 @@
   }
   .Nav__list {
     padding: 0;
-    background: #262626;
+    background: #2b2b2b;
     display: none;
     position: fixed;
     top: 70px;
@@ -100,15 +100,9 @@
     top: 19px;
   }
 }
-.Footer:after{
-  content: '';
-  display: table;
-  clear: both;
-}
 .Footer {
   background: #000;
   color: #b3b3b3;
-  padding: 30px 50px;
   text-align: center;
 }
 .Footer__heading {
@@ -128,62 +122,70 @@
   text-decoration: none;
   color: #fff;
 }
-.Footer > div {
+.Footer__content:after{
+  content: '';
+  display: table;
+  clear: both;
+}
+.Footer__content {
+  padding: 30px 50px;
+}
+.Footer__content > div {
   text-align: left;
   width: calc(99.99% * 1/1 - (30px - 30px * 1/1));
 }
-.Footer > div:nth-child(1n){
+.Footer__content > div:nth-child(1n){
   float: left;
   margin-right: 30px;
   clear: none;
 }
-.Footer > div:last-child{
+.Footer__content > div:last-child{
   margin-right: 0;
 }
-.Footer > div:nth-child(1n){
+.Footer__content > div:nth-child(1n){
   margin-right: 0;
   float: right;
 }
-.Footer > div:nth-child(1n + 1){
+.Footer__content > div:nth-child(1n + 1){
   clear: left;
 }
 @media screen and (min-width: 768px) {
-  .Footer > div {
+  .Footer__content > div {
     width: calc(99.99% * 1/2 - (30px - 30px * 1/2));
   }
-  .Footer > div:nth-child(1n){
+  .Footer__content > div:nth-child(1n){
     float: left;
     margin-right: 30px;
     clear: none;
   }
-  .Footer > div:last-child{
+  .Footer__content > div:last-child{
     margin-right: 0;
   }
-  .Footer > div:nth-child(2n){
+  .Footer__content > div:nth-child(2n){
     margin-right: 0;
     float: right;
   }
-  .Footer > div:nth-child(2n + 1){
+  .Footer__content > div:nth-child(2n + 1){
     clear: left;
   }
 }
 @media screen and (min-width: 1200px) {
-  .Footer > div {
+  .Footer__content > div {
     width: calc(99.99% * 1/4 - (30px - 30px * 1/4));
   }
-  .Footer > div:nth-child(1n){
+  .Footer__content > div:nth-child(1n){
     float: left;
     margin-right: 30px;
     clear: none;
   }
-  .Footer > div:last-child{
+  .Footer__content > div:last-child{
     margin-right: 0;
   }
-  .Footer > div:nth-child(4n){
+  .Footer__content > div:nth-child(4n){
     margin-right: 0;
     float: right;
   }
-  .Footer > div:nth-child(4n + 1){
+  .Footer__content > div:nth-child(4n + 1){
     clear: left;
   }
 }
@@ -235,6 +237,60 @@
   border-color: #fff;
   color: #fff;
   text-decoration: none;
+}
+.Subscription {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  background: #2b2b2b;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+      align-items: center;
+  padding: 30px 50px;
+}
+.Subscription__label {
+  font-size: 24px;
+}
+.Subscription__input {
+  height: 45px;
+  border: none;
+  outline: none;
+  background: #4d4d4d;
+  width: 300px;
+  color: #fff;
+  padding: 0 10px;
+  font-size: 22px;
+}
+.Subscription__button {
+  border: none;
+  height: 45px;
+  color: #fff;
+  background: #e6b500;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+.Subscription > div {
+  padding: 0 20px;
+  text-align: left;
+}
+@media screen and (max-width: 768px) {
+  .Subscription {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
+  .Subscription__label {
+    margin-bottom: 20px;
+  }
+  .Subscription > div {
+    text-align: center;
+    -ms-flex-preferred-size: 100%;
+        -webkit-flex-basis: 100%;
+        flex-basis: 100%;
+  }
 }
 body {
   font-family: 'PT Sans', sans-serif;
