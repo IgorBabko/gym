@@ -389,6 +389,7 @@
 .Section__heading {
   color: #333;
   font-weight: bold;
+  text-transform: uppercase;
 }
 .Section__media {
   margin: 20px;
@@ -396,8 +397,7 @@
 .Section__description {
   font-size: 18px;
 }
-.Section__button {
-  background: #b30000;
+.Button {
   border: none;
   font-size: 28px;
   color: #fff;
@@ -406,13 +406,30 @@
   border-radius: 10px;
   transition: background 0.1s ease-in-out;
   cursor: pointer;
+}
+.Button:focus {
+  outline: none;
+}
+.Button--red {
+  background: #b30000;
   border-bottom: 5px solid #7d0000;
 }
-.Section__button:hover {
+.Button--red:hover {
   background: #980000;
 }
-.Section__button:focus {
-  outline: none;
+.Button--pink {
+  background: #fb5c97;
+  border-bottom: 5px solid #ea065b;
+}
+.Button--pink:hover {
+  background: #fa2a77;
+}
+.Button--blue {
+  background: #4e91d6;
+  border-bottom: 5px solid #2665a6;
+}
+.Button--blue:hover {
+  background: #2f7bca;
 }
 body {
   font-family: 'PT Sans', sans-serif;

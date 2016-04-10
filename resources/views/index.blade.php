@@ -6,11 +6,11 @@
         <div class="Section__media">
             <div class="Media">
                 <img src="/img/food1.png" class="Media__picture" alt="food">
-                <button>Male</button>
+                <button class="Button Button--blue">Male</button>
             </div>
             <div class="Media">
                 <img src="/img/dumbbells.jpg" class="Media__picture Media__picture--program" alt="program">
-                <button>Female</button>
+                <button class="Button Button--pink">Female</button>
             </div>
         </div>
     </div>
