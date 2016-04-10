@@ -4,14 +4,20 @@
     &__item
         width: 50px
         height: 50px
-        border-radius: 50%
-        border: 2px solid white
         display: inline-block
         margin: 2px
 
     &__link
-        color: white
+        color: $lightestGray
+        border-radius: 50%
+        border: 2px solid $lightestGray
+        font-size: 20px
         display: flex
         justify-content: center
         align-items: center
         height: 100%
+        
+        &:hover
+            border-color: white
+            color: white
+            text-decoration: none // make general styles for tag 'a'

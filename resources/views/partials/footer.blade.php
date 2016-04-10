@@ -22,7 +22,7 @@
     <div>
         <h2 class="Footer__heading">Join us</h2>
         <ul class="Social">
-            <li class="Social__item"><a href="#" class="Social__link">1</a></li>
+            <li class="Social__item"><a href="#" class="Social__link"><i class="fa fa-facebook"></i></a></li>
             <li class="Social__item"><a href="#" class="Social__link">2</a></li>
             <li class="Social__item"><a href="#" class="Social__link">3</a></li>
             <li class="Social__item"><a href="#" class="Social__link">4</a></li>
