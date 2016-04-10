@@ -10,6 +10,12 @@
         return $('.Nav__list').toggle();
       }
     });
+    $('.Search__input').focus(function() {
+      return $(this).addClass('Search__input--expanded');
+    });
+    $('.Search__input').blur(function() {
+      return $(this).removeClass('Search__input--expanded');
+    });
     isScreenLarge = (ref = window.innerWidth > 768) != null ? ref : {
       "true": false
     };

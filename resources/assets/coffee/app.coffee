@@ -8,6 +8,12 @@ $ ->
         if window.innerWidth <= 768 and e.keyCode == 27
             $('.Nav__list').toggle()
 
+    $('.Search__input').focus ->
+        $(this).addClass 'Search__input--expanded'
+
+    $('.Search__input').blur ->
+        $(this).removeClass 'Search__input--expanded'
+
     isScreenLarge = window.innerWidth > 768 ? true : false
     $(window).resize ->
 
