@@ -116,6 +116,7 @@
 }
 .Footer__heading {
   text-transform: uppercase;
+  color: #d6c06f;
 }
 .Footer__list {
   list-style: none;
@@ -254,7 +255,7 @@
   -webkit-justify-content: center;
   -ms-flex-pack: center;
       justify-content: center;
-  background: #333;
+  background: #d6c06f;
   -webkit-align-items: center;
   -ms-flex-align: center;
       align-items: center;
@@ -266,14 +267,15 @@
 }
 .Subscription__label {
   font-size: 18px;
+  color: #000;
 }
 .Subscription__input {
   height: 45px;
   border: none;
   outline: none;
-  background: #4d4d4d;
+  background: #fff;
   width: 350px;
-  color: #fff;
+  color: #000;
   padding: 0 10px;
   font-size: 22px;
 }
@@ -284,10 +286,7 @@
   right: 10px;
   top: 12px;
   cursor: pointer;
-  color: #b3b3b3;
-}
-.Subscription__button:hover {
-  color: #fff;
+  color: #006322;
 }
 .Subscription > div {
   padding: 0 20px;
