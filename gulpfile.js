@@ -17,15 +17,17 @@ require('laravel-elixir-stylus');
 
 elixir(function(mix) {
 
-    mix.stylus('app.styl', null, {
-        use: [
-            postStylus( [ 'autoprefixer', 'lost', 'rucksack-css' ] )
-        ]
-    });
+    mix
+        .coffee('app.coffee')
+        .stylus('app.styl', null, {
+            use: [
+                postStylus( [ 'autoprefixer', 'lost', 'rucksack-css' ] )
+            ]
+        });
 
     mix
         .copy('node_modules/jquery/dist/jquery.min.js', 'public/js/jquery.min.js')
-        .copy('node_modules/bootstrap-sass/assets/fonts/bootstrap', 'public/fonts/bootstrap')
+        .copy('node_modules/bootstrap-sass/assets/fonts/bootstrap', 'public/fonts')
         .copy('node_modules/bootstrap/dist/css/bootstrap.min.css', 'public/css/bootstrap.min.css')
         .copy('node_modules/bootstrap/dist/js/bootstrap.min.js', 'public/js/bootstrap.min.js')
         .copy('node_modules/font-awesome/css/font-awesome.css', 'public/css/font-awesome.css')

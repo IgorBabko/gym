@@ -1,0 +1,41 @@
+.Footer
+    background: $darkGray
+    color: $lightestGray
+    text-align: center
+
+    &__heading
+        text-transform: uppercase
+        color: $yellow
+
+    &__list
+        list-style: none
+        padding: 0 0 0 10px
+    
+    &__item
+        padding: 5px
+    
+    &__link
+        color: $lightestGray
+        &:hover
+            text-decoration: none
+            color: white
+    
+    &__content
+        clear: fix
+        padding: 50px
+        > div
+            text-align: left
+            lost-column: 1/1
+            @media screen and (min-width: 768px)
+                lost-column: 1/2
+            @media screen and (min-width: 1200px)
+                lost-column: 1/4
+    
+    &__copyright
+        display: inline-block
+        padding: 5px 10px
+        background: $red
+        color: white
+        font-size: 22px
+        margin-top: 10px
+        text-transform: uppercase

@@ -1,0 +1,45 @@
+.Subscription
+    display: flex
+    justify-content: center
+    background: $yellow
+    align-items: center
+    padding: 30px 50px
+    
+    &__form
+        position: relative
+        display: inline-block
+
+    &__label
+        font-size: 18px
+        color: black
+    
+    &__input
+        height: 45px
+        border: none
+        outline: none
+        background: white
+        width: 350px
+        color: black
+        padding: 0 10px
+        font-size: 22px
+    
+    &__button
+        position: absolute
+        font-size: 22px
+        color: white
+        right: 10px
+        top: 12px
+        cursor: pointer
+        color: $green
+
+    > div
+        padding: 0 20px
+        text-align: left
+    
+    @media screen and (max-width: 768px)
+        &__label
+            margin-bottom: 20px
+        flex-wrap: wrap
+        > div
+            text-align: center
+            flex-basis: 100%
