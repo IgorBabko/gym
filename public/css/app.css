@@ -128,7 +128,7 @@
   clear: both;
 }
 .Footer__content {
-  padding: 30px 50px;
+  padding: 50px;
 }
 .Footer__content > div {
   text-align: left;
@@ -251,25 +251,29 @@
       align-items: center;
   padding: 30px 50px;
 }
+.Subscription__form {
+  position: relative;
+  display: inline-block;
+}
 .Subscription__label {
-  font-size: 24px;
+  font-size: 18px;
 }
 .Subscription__input {
   height: 45px;
   border: none;
   outline: none;
   background: #4d4d4d;
-  width: 300px;
+  width: 350px;
   color: #fff;
   padding: 0 10px;
   font-size: 22px;
 }
 .Subscription__button {
-  position: relative;
+  position: absolute;
   font-size: 22px;
   color: #fff;
-  left: -33px;
-  top: 2px;
+  right: 10px;
+  top: 12px;
   cursor: pointer;
   color: #b3b3b3;
 }

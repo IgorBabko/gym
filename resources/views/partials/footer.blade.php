@@ -1,12 +1,5 @@
 <footer class="Footer">
-    <div class="Subscription">
-        <div class="Subscription__label">Subscribe to get latest updates</div>
-        <div>
-            <form action="#" method="POST">
-                <input type="text" class="Subscription__input" placeholder="your email"><i class="fa fa-check Subscription__button"></i>
-            </form>
-        </div>
-    </div>
+    @include('partials.subscription')
     <div class="Footer__content">
         <div>
             <h2 class="Footer__heading">Need help?</h2>
