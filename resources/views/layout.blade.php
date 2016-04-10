@@ -14,6 +14,7 @@
     </head>
     <body>
         @include('partials.nav')
+        @include('partials.header')
         @yield('content')
         @include('partials.footer')
         <script src="/js/jquery.min.js"></script>
