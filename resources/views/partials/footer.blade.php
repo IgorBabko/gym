@@ -23,10 +23,10 @@
         <h2 class="Footer__heading">Join us</h2>
         <ul class="Social">
             <li class="Social__item"><a href="#" class="Social__link"><i class="fa fa-facebook"></i></a></li>
-            <li class="Social__item"><a href="#" class="Social__link">2</a></li>
-            <li class="Social__item"><a href="#" class="Social__link">3</a></li>
-            <li class="Social__item"><a href="#" class="Social__link">4</a></li>
-            <li class="Social__item"><a href="#" class="Social__link">5</a></li>
+            <li class="Social__item"><a href="#" class="Social__link"><i class="fa fa-vk"></i></a></li>
+            <li class="Social__item"><a href="#" class="Social__link"><i class="fa fa-twitter"></i></a></li>
+            <li class="Social__item"><a href="#" class="Social__link"><i class="fa fa-instagram"></i></a></li>
+            <li class="Social__item"><a href="#" class="Social__link"><i class="fa fa-youtube-play"></i></a></li>
         </ul>
         <div class="Footer__copyright">&copy; 2016 sumy.gym.ua</div>
     </div>

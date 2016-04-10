@@ -194,6 +194,7 @@
   color: #fff;
   font-size: 22px;
   margin-top: 10px;
+  text-transform: uppercase;
 }
 .Social {
   list-style: none;
@@ -220,6 +221,15 @@
   -ms-flex-align: center;
       align-items: center;
   height: 100%;
+}
+.Social__link:hover {
+  background: #fff;
+  border-color: #fff;
+  color: #000 !important;
+}
+.Social__link:focus {
+  color: #b3b3b3;
+  text-decoration: none;
 }
 .Social__link:hover {
   border-color: #fff;
