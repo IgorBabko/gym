@@ -1,9 +1,9 @@
 (function() {
   $(function() {
-    var isScreenLarge, ref;
+    var $loginModal, $overlay, isScreenLarge, ref;
     $('.Nav__item--hamburger').click(function() {
       $('.Nav__list').toggle();
-      return $('.Search__input').focus().select();
+      return $('.search__input').focus().select();
     });
     $(window).keyup(function(e) {
       if (window.innerWidth <= 768 && e.keyCode === 27) {
@@ -29,6 +29,14 @@
         $('.Nav__list').css('display', 'none');
         return isScreenLarge = false;
       }
+    });
+    $overlay = $('.Auth__overlay');
+    $loginModal = $('.Auth');
+    $('.Nav__item--login').click(function(e) {
+      return $loginModal.addClass('Auth--visible');
+    });
+    $overlay.click(function() {
+      return $loginModal.removeClass('Auth--visible');
     });
   });
 

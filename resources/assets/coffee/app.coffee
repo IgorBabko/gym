@@ -2,7 +2,7 @@ $ ->
 
     $('.Nav__item--hamburger').click ->
         $('.Nav__list').toggle()
-        $('.Search__input').focus().select()
+        $('.search__input').focus().select()
 
     $(window).keyup (e) ->
         if window.innerWidth <= 768 and e.keyCode == 27
@@ -27,4 +27,15 @@ $ ->
             $('.Nav__list').css('display', 'none')
             isScreenLarge = false
 
+    # open login form when pression Log In menu item
+    $overlay = $('.Auth__overlay')
+    $loginModal = $('.Auth')
+
+    $('.Nav__item--login').click (e) ->
+        $loginModal.addClass 'Auth--visible'
+
+    $overlay.click ->
+        $loginModal.removeClass 'Auth--visible'
+
     return
+
