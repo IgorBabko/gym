@@ -15,9 +15,9 @@ Route::get('/', 'HomeController@index');
 Route::get('/profile', 'HomeController@profile');
 Route::get('/metrics', 'HomeController@metrics');
 
-Route::get('/bmi', 'MetricsController@bmi');
-Route::get('/bmr', 'MetricsController@bmr');
-Route::get('/water', 'MetricsController@water');
+Route::get('/metrics/bmi', 'MetricsController@bmi');
+Route::get('/metrics/bmr', 'MetricsController@bmr');
+Route::get('/metrics/water', 'MetricsController@water');
 
 Route::auth();
 
