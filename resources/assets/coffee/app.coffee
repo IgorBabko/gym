@@ -55,13 +55,13 @@ $ ->
 
     loginRequest.fail (jqXHR, textStatus) ->
         updateValidErrors $loginForm, textStatus
-        console.log "Request failed (login): " + textStatus
+        console.log jqXHR.responseJSON
 
 
     # register ajax request
     $('.Modal__form--register').submit (e) ->
         e.preventDefault()
-        #console.log $registerForm.serialize()
+     #   console.log $registerForm.serialize()
 
         registerRequest = $.ajax
             url: "/register"
@@ -71,20 +71,19 @@ $ ->
         registerRequest.done (msg) ->
             console.log 'register ok'
 
-        registerRequest.fail (jqXHR, textStatus) ->
-            updateValidErrors $registerForm, textStatus
-            console.log "Request failed (register): " + textStatus
+        registerRequest.fail (response) ->
+            updateValidErrors $registerForm, response.responseJSON
 
     updateValidErrors = ($form, validErrors) ->
         $form.find('input').each (index, input) ->
             $input = $(input)
-            $fieldName = $input.attr('name')
+            fieldName = $input.attr('name')
             $errorBlock = $input.next()
-            if $fieldName of validErrors and not $errorBlock.hasClass('Error')
-                $(input).after '<span class="Error">' + validErrors[fieldName] + '</span>'
+            if validErrors[fieldName]? and not $errorBlock.hasClass('Error')
+                $(input).after '<span class="Error">' + validErrors[fieldName][0] + '</span>'
                 return
 
-            if not $fieldName of validErrors and $errorBlock.hasClass('Error')
+            if not validErrors[fieldName]? and $errorBlock.hasClass('Error')
                 $errorBlock.remove()
 
     return

@@ -5,13 +5,13 @@
             <form method="POST" action="{{ url('/register') }}" class="Modal__form Modal__form--register">
                 {!! csrf_field() !!}
                 <label class="Label" for="name">Name:</label>
-                <input type="text" name="name" class="Input">
-                <label class="Label" for="">Email:</label>
-                <input type="email" name="email" class="Input">
-                <label class="Label" for="">Password:</label>
-                <input type="password" name="password" class="Input">
-                <label class="Label" for="">Confirm password:</label>
-                <input type="password" name="password_confirmation" class="Input">
+                <input type="text" name="name" id="name" class="Input">
+                <label class="Label" for="email">Email:</label>
+                <input type="email" name="email" id="email" class="Input">
+                <label class="Label" for="password">Password:</label>
+                <input type="password" name="password" id="password" class="Input">
+                <label class="Label" for="password_confirmation">Confirm password:</label>
+                <input type="password" name="password_confirmation" id="password_confirmation" class="Input">
                 <button type="submit" class="Button Button--modal Button--yellow">Register</button>
             </form>
         </div>
