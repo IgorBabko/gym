@@ -507,6 +507,15 @@
   transition: background 0.1s ease-in-out;
   cursor: pointer;
   padding: 10px;
+  display: inline-block;
+}
+.Button:hover {
+  color: #fff;
+  text-decoration: none;
+}
+.Button:focus {
+  color: #fff;
+  text-decoration: none;
 }
 .Button--modal {
   width: 320px;
