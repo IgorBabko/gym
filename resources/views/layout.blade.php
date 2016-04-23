@@ -19,7 +19,11 @@
         @include('partials.header')
         @yield('content')
         @include('partials.footer')
+
+        <div id="ohsnap"></div>
+
         <script src="/js/jquery.min.js"></script>
+        <script src="/js/ohsnap.js"></script>
         <script src="/js/app.js"></script>
     </body>
 </html>
