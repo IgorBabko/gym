@@ -1,4 +1,7 @@
 @import 'https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin,cyrillic';
+body {
+  background: #dadada;
+}
 .flexible {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -167,7 +170,7 @@
 }
 .Footer {
   background: #3c3c3c;
-  color: #a3a3a3;
+  color: #dadada;
   text-align: center;
 }
 .Footer__heading {
@@ -182,7 +185,7 @@
   padding: 5px;
 }
 .Footer__link {
-  color: #a3a3a3;
+  color: #dadada;
 }
 .Footer__link:hover {
   text-decoration: none;
@@ -275,9 +278,9 @@
   margin: 2px;
 }
 .Social__link {
-  color: #a3a3a3;
+  color: #dadada;
   border-radius: 50%;
-  border: 2px solid #a3a3a3;
+  border: 2px solid #dadada;
   font-size: 20px;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -296,7 +299,7 @@
   color: #000 !important;
 }
 .Social__link:focus {
-  color: #a3a3a3;
+  color: #dadada;
   text-decoration: none;
 }
 .Social__link:hover {
@@ -508,6 +511,7 @@
   cursor: pointer;
   padding: 10px;
   display: inline-block;
+  float: right;
 }
 .Button:hover {
   color: #fff;
@@ -632,6 +636,9 @@
   display: block;
   margin-top: 20px;
 }
+.Label--inline {
+  display: inline;
+}
 .Error {
   color: #b30000;
   margin-top: 5px;
@@ -661,6 +668,12 @@
 }
 .alert-green {
   background-color: #008000;
+}
+.Block {
+  margin: 100px;
+  background: #fff;
+  padding: 50px;
+  box-shadow: 0 0 7px 0px #c7c7c7;
 }
 body {
   font-family: 'PT Sans', sans-serif;
