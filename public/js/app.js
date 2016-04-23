@@ -58,6 +58,9 @@
         data: $(this).serialize()
       });
       request.done(function(response) {
+        $('.Nav__item--modal').remove();
+        $('.Nav__list').append('<li class="Nav__item"><a href="/profile" class="Nav__link"><span>My profile</span></a></li>');
+        $('.Nav__list').append('<li class="Nav__item"><a href="/logout" class="Nav__link"><span>Logout</span></a></li>');
         ohSnap(response.message, {
           color: 'green'
         });
