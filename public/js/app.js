@@ -67,7 +67,9 @@
         return $('.Modal__overlay').trigger('click');
       });
       return request.fail(function(response) {
-        ohSnap('Please, fix valid errors', {
+        var ref1;
+        console.log(response.responseJSON);
+        ohSnap((ref1 = response.responseJSON.message) != null ? ref1 : 'Please, fix valid errors', {
           color: 'red'
         });
         return updateValidErrors($this, response.responseJSON);
