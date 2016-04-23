@@ -599,8 +599,8 @@
   color: #808080;
   font-size: 18px;
   font-weight: 100;
-  display: inline-block;
-  margin-top: 10px;
+  display: block;
+  margin-top: 20px;
 }
 .Error {
   color: #b30000;
