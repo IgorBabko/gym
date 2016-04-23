@@ -31,5 +31,9 @@ elixir(function(mix) {
         .copy('node_modules/bootstrap/dist/css/bootstrap.min.css', 'public/css/bootstrap.min.css')
         .copy('node_modules/bootstrap/dist/js/bootstrap.min.js', 'public/js/bootstrap.min.js')
         .copy('node_modules/font-awesome/css/font-awesome.css', 'public/css/font-awesome.css')
-        .copy('node_modules/font-awesome/fonts', 'public/fonts');
+        .copy('node_modules/font-awesome/fonts', 'public/fonts')
+        .copy('bower_components/bxslider-4/dist/jquery.bxslider.min.css', 'public/css')
+        .copy('bower_components/bxslider-4/dist/jquery.bxslider.min.js', 'public/js')
+        .copy('bower_components/bxslider-4/dist/images/bx_loader.gif', 'public/img')
+        .copy('bower_components/bxslider-4/dist/images/controls.png', 'public/img');
 });
