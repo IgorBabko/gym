@@ -6,17 +6,17 @@
         <div class="Media Media--calc">
             <h2 class="Media__heading">BMI</h2>
             <div class="Media__body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, eum.</div>
-            <button class="Button Button--red">Calculate</button>
+            <a href="/bmi" class="Button Button--red">Calculate</a>
         </div>
         <div class="Media Media--calc">
             <h2 class="Media__heading">BMR</h2>
             <div class="Media__body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, eum.</div>
-            <button class="Button Button--red">Calculate</button>
+            <a href="/bmr" class="Button Button--red">Calculate</a>
         </div>
         <div class="Media Media--calc">
             <h2 class="Media__heading">Water</h2>
             <div class="Media__body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, eum.</div>
-            <button class="Button Button--red">Calculate</button>
+            <a href="/water" class="Button Button--red">Calculate</a>
         </div>
     </div>
 </section>
