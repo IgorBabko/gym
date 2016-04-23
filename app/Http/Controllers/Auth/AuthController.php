@@ -111,7 +111,16 @@ class AuthController extends Controller
         $credentials = $this->getCredentials($request);
 
         if (Auth::guard($this->getGuard())->attempt($credentials, $request->has('remember'))) {
-            return $this->handleUserWasAuthenticated($request, $throttles);
+
+            if ($throttles) {
+                $this->clearLoginAttempts($request);
+            }
+
+            if (method_exists($this, 'authenticated')) {
+                return $this->authenticated($request, Auth::guard($this->getGuard())->user());
+            }
+
+            return response()->json(['message' => 'You are logged in!'], 200);
         }
 
         // If the login attempt was unsuccessful we will increment the number of attempts
@@ -122,5 +131,18 @@ class AuthController extends Controller
         }
 
         return response()->json(['message' => 'credentials are wrong'], 422);
+    }
+
+    /**
+     * Log the user out of the application.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function logout()
+    {
+        Auth::guard($this->getGuard())->logout();
+
+        return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/')
+                ->with('notify', 'You are now logged out');
     }
 }

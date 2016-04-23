@@ -47,7 +47,7 @@
       var $this, request, url;
       e.preventDefault();
       $this = $(this);
-      if ($(this).closest('.Modal').hasClass('Modal--register')) {
+      if ($this.closest('.Modal').hasClass('Modal--register')) {
         url = '/register';
       } else {
         url = '/login';
@@ -55,7 +55,7 @@
       request = $.ajax({
         url: url,
         method: "POST",
-        data: $(this).serialize()
+        data: $this.serialize()
       });
       request.done(function(response) {
         $('.Nav__item--modal').remove();
@@ -68,7 +68,6 @@
       });
       return request.fail(function(response) {
         var ref1;
-        console.log(response.responseJSON);
         ohSnap((ref1 = response.responseJSON.message) != null ? ref1 : 'Please, fix valid errors', {
           color: 'red'
         });
