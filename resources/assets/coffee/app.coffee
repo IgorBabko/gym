@@ -28,11 +28,12 @@ $ ->
             isScreenLarge = false
 
     $('.Nav__item').click (e) ->
-        $modal = if $(this).data('type') == 'login' then $('.Modal--login') else $('.Modal--register')
-        setTimeout ( ->
-            $modal.find('.Modal__form input').first().select()
-        ), 100
-        $modal.addClass 'Modal--visible'
+        if $(this).data('type')?
+            $modal = if $(this).data('type') == 'login' then $('.Modal--login') else $('.Modal--register')
+            setTimeout ( ->
+                $modal.find('.Modal__form input').first().select()
+            ), 100
+            $modal.addClass 'Modal--visible'
 
     $('.Modal__overlay').click ->
         $('.Modal').removeClass 'Modal--visible'
@@ -52,10 +53,12 @@ $ ->
             method: "POST"
             data: $(this).serialize()
 
-        request.done (msg) ->
-            $('.Modal__overlay').trigger('click')
+        request.done (response) ->
+            ohSnap response.message, color: 'green'
+            $('.Modal__overlay').trigger 'click'
 
         request.fail (response) ->
+            ohSnap 'Please, fix valid errors', color: 'red'
             updateValidErrors $this, response.responseJSON
 
     updateValidErrors = ($form, validErrors) ->

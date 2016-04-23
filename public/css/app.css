@@ -593,6 +593,29 @@
   font-size: 16px;
   text-align: right;
 }
+#ohsnap {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  margin: 0;
+  z-index: 3000;
+}
+.alert {
+  text-align: right;
+  padding: 15px;
+  margin: 0 0 5px 0;
+  border-radius: 0;
+  float: right;
+  clear: right;
+  color: #fff;
+  font-size: 16px;
+}
+.alert-red {
+  background-color: #b30000;
+}
+.alert-green {
+  background-color: #008000;
+}
 body {
   font-family: 'PT Sans', sans-serif;
 }

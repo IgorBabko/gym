@@ -32,11 +32,13 @@
     });
     $('.Nav__item').click(function(e) {
       var $modal;
-      $modal = $(this).data('type') === 'login' ? $('.Modal--login') : $('.Modal--register');
-      setTimeout((function() {
-        return $modal.find('.Modal__form input').first().select();
-      }), 100);
-      return $modal.addClass('Modal--visible');
+      if ($(this).data('type') != null) {
+        $modal = $(this).data('type') === 'login' ? $('.Modal--login') : $('.Modal--register');
+        setTimeout((function() {
+          return $modal.find('.Modal__form input').first().select();
+        }), 100);
+        return $modal.addClass('Modal--visible');
+      }
     });
     $('.Modal__overlay').click(function() {
       return $('.Modal').removeClass('Modal--visible');
@@ -55,10 +57,16 @@
         method: "POST",
         data: $(this).serialize()
       });
-      request.done(function(msg) {
+      request.done(function(response) {
+        ohSnap(response.message, {
+          color: 'green'
+        });
         return $('.Modal__overlay').trigger('click');
       });
       return request.fail(function(response) {
+        ohSnap('Please, fix valid errors', {
+          color: 'red'
+        });
         return updateValidErrors($this, response.responseJSON);
       });
     });
