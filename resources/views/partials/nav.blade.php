@@ -7,9 +7,10 @@
         </li>
         @if (Auth::check())
             <li class="Nav__item"><a href="/profile" class="Nav__link"><span>My profile</span></a></li>
+            <li class="Nav__item"><a href="/logout" class="Nav__link"><span>Logout</span></a></li>
         @else
-            <li class="Nav__item" data-type="login">Log In</li>
-            <li class="Nav__item" data-type="register">Sign Up</li>
+            <li class="Nav__item Nav__item--modal" data-type="login"><a href="#" class="Nav__link"><span>Log In</span></a></li>
+            <li class="Nav__item Nav__item--modal" data-type="register"><a href="#" class="Nav__link"><span>Sign Up</span></a></li>
         @endif
     </ul>
     <li class="Nav__item Nav__item--hamburger">

@@ -61,9 +61,6 @@
   -ms-flex-align: center;
       align-items: center;
   padding: 0 15px;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: 100;
 }
 .Nav__link:hover {
   color: #000;
@@ -76,6 +73,9 @@
   -webkit-align-items: center;
   -ms-flex-align: center;
       align-items: center;
+  font-size: 18px;
+  font-weight: 100;
+  cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
 .Nav__item:not(.Search):hover {
