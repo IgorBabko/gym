@@ -61,7 +61,8 @@ $ ->
             $('.Modal__overlay').trigger 'click'
 
         request.fail (response) ->
-            ohSnap 'Please, fix valid errors', color: 'red'
+            console.log response.responseJSON
+            ohSnap response.responseJSON.message ? 'Please, fix valid errors', color: 'red'
             updateValidErrors $this, response.responseJSON
 
     updateValidErrors = ($form, validErrors) ->

@@ -16,7 +16,6 @@
         @include('partials.login')
         @include('partials.register')
         @include('partials.nav')
-        @include('partials.header')
         @yield('content')
         @include('partials.footer')
 
