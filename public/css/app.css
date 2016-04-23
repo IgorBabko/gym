@@ -1,4 +1,27 @@
 @import 'https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin,cyrillic';
+.flexible {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.centered {
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+              -ms-grid-row-align: center;
+          -webkit-align-items: center;
+          -ms-flex-align: center;
+          align-items: center;
+}
+.visible {
+  visibility: visible !important;
+}
+.opaque {
+  opacity: 1 !important;
+}
 .Nav {
   height: 70px;
   background: rgba(0,0,0,0.8);
@@ -27,6 +50,22 @@
   padding: 0;
   height: 100%;
 }
+.Nav__link {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  color: #fff;
+  height: 70px;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+      align-items: center;
+  padding: 0 15px;
+}
+.Nav__link:hover {
+  color: #000;
+  text-decoration: none;
+}
 .Nav__item {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -34,10 +73,9 @@
   -webkit-align-items: center;
   -ms-flex-align: center;
       align-items: center;
-  cursor: pointer;
   font-size: 18px;
   font-weight: 100;
-  padding: 0 15px;
+  cursor: pointer;
   transition: all 0.2s ease-in-out;
 }
 .Nav__item:not(.Search):hover {
@@ -64,11 +102,11 @@
     width: 100%;
     height: 100%;
   }
-  .Nav__item {
-    padding: 15px 30px;
-  }
   .Nav__item--hamburger {
     display: block;
+  }
+  .Nav__link {
+    padding: 15px 30px;
   }
 }
 .Logo {
@@ -78,6 +116,9 @@
 }
 .Logo__middle-letter {
   color: #d6c06f;
+}
+.Logo__last-letter {
+  color: #ea5050;
 }
 .Logo:hover,
 .Logo:focus {
@@ -91,11 +132,17 @@
   background: rgba(77,77,77,0.8);
   border: none;
   padding: 10px;
+  margin: 0 15px;
   outline: none;
   width: 250px;
   color: #fff;
   font-weight: 100;
   transition: all 0.2s ease-in-out;
+}
+@media screen and (max-width: 768px) {
+  .Search__input {
+    margin: 0;
+  }
 }
 .Search__input--expanded {
   width: 350px;
@@ -435,11 +482,15 @@
   border: none;
   font-size: 28px;
   color: #fff;
-  padding: 15px;
-  margin: 15px;
-  border-radius: 10px;
   transition: background 0.1s ease-in-out;
   cursor: pointer;
+}
+.Button--modal {
+  width: 320px;
+  margin: 40px 0 20px;
+  height: 50px;
+  font-size: 18px;
+  display: block;
 }
 .Button:focus {
   outline: none;
@@ -474,7 +525,117 @@
 }
 .Button--yellow:active {
   border: none;
+}
+.Modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  max-width: 630px;
+  min-width: 300px;
+  z-index: 2000;
+  visibility: hidden;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+}
+.Modal__content {
+  display: block;
+  -webkit-transform: scale(0.7);
+          transform: scale(0.7);
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  background: #fff;
+}
+.Modal__header {
+  font-size: 28px;
+  margin: 0;
+  padding: 20px;
+  background: #a53131;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+}
+.Modal__body {
+  padding: 40px;
+}
+.Modal--visible {
+  visibility: visible;
+}
+.Modal__overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  opacity: 0;
+  background: rgba(0,0,0,0.85);
+  transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+.Modal__reset-password {
+  text-align: center;
+  margin: 0 90px;
+  display: inline-block;
+  color: #000;
+}
+.Modal--visible .Modal__content {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+.Modal--visible + .Modal__overlay {
+  opacity: 1;
+  visibility: visible;
+}
+.Input {
+  background: #efefef;
+  border: none;
+  height: 50px;
+  display: block;
+  width: 320px;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 100;
+}
+.Input:focus {
+  outline: none;
+}
+.Label {
+  color: #808080;
+  font-size: 18px;
+  font-weight: 100;
+  display: block;
   margin-top: 20px;
+}
+.Error {
+  color: #b30000;
+  margin-top: 5px;
+  display: block;
+  font-size: 16px;
+  text-align: right;
+}
+#ohsnap {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  margin: 0;
+  z-index: 3000;
+}
+.alert {
+  text-align: right;
+  padding: 15px;
+  margin: 0 0 5px 0;
+  border-radius: 0;
+  float: right;
+  clear: right;
+  color: #fff;
+  font-size: 16px;
+}
+.alert-red {
+  background-color: #b30000;
+}
+.alert-green {
+  background-color: #008000;
 }
 body {
   font-family: 'PT Sans', sans-serif;
