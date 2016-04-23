@@ -690,6 +690,9 @@ body {
   float: left;
   margin-right: 30px;
 }
+.Info {
+  font-size: 16px;
+}
 body {
   font-family: 'PT Sans', sans-serif;
 }
