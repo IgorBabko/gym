@@ -1,0 +1,58 @@
+.Modal 
+    position: fixed
+    top: 50%
+    left: 50%
+    max-width: 630px
+    min-width: 300px
+    z-index: 2000
+    visibility: hidden
+    transform: translateX(-50%) translateY(-50%)
+
+    &__content
+        display: block
+        transform: scale(0.7)
+        opacity: 0
+        transition: all 0.2s ease-in-out
+        background: white
+
+    &__header
+        font-size: 28px
+        margin: 0
+        padding: 20px
+        background: #A53131 
+        color: white
+        font-weight: bold
+        text-align: center
+
+    &__body
+        padding: 40px
+
+    &--visible 
+        visibility: visible
+
+    &__overlay 
+        position: fixed
+        width: 100vw
+        height: 100vh
+        visibility: hidden
+        top: 0
+        left: 0
+        z-index: 1000
+        opacity: 0
+        background: rgba(black, 0.85)
+        transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out
+
+    &__reset-password
+        text-align: center
+        margin: 0 90px
+        display: inline-block
+        color: black
+
+    &--visible 
+        .Modal__content
+            transform: scale(1)
+            opacity: 1
+
+    &--visible + .Modal__overlay 
+        opacity: 1
+        visibility: visible

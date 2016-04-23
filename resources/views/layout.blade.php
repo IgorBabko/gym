@@ -13,11 +13,15 @@
         @endif
     </head>
     <body>
+        @include ('partials.notifications')
+        @include('partials.login')
+        @include('partials.register')
         @include('partials.nav')
-        @include('partials.header')
         @yield('content')
         @include('partials.footer')
+
         <script src="/js/jquery.min.js"></script>
+        <script src="/js/ohsnap.js"></script>
         <script src="/js/app.js"></script>
     </body>
 </html>
