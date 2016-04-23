@@ -12,9 +12,12 @@ class MetricsController extends Controller
         return view('bmi');
     } 
 
-    public function calcBmi()
+    public function calcBmi(Request $request)
     {
-        
+        $height = $request->input('height');
+        $weight = $request->input('weight');
+
+        return $weight / ($height * $height);
     }
 
     public function bmr()
