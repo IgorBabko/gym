@@ -13,6 +13,7 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('/profile', 'HomeController@profile');
+Route::get('/metrics', 'HomeController@metrics');
 
 Route::auth();
 

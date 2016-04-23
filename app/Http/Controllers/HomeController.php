@@ -31,4 +31,9 @@ class HomeController extends Controller
     {
         return view('profile');
     }
+
+    public function metrics()
+    {
+        return view('metrics');
+    }
 }
