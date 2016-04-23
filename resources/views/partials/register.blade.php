@@ -2,7 +2,7 @@
     <div class="Modal__content">
         <h1 class="Modal__header">Registration</h1>
         <div class="Modal__body">
-            <form method="POST" action="{{ url('/login') }}" class="Modal__form">
+            <form method="POST" action="{{ url('/register') }}" class="Modal__form Modal__form--register">
                 {!! csrf_field() !!}
                 <label class="Label" for="name">Name:</label>
                 <input type="text" name="name" class="Input">

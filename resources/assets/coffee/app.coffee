@@ -40,8 +40,8 @@ $ ->
 
     # get login and register forms
 
-    $loginForm = $('Modal__form--login')
-    $registerForm = $('Modal__form--register')
+    $loginForm = $('.Modal__form--login')
+    $registerForm = $('.Modal__form--register')
 
     # login ajax request
     loginRequest = $.ajax({
@@ -54,21 +54,38 @@ $ ->
         console.log 'login ok'
 
     loginRequest.fail (jqXHR, textStatus) ->
+        updateValidErrors $loginForm, textStatus
         console.log "Request failed (login): " + textStatus
 
 
     # register ajax request
-    registerRequest = $.ajax({
-        url: "/register"
-        method: "POST"
-        data: $registerForm.serialize()
-    })
+    $('.Modal__form--register').submit (e) ->
+        e.preventDefault()
+        #console.log $registerForm.serialize()
 
-    registerRequest.done (msg) ->
-        console.log 'register ok'
+        registerRequest = $.ajax
+            url: "/register"
+            method: "POST"
+            data: $registerForm.serialize()
 
-    registerRequest.fail (jqXHR, textStatus) ->
-        console.log "Request failed (register): " + textStatus
+        registerRequest.done (msg) ->
+            console.log 'register ok'
+
+        registerRequest.fail (jqXHR, textStatus) ->
+            updateValidErrors $registerForm, textStatus
+            console.log "Request failed (register): " + textStatus
+
+    updateValidErrors = ($form, validErrors) ->
+        $form.find('input').each (index, input) ->
+            $input = $(input)
+            $fieldName = $input.attr('name')
+            $errorBlock = $input.next()
+            if $fieldName of validErrors and not $errorBlock.hasClass('Error')
+                $(input).after '<span class="Error">' + validErrors[fieldName] + '</span>'
+                return
+
+            if not $fieldName of validErrors and $errorBlock.hasClass('Error')
+                $errorBlock.remove()
 
     return
 
