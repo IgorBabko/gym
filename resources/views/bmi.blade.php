@@ -2,7 +2,8 @@
 
 @section ('content')
 <div class="Block">
-    <form method="POST" class="Form" action="{{ url('/calcBmi') }}">
+    <h1 class="Block__heading">Body Mass Index</h1>
+    <form method="POST" class="Form" action="{{ url('/metrics/calcBmi') }}">
         <label class="Label Label--inline">
             <input type="radio" name="gender" class="Radio">
             Male
@@ -12,12 +13,12 @@
             Female
         </label>
         <label class="Label">
-            Heigh:
+            Heigh (kg):
             <input type="text" name="height" class="Input">
             <span class="Error"></span>
         </label>
         <label class="Label">
-            Weight:
+            Weight (meters):
             <input type="text" name="weight" class="Input">
             <span class="Error"></span>
         </label>

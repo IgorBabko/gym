@@ -512,6 +512,7 @@ body {
   padding: 10px;
   display: inline-block;
   float: right;
+  margin-top: 20px;
 }
 .Button:hover {
   color: #fff;
@@ -638,6 +639,7 @@ body {
 }
 .Label--inline {
   display: inline;
+  margin-right: 30px;
 }
 .Error {
   color: #b30000;
@@ -669,11 +671,24 @@ body {
 .alert-green {
   background-color: #008000;
 }
+.Block:after{
+  content: '';
+  display: table;
+  clear: both;
+}
 .Block {
   margin: 100px;
   background: #fff;
   padding: 50px;
   box-shadow: 0 0 7px 0px #c7c7c7;
+}
+.Block__heading {
+  color: #000;
+  margin-bottom: 30px;
+}
+.Form {
+  float: left;
+  margin-right: 30px;
 }
 body {
   font-family: 'PT Sans', sans-serif;
