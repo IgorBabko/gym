@@ -42,7 +42,6 @@ $ ->
     flashMessage = $('#ohsnap').data('notify')
     if flashMessage? then ohSnap(flashMessage, {color: 'green'})
 
-
     $('.Modal__form').submit (e) ->
         e.preventDefault()
 
