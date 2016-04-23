@@ -43,7 +43,7 @@ $ ->
 
         $this = $(this)
 
-        if $(this).closest('.Modal').hasClass('Modal--register')
+        if $this.closest('.Modal').hasClass('Modal--register')
             url = '/register'
         else
             url = '/login'
@@ -51,7 +51,7 @@ $ ->
         request = $.ajax
             url: url
             method: "POST"
-            data: $(this).serialize()
+            data: $this.serialize()
 
         request.done (response) ->
             $('.Nav__item--modal').remove()
@@ -61,7 +61,6 @@ $ ->
             $('.Modal__overlay').trigger 'click'
 
         request.fail (response) ->
-            console.log response.responseJSON
             ohSnap response.responseJSON.message ? 'Please, fix valid errors', color: 'red'
             updateValidErrors $this, response.responseJSON
 
