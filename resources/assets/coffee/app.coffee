@@ -28,14 +28,47 @@ $ ->
             isScreenLarge = false
 
     # open login form when pression Log In menu item
-    $overlay = $('.Auth__overlay')
-    $loginModal = $('.Auth')
-
     $('.Nav__item--login').click (e) ->
-        $loginModal.addClass 'Auth--visible'
+        $('.Modal--login').addClass 'Modal--visible'
 
-    $overlay.click ->
-        $loginModal.removeClass 'Auth--visible'
+    # open register form when pression Sign Up menu item
+    $('.Nav__item--register').click (e) ->
+        $('.Modal--register').addClass 'Modal--visible'
+
+    $('.Modal__overlay').click ->
+        $('.Modal').removeClass 'Modal--visible'
+
+    # get login and register forms
+
+    $loginForm = $('Modal__form--login')
+    $registerForm = $('Modal__form--register')
+
+    # login ajax request
+    loginRequest = $.ajax({
+        url: "/login"
+        method: "POST"
+        data: $loginForm.serialize()
+    })
+
+    loginRequest.done (msg) ->
+        console.log 'login ok'
+
+    loginRequest.fail (jqXHR, textStatus) ->
+        console.log "Request failed (login): " + textStatus
+
+
+    # register ajax request
+    registerRequest = $.ajax({
+        url: "/register"
+        method: "POST"
+        data: $registerForm.serialize()
+    })
+
+    registerRequest.done (msg) ->
+        console.log 'register ok'
+
+    registerRequest.fail (jqXHR, textStatus) ->
+        console.log "Request failed (register): " + textStatus
 
     return
 

@@ -1,6 +1,6 @@
 (function() {
   $(function() {
-    var $loginModal, $overlay, isScreenLarge, ref;
+    var $loginForm, $registerForm, isScreenLarge, loginRequest, ref, registerRequest;
     $('.Nav__item--hamburger').click(function() {
       $('.Nav__list').toggle();
       return $('.search__input').focus().select();
@@ -30,13 +30,38 @@
         return isScreenLarge = false;
       }
     });
-    $overlay = $('.Auth__overlay');
-    $loginModal = $('.Auth');
     $('.Nav__item--login').click(function(e) {
-      return $loginModal.addClass('Auth--visible');
+      return $('.Modal--login').addClass('Modal--visible');
     });
-    $overlay.click(function() {
-      return $loginModal.removeClass('Auth--visible');
+    $('.Nav__item--register').click(function(e) {
+      return $('.Modal--register').addClass('Modal--visible');
+    });
+    $('.Modal__overlay').click(function() {
+      return $('.Modal').removeClass('Modal--visible');
+    });
+    $loginForm = $('Modal__form--login');
+    $registerForm = $('Modal__form--register');
+    loginRequest = $.ajax({
+      url: "/login",
+      method: "POST",
+      data: $loginForm.serialize()
+    });
+    loginRequest.done(function(msg) {
+      return console.log('login ok');
+    });
+    loginRequest.fail(function(jqXHR, textStatus) {
+      return console.log("Request failed (login): " + textStatus);
+    });
+    registerRequest = $.ajax({
+      url: "/register",
+      method: "POST",
+      data: $registerForm.serialize()
+    });
+    registerRequest.done(function(msg) {
+      return console.log('register ok');
+    });
+    registerRequest.fail(function(jqXHR, textStatus) {
+      return console.log("Request failed (register): " + textStatus);
     });
   });
 

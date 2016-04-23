@@ -13,7 +13,8 @@
         @endif
     </head>
     <body>
-        @include('partials.auth')
+        @include('partials.login')
+        @include('partials.register')
         @include('partials.nav')
         @include('partials.header')
         @yield('content')
