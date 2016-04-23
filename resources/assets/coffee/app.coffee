@@ -29,10 +29,16 @@ $ ->
 
     # open login form when pression Log In menu item
     $('.Nav__item--login').click (e) ->
+        setTimeout ( ->
+            $loginForm.find('input').first().select()
+        ), 100
         $('.Modal--login').addClass 'Modal--visible'
 
     # open register form when pression Sign Up menu item
     $('.Nav__item--register').click (e) ->
+        setTimeout ( ->
+            $registerForm.find('input').first().select()
+        ), 100
         $('.Modal--register').addClass 'Modal--visible'
 
     $('.Modal__overlay').click ->

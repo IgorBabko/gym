@@ -31,9 +31,15 @@
       }
     });
     $('.Nav__item--login').click(function(e) {
+      setTimeout((function() {
+        return $loginForm.find('input').first().select();
+      }), 100);
       return $('.Modal--login').addClass('Modal--visible');
     });
     $('.Nav__item--register').click(function(e) {
+      setTimeout((function() {
+        return $registerForm.find('input').first().select();
+      }), 100);
       return $('.Modal--register').addClass('Modal--visible');
     });
     $('.Modal__overlay').click(function() {
