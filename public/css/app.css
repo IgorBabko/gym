@@ -365,7 +365,11 @@
   }
 }
 .Media {
+  background: #fff;
+  box-shadow: 0 0 7px 0px #c7c7c7;
   width: calc(99.99% * 1/2 - (30px - 30px * 1/2));
+  margin: 20px 0;
+  padding: 20px;
 }
 .Media:nth-child(1n){
   float: left;
@@ -398,6 +402,24 @@
   float: right;
 }
 .Media--gender:nth-child(2n + 1){
+  clear: left;
+}
+.Media--calc {
+  width: calc(99.99% * 1/3 - (30px - 30px * 1/3));
+}
+.Media--calc:nth-child(1n){
+  float: left;
+  margin-right: 30px;
+  clear: none;
+}
+.Media--calc:last-child{
+  margin-right: 0;
+}
+.Media--calc:nth-child(3n){
+  margin-right: 0;
+  float: right;
+}
+.Media--calc:nth-child(3n + 1){
   clear: left;
 }
 @media screen and (max-width: 768px) {
@@ -480,10 +502,11 @@
 }
 .Button {
   border: none;
-  font-size: 28px;
+  font-size: 20px;
   color: #fff;
   transition: background 0.1s ease-in-out;
   cursor: pointer;
+  padding: 10px;
 }
 .Button--modal {
   width: 320px;
@@ -497,34 +520,27 @@
 }
 .Button--red {
   background: #b30000;
-  border-bottom: 5px solid #7d0000;
 }
 .Button--red:hover {
   background: #980000;
 }
 .Button--pink {
   background: #fb5c97;
-  border-bottom: 5px solid #ea065b;
 }
 .Button--pink:hover {
   background: #fa2a77;
 }
 .Button--blue {
   background: #4e91d6;
-  border-bottom: 5px solid #2665a6;
 }
 .Button--blue:hover {
   background: #2f7bca;
 }
 .Button--yellow {
   background: #d6c06f;
-  border-bottom: 5px solid #b19632;
 }
 .Button--yellow:hover {
   background: #cbaf49;
-}
-.Button--yellow:active {
-  border: none;
 }
 .Modal {
   position: fixed;
