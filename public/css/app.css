@@ -573,7 +573,6 @@
   display: block;
   width: 320px;
   padding: 10px;
-  margin-bottom: 20px;
   font-size: 18px;
   font-weight: 100;
 }
@@ -584,6 +583,15 @@
   color: #808080;
   font-size: 18px;
   font-weight: 100;
+  display: block;
+  margin-top: 10px;
+}
+.Error {
+  color: #b30000;
+  margin-top: 5px;
+  display: block;
+  font-size: 16px;
+  text-align: right;
 }
 body {
   font-family: 'PT Sans', sans-serif;

@@ -51,7 +51,7 @@
     });
     loginRequest.fail(function(jqXHR, textStatus) {
       updateValidErrors($loginForm, textStatus);
-      return console.log("Request failed (login): " + textStatus);
+      return console.log(jqXHR.responseJSON);
     });
     $('.Modal__form--register').submit(function(e) {
       var registerRequest;
@@ -64,22 +64,21 @@
       registerRequest.done(function(msg) {
         return console.log('register ok');
       });
-      return registerRequest.fail(function(jqXHR, textStatus) {
-        updateValidErrors($registerForm, textStatus);
-        return console.log("Request failed (register): " + textStatus);
+      return registerRequest.fail(function(response) {
+        return updateValidErrors($registerForm, response.responseJSON);
       });
     });
     updateValidErrors = function($form, validErrors) {
       return $form.find('input').each(function(index, input) {
-        var $errorBlock, $fieldName, $input;
+        var $errorBlock, $input, fieldName;
         $input = $(input);
-        $fieldName = $input.attr('name');
+        fieldName = $input.attr('name');
         $errorBlock = $input.next();
-        if ($fieldName in validErrors && !$errorBlock.hasClass('Error')) {
-          $(input).after('<span class="Error">' + validErrors[fieldName] + '</span>');
+        if ((validErrors[fieldName] != null) && !$errorBlock.hasClass('Error')) {
+          $(input).after('<span class="Error">' + validErrors[fieldName][0] + '</span>');
           return;
         }
-        if (!$fieldName in validErrors && $errorBlock.hasClass('Error')) {
+        if ((validErrors[fieldName] == null) && $errorBlock.hasClass('Error')) {
           return $errorBlock.remove();
         }
       });
