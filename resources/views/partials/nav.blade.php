@@ -5,8 +5,8 @@
             <input type="text" class="Search__input" placeholder="search">
             <span class="glyphicon glyphicon-search Search__button" aria-hidden="true"></span>
         </li>
-        <li class="Nav__item Nav__item--login">Log In</li>
-        <li class="Nav__item Nav__item--register">Sign Up</li>
+        <li class="Nav__item" data-type="login">Log In</li>
+        <li class="Nav__item" data-type="register">Sign Up</li>
     </ul>
     <li class="Nav__item Nav__item--hamburger">
         <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>

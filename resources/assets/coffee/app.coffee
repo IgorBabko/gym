@@ -27,70 +27,44 @@ $ ->
             $('.Nav__list').css('display', 'none')
             isScreenLarge = false
 
-    # open login form when pression Log In menu item
-    $('.Nav__item--login').click (e) ->
+    $('.Nav__item').click (e) ->
+        $modal = if $(this).data('type') == 'login' then $('.Modal--login') else $('.Modal--register')
         setTimeout ( ->
-            $loginForm.find('input').first().select()
+            $modal.find('.Modal__form input').first().select()
         ), 100
-        $('.Modal--login').addClass 'Modal--visible'
-
-    # open register form when pression Sign Up menu item
-    $('.Nav__item--register').click (e) ->
-        setTimeout ( ->
-            $registerForm.find('input').first().select()
-        ), 100
-        $('.Modal--register').addClass 'Modal--visible'
+        $modal.addClass 'Modal--visible'
 
     $('.Modal__overlay').click ->
         $('.Modal').removeClass 'Modal--visible'
 
-    # get login and register forms
-
-    $loginForm = $('.Modal__form--login')
-    $registerForm = $('.Modal__form--register')
-
-    # login ajax request
-    loginRequest = $.ajax({
-        url: "/login"
-        method: "POST"
-        data: $loginForm.serialize()
-    })
-
-    loginRequest.done (msg) ->
-        console.log 'login ok'
-
-    loginRequest.fail (jqXHR, textStatus) ->
-        updateValidErrors $loginForm, textStatus
-        console.log jqXHR.responseJSON
-
-
-    # register ajax request
-    $('.Modal__form--register').submit (e) ->
+    $('.Modal__form').submit (e) ->
         e.preventDefault()
-     #   console.log $registerForm.serialize()
 
-        registerRequest = $.ajax
-            url: "/register"
+        $this = $(this)
+
+        if $(this).closest('.Modal').hasClass('Modal--register')
+            url = '/register'
+        else
+            url = '/login'
+
+        request = $.ajax
+            url: url
             method: "POST"
-            data: $registerForm.serialize()
+            data: $(this).serialize()
 
-        registerRequest.done (msg) ->
-            console.log 'register ok'
+        request.done (msg) ->
+            $('.Modal__overlay').trigger('click')
 
-        registerRequest.fail (response) ->
-            updateValidErrors $registerForm, response.responseJSON
+        request.fail (response) ->
+            updateValidErrors $this, response.responseJSON
 
     updateValidErrors = ($form, validErrors) ->
         $form.find('input').each (index, input) ->
             $input = $(input)
             fieldName = $input.attr('name')
-            $errorBlock = $input.next()
-            if validErrors[fieldName]? and not $errorBlock.hasClass('Error')
-                $(input).after '<span class="Error">' + validErrors[fieldName][0] + '</span>'
-                return
-
-            if not validErrors[fieldName]? and $errorBlock.hasClass('Error')
-                $errorBlock.remove()
+            $errorBlock = $input.next('.Error')
+            $errorMsg = if validErrors[fieldName] then validErrors[fieldName][0] else ''
+            $errorBlock.text($errorMsg)
 
     return
 

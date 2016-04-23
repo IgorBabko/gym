@@ -1,6 +1,6 @@
 (function() {
   $(function() {
-    var $loginForm, $registerForm, isScreenLarge, loginRequest, ref, updateValidErrors;
+    var isScreenLarge, ref, updateValidErrors;
     $('.Nav__item--hamburger').click(function() {
       $('.Nav__list').toggle();
       return $('.search__input').focus().select();
@@ -30,63 +30,46 @@
         return isScreenLarge = false;
       }
     });
-    $('.Nav__item--login').click(function(e) {
+    $('.Nav__item').click(function(e) {
+      var $modal;
+      $modal = $(this).data('type') === 'login' ? $('.Modal--login') : $('.Modal--register');
       setTimeout((function() {
-        return $loginForm.find('input').first().select();
+        return $modal.find('.Modal__form input').first().select();
       }), 100);
-      return $('.Modal--login').addClass('Modal--visible');
-    });
-    $('.Nav__item--register').click(function(e) {
-      setTimeout((function() {
-        return $registerForm.find('input').first().select();
-      }), 100);
-      return $('.Modal--register').addClass('Modal--visible');
+      return $modal.addClass('Modal--visible');
     });
     $('.Modal__overlay').click(function() {
       return $('.Modal').removeClass('Modal--visible');
     });
-    $loginForm = $('.Modal__form--login');
-    $registerForm = $('.Modal__form--register');
-    loginRequest = $.ajax({
-      url: "/login",
-      method: "POST",
-      data: $loginForm.serialize()
-    });
-    loginRequest.done(function(msg) {
-      return console.log('login ok');
-    });
-    loginRequest.fail(function(jqXHR, textStatus) {
-      updateValidErrors($loginForm, textStatus);
-      return console.log(jqXHR.responseJSON);
-    });
-    $('.Modal__form--register').submit(function(e) {
-      var registerRequest;
+    $('.Modal__form').submit(function(e) {
+      var $this, request, url;
       e.preventDefault();
-      registerRequest = $.ajax({
-        url: "/register",
+      $this = $(this);
+      if ($(this).closest('.Modal').hasClass('Modal--register')) {
+        url = '/register';
+      } else {
+        url = '/login';
+      }
+      request = $.ajax({
+        url: url,
         method: "POST",
-        data: $registerForm.serialize()
+        data: $(this).serialize()
       });
-      registerRequest.done(function(msg) {
-        return console.log('register ok');
+      request.done(function(msg) {
+        return $('.Modal__overlay').trigger('click');
       });
-      return registerRequest.fail(function(response) {
-        return updateValidErrors($registerForm, response.responseJSON);
+      return request.fail(function(response) {
+        return updateValidErrors($this, response.responseJSON);
       });
     });
     updateValidErrors = function($form, validErrors) {
       return $form.find('input').each(function(index, input) {
-        var $errorBlock, $input, fieldName;
+        var $errorBlock, $errorMsg, $input, fieldName;
         $input = $(input);
         fieldName = $input.attr('name');
-        $errorBlock = $input.next();
-        if ((validErrors[fieldName] != null) && !$errorBlock.hasClass('Error')) {
-          $(input).after('<span class="Error">' + validErrors[fieldName][0] + '</span>');
-          return;
-        }
-        if ((validErrors[fieldName] == null) && $errorBlock.hasClass('Error')) {
-          return $errorBlock.remove();
-        }
+        $errorBlock = $input.next('.Error');
+        $errorMsg = validErrors[fieldName] ? validErrors[fieldName][0] : '';
+        return $errorBlock.text($errorMsg);
       });
     };
   });
