@@ -38,6 +38,11 @@ $ ->
     $('.Modal__overlay').click ->
         $('.Modal').removeClass 'Modal--visible'
 
+    # show flash message in alert
+    flashMessage = $('#ohsnap').data('notify')
+    if flashMessage? then ohSnap(flashMessage, {color: 'green'})
+
+
     $('.Modal__form').submit (e) ->
         e.preventDefault()
 

@@ -1,6 +1,6 @@
 (function() {
   $(function() {
-    var isScreenLarge, ref, updateValidErrors;
+    var flashMessage, isScreenLarge, ref, updateValidErrors;
     $('.Nav__item--hamburger').click(function() {
       $('.Nav__list').toggle();
       return $('.search__input').focus().select();
@@ -43,6 +43,12 @@
     $('.Modal__overlay').click(function() {
       return $('.Modal').removeClass('Modal--visible');
     });
+    flashMessage = $('#ohsnap').data('notify');
+    if (flashMessage != null) {
+      ohSnap(flashMessage, {
+        color: 'green'
+      });
+    }
     $('.Modal__form').submit(function(e) {
       var $this, request, url;
       e.preventDefault();
