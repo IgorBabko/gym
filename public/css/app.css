@@ -50,6 +50,25 @@
   padding: 0;
   height: 100%;
 }
+.Nav__link {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  color: #fff;
+  height: 70px;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+      align-items: center;
+  padding: 0 15px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 100;
+}
+.Nav__link:hover {
+  color: #000;
+  text-decoration: none;
+}
 .Nav__item {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -57,10 +76,6 @@
   -webkit-align-items: center;
   -ms-flex-align: center;
       align-items: center;
-  cursor: pointer;
-  font-size: 18px;
-  font-weight: 100;
-  padding: 0 15px;
   transition: all 0.2s ease-in-out;
 }
 .Nav__item:not(.Search):hover {
@@ -117,6 +132,7 @@
   background: rgba(77,77,77,0.8);
   border: none;
   padding: 10px;
+  margin: 0 15px;
   outline: none;
   width: 250px;
   color: #fff;
