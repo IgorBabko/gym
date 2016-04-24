@@ -5,6 +5,7 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="/css/bootstrap.min.css">
         <link rel="stylesheet" href="/css/font-awesome.css">
+        <link rel="stylesheet" href="/css/jquery.bxslider.min.css">
         <link rel="stylesheet" href="/css/app.css">
         @if ( Config::get('app.debug') )
         <script type="text/javascript">
@@ -20,8 +21,12 @@
         @yield('content')
         @include('partials.footer')
 
+
+        <span id="niko" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+
         <script src="/js/jquery.min.js"></script>
         <script src="/js/ohsnap.js"></script>
+        <script src="/js/jquery.bxslider.min.js"></script>
         <script src="/js/app.js"></script>
     </body>
 </html>

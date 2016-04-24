@@ -76,5 +76,13 @@ $ ->
             $errorMsg = if validErrors[fieldName] then validErrors[fieldName][0] else ''
             $errorBlock.text($errorMsg)
 
+    $('.bxslider').bxSlider
+        auto: true
+        pause: 5000
+        mode: 'fade'
+        autoControls: true
+        controls: false
+        duration: 1000
+
     return
 

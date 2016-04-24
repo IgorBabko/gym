@@ -27,8 +27,9 @@ body {
   opacity: 1 !important;
 }
 .Nav {
+  z-index: 10000;
   height: 70px;
-  background: rgba(0,0,0,0.8);
+  background: #323232;
   position: fixed;
   top: 0;
   left: 0;
@@ -565,7 +566,7 @@ body {
   top: 50%;
   left: 50%;
   max-width: 630px;
-  z-index: 2000;
+  z-index: 100000;
   visibility: hidden;
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
@@ -734,6 +735,37 @@ body {
 Form {
   width: 300px;
   margin-bottom: 30px;
+}
+.bx-wrapper {
+  border: none;
+  top: -70px;
+}
+.bx-viewport {
+  height: calc(100vh) !important;
+}
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+  width: 100%;
+  text-align: center;
+  bottom: 30px;
+}
+.bx-wrapper .bx-prev,
+.bx-wrapper .bx-next {
+  background: url("../img/controls.png");
+}
+.bx-wrapper .bx-pager.bx-default-pager a {
+  background: #fff;
+}
+.bx-wrapper .bx-pager.bx-default-pager a {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  background: none;
+  border: 2px solid #fff;
+}
+.bx-wrapper .bx-pager.bx-default-pager a.active,
+.bx-wrapper .bx-pager.bx-default-pager a:focus,
+.bx-wrapper .bx-pager.bx-default-pager a:hover {
+  background: #fff;
 }
 body {
   font-family: 'PT Sans', sans-serif;
