@@ -23,7 +23,8 @@ elixir(function(mix) {
             use: [
                 postStylus( [ 'autoprefixer', 'lost', 'rucksack-css' ] )
             ]
-        });
+        })
+        .livereload();
 
     mix
         .copy('node_modules/jquery/dist/jquery.min.js', 'public/js/jquery.min.js')

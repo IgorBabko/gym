@@ -1,10 +1,31 @@
 .Block
     clear: fix
-    margin: 100px
+    margin: 50px
     background: white
     padding: 50px
     box-shadow: 0 0 7px 0px #C7C7C7
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
 
     &__heading
         color: black 
         margin-bottom: 30px
+        flex-basis: 100%
+
+        
+    &__info
+        font-size: 16px
+        margin-left: 30px
+        flex: 5
+
+    @media screen and (max-width: 768px)
+        margin: 20px
+        padding: 30px
+        &__heading
+            text-align: center
+        &__form
+            margin: 0 0 30px 0
+        &__info
+            margin: 0
+            flex-basis: 100%

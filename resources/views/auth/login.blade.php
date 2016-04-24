@@ -1,4 +1,4 @@
-<form method="POST" action="{{ url('/login') }}">
+<form method="POST" class="Form" action="{{ url('/login') }}">
     {!! csrf_field() !!}
     <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
         <label >E-Mail Address</label>
