@@ -7,15 +7,15 @@
         {!! csrf_field() !!}
         <label class="Label">Gender</label>
         <label class="Label Label--radio">
-            <input type="radio" name="coeff" value="88.36" class="Radio">
+            <input type="radio" name="gender" value="male" class="Radio">
             Male
         </label>
         <label class="Label Label--radio">
-            <input type="radio" name="coeff" value="447.6" class="Radio">
+            <input type="radio" name="gender" value="female" class="Radio">
             Female
         </label>
         <label class="Label">
-            Height (meters):
+            Height (sm):
             <input type="text" name="height" class="Input">
             <span class="Error"></span>
         </label>
@@ -30,6 +30,9 @@
             <span class="Error"></span>
         </label>
         <label class="Label">Activity level</label>
+        <p>
+            Разделяют пять типов физической активности: минимальный (никаких физических нагрузок), низкий (физические нагрузки 1-3 раза в неделю), средний (3-5 дней в неделю), высокий (6-7 раз в неделю), очень высокий (тренировки чаще, чем раз в день).
+        </p>
         <label class="Label Label--radio">
             <input type="radio" name="activity_level" value="1.2" class="Radio">
             Minimal 
@@ -54,7 +57,6 @@
         <button type="submit" class="Button Button--red">Calculate</button>
     </form>
     <div class="Block__info">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora quae, optio eveniet minima quidem dolorum eum! Repellendus tenetur ut nulla aut et, ipsa ad, nihil facere. Tenetur architecto atque quasi explicabo ex modi ullam, commodi culpa, debitis distinctio vitae, minima unde? Eos praesentium dolorem deserunt, nesciunt, officiis consequatur, reprehenderit consectetur mollitia atque inventore delectus. Autem, cupiditate ratione sapiente? Blanditiis iste laborum, ipsam quaerat rerum nisi velit nulla recusandae! A sed vitae dolorem earum officia aliquid odit rem ullam recusandae accusantium consequuntur cum modi ipsam odio laboriosam similique inventore culpa iure, aut. Ipsam temporibus sint ipsum modi laudantium eveniet asperiores, dolore.
     </div>
 </div>
 @stop

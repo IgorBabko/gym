@@ -3,7 +3,7 @@
 @section ('content')
 <div class="Block">
     <h1 class="Block__heading">Water</h1>
-    <form method="POST" class="Form" action="{{ url('/metrics/water') }}">
+    <form method="POST" class="Form" action="{{ url('/metrics/calcWater') }}">
         {!! csrf_field() !!}
         <label class="Label">Gender</label>
         <label class="Label Label--radio">
