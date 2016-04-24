@@ -3,9 +3,9 @@
 @section ('content')
 <div class="Block">
     <h1 class="Block__heading">Body Mass Index</h1>
-    <form method="POST" class="Form" action="{{ url('/metrics/calcBmi') }}">
+    <form method="post" class="form" action="{{ url('/metrics/calcbmi') }}">
         {!! csrf_field() !!}
-        <label class="Label">Gender</label>
+        <label class="Label">gender</label>
         <label class="Label Label--radio">
             <input type="radio" name="coeff" value="88.36" class="Radio">
             Male
@@ -27,7 +27,7 @@
         {!! csrf_field() !!}
         <button type="submit" class="Button Button--red">Calculate</button>
     </form>
-    <div class="Block__info">
+    <div class="Block__description">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora quae, optio eveniet minima quidem dolorum eum! Repellendus tenetur ut nulla aut et, ipsa ad, nihil facere. Tenetur architecto atque quasi explicabo ex modi ullam, commodi culpa, debitis distinctio vitae, minima unde? Eos praesentium dolorem deserunt, nesciunt, officiis consequatur, reprehenderit consectetur mollitia atque inventore delectus. Autem, cupiditate ratione sapiente? Blanditiis iste laborum, ipsam quaerat rerum nisi velit nulla recusandae! A sed vitae dolorem earum officia aliquid odit rem ullam recusandae accusantium consequuntur cum modi ipsam odio laboriosam similique inventore culpa iure, aut. Ipsam temporibus sint ipsum modi laudantium eveniet asperiores, dolore.
     </div>
 </div>
