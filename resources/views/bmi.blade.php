@@ -7,11 +7,11 @@
         {!! csrf_field() !!}
         <label class="Label">Gender</label>
         <label class="Label Label--radio">
-            <input type="radio" name="gender" class="Radio">
+            <input type="radio" name="coeff" value="88.36" class="Radio">
             Male
         </label>
         <label class="Label Label--radio">
-            <input type="radio" name="gender" class="Radio">
+            <input type="radio" name="coeff" value="447.6" class="Radio">
             Female
         </label>
         <label class="Label">

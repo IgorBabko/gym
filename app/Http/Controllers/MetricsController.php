@@ -9,7 +9,7 @@ class MetricsController extends Controller
 {
     protected $request;
 
-    public function __construct(Reqest $request)
+    public function __construct(Request $request)
     {
         $this->request = $request;
     }
@@ -21,10 +21,8 @@ class MetricsController extends Controller
 
     public function calcBmi()
     {
-        $height = $this->request->input('height');
-        $weight = $this->request->input('weight');
-
-        return $weight / ($height * $height);
+        return Request::input('weight') / 
+            ( Request::input('height') * Request::input('height') );
     }
 
     public function bmr()
@@ -34,12 +32,8 @@ class MetricsController extends Controller
 
     public function calcBmr()
     {
-        $height = $this->request->input('height');
-        $weight = $this->request->input('weight');
-        $age = $this->request->input('age');
-        $coeff = $this->request->input('coeff');
-        
-        return $coeff + 13.4 * $weight + 4.8 * $height - 5.7 * $age;
+        return Request::input('coeff') + 13.4 * Request::input('weight')
+                + 4.8 * Request::input('height') - 5.7 * Request::input('age');
     }
 
     public function water()
@@ -49,5 +43,10 @@ class MetricsController extends Controller
 
     public function calcWater()
     {
+        if (Request::input('gender') == 'male') {
+            return Request::input('weight') * 0.04 * Request::input('physical-activity') * 0.6;
+        }
+
+        return Request::input('weight') * 0.03 * Request::input('physical-activity') * 0.4;
     }
 }

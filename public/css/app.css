@@ -81,7 +81,6 @@ body {
   font-size: 18px;
   font-weight: 100;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
 }
 .Nav__item:not(.Search):hover {
   background: #d6c06f;
