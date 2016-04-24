@@ -183,6 +183,7 @@ body {
   padding: 5px;
 }
 .Footer__link {
+  font-size: 16px;
   color: #dadada;
 }
 .Footer__link:hover {
@@ -255,6 +256,9 @@ body {
   .Footer__content > div:nth-child(4n + 1){
     clear: left;
   }
+}
+.Footer p {
+  font-size: 16px;
 }
 .Footer__copyright {
   display: inline-block;
@@ -737,7 +741,7 @@ body {
 }
 .Form--subscription {
   position: relative;
-  margin: 0;
+  margin: 0 auto;
 }
 .bx-wrapper {
   border: none;
