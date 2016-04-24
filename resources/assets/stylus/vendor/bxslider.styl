@@ -1,9 +1,11 @@
 .bx-wrapper
     border: none
-    top: -70px
 
 .bx-viewport
-    height: calc(100vh) !important
+    height: calc(100vh - 65px) !important
+    height: -webkit-calc(100vh - 65px) !important
+    height: -o-calc(100vh - 65px) !important
+    height: -moz-calc(100vh - 65px) !important
 
 .bx-wrapper
     .bx-controls.bx-has-controls-auto.bx-has-pager
@@ -21,6 +23,7 @@
     background: white
 
 .bx-wrapper
+    margin: 0
     .bx-pager.bx-default-pager
         a
             width: 17px
