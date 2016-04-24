@@ -80,7 +80,7 @@ $ ->
         mode: 'fade'
         autoControls: true
         controls: false
-        duration: 1000
+        speed: 1500
 
     return
 
