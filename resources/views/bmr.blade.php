@@ -5,11 +5,12 @@
     <h1 class="Block__heading">Basal metabolic rate</h1>
     <form method="POST" class="Form" action="{{ url('/metrics/calcBmr') }}">
         {!! csrf_field() !!}
-        <label class="Label Label--inline">
+        <label class="Label">Gender</label>
+        <label class="Label Label--radio">
             <input type="radio" name="gender" class="Radio">
             Male
         </label>
-        <label class="Label Label--inline">
+        <label class="Label Label--radio">
             <input type="radio" name="gender" class="Radio">
             Female
         </label>
@@ -27,6 +28,27 @@
             Age:
             <input type="text" name="age" class="Input">
             <span class="Error"></span>
+        </label>
+        <label class="Label">Activity level</label>
+        <label class="Label Label--radio">
+            <input type="radio" name="activity_level" class="Radio">
+            Minimal 
+        </label>
+        <label class="Label Label--radio">
+            <input type="radio" name="activity_level" class="Radio">
+            Low 
+        </label>
+        <label class="Label Label--radio">
+            <input type="radio" name="activity_level" class="Radio">
+            Medium 
+        </label>
+        <label class="Label Label--radio">
+            <input type="radio" name="activity_level" class="Radio">
+            High 
+        </label>
+        <label class="Label Label--radio">
+            <input type="radio" name="activity_level" class="Radio">
+            Very high 
         </label>
         {!! csrf_field() !!}
         <button type="submit" class="Button Button--red">Calculate</button>
