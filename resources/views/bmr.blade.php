@@ -7,11 +7,11 @@
         {!! csrf_field() !!}
         <label class="Label">Gender</label>
         <label class="Label Label--radio">
-            <input type="radio" name="gender" class="Radio">
+            <input type="radio" name="coeff" value="88.36" class="Radio">
             Male
         </label>
         <label class="Label Label--radio">
-            <input type="radio" name="gender" class="Radio">
+            <input type="radio" name="coeff" value="447.6" class="Radio">
             Female
         </label>
         <label class="Label">
@@ -31,23 +31,23 @@
         </label>
         <label class="Label">Activity level</label>
         <label class="Label Label--radio">
-            <input type="radio" name="activity_level" class="Radio">
+            <input type="radio" name="activity_level" value="1.2" class="Radio">
             Minimal 
         </label>
         <label class="Label Label--radio">
-            <input type="radio" name="activity_level" class="Radio">
+            <input type="radio" name="activity_level" value="1.375" class="Radio">
             Low 
         </label>
         <label class="Label Label--radio">
-            <input type="radio" name="activity_level" class="Radio">
+            <input type="radio" name="activity_level" value="1.55" class="Radio">
             Medium 
         </label>
         <label class="Label Label--radio">
-            <input type="radio" name="activity_level" class="Radio">
+            <input type="radio" name="activity_level" value="1.725" class="Radio">
             High 
         </label>
         <label class="Label Label--radio">
-            <input type="radio" name="activity_level" class="Radio">
+            <input type="radio" name="activity_level" value="1.9" class="Radio">
             Very high 
         </label>
         {!! csrf_field() !!}

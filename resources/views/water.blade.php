@@ -5,12 +5,13 @@
     <h1 class="Block__heading">Water</h1>
     <form method="POST" class="Form" action="{{ url('/metrics/water') }}">
         {!! csrf_field() !!}
-        <label class="Label Label--inline">
-            <input type="radio" name="gender" class="Radio">
+        <label class="Label">Gender</label>
+        <label class="Label Label--radio">
+            <input type="radio" name="gender" value="male" class="Radio">
             Male
         </label>
-        <label class="Label Label--inline">
-            <input type="radio" name="gender" class="Radio">
+        <label class="Label Label--radio">
+            <input type="radio" name="gender" value="female" class="Radio">
             Female
         </label>
         <label class="Label">
@@ -19,8 +20,8 @@
             <span class="Error"></span>
         </label>
         <label class="Label">
-            Workout duration:
-            <input type="text" name="duration" class="Input">
+            Physical activity (hours):
+            <input type="text" name="physical-activity" class="Input">
             <span class="Error"></span>
         </label>
         {!! csrf_field() !!}
