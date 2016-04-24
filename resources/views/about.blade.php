@@ -1,8 +1,8 @@
 @extends ('layout')
 
 @section ('content')
-<div class="Block">
-    <h1 class="Block__heading">Welcome to About section<h1>
+<div class="Block Block--small">
+    <h1 class="Block__heading Block__heading--red">About</h1>
     <div class="Block__info">
         Here you can familiarize with different abilities of our website and you can read who our website made for.
         <br/>
