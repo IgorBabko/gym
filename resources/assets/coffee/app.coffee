@@ -29,7 +29,7 @@ $ ->
         if $(this).data('type')?
             $modal = if $(this).data('type') == 'login' then $('.Modal--login') else $('.Modal--register')
             setTimeout ( ->
-                $modal.find('.Modal__form input').first().select()
+                $modal.find('.Form input').first().select()
             ), 100
             $modal.addClass 'Modal--visible'
 
@@ -40,7 +40,7 @@ $ ->
     flashMessage = $('#ohsnap').data('notify')
     if flashMessage? then ohSnap(flashMessage, {color: 'green'})
 
-    $('.Modal__form').submit (e) ->
+    $('.Modal .Form').submit (e) ->
         e.preventDefault()
 
         $this = $(this)

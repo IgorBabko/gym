@@ -34,7 +34,7 @@
       if ($(this).data('type') != null) {
         $modal = $(this).data('type') === 'login' ? $('.Modal--login') : $('.Modal--register');
         setTimeout((function() {
-          return $modal.find('.Modal__form input').first().select();
+          return $modal.find('.Form input').first().select();
         }), 100);
         return $modal.addClass('Modal--visible');
       }
@@ -48,7 +48,7 @@
         color: 'green'
       });
     }
-    $('.Modal__form').submit(function(e) {
+    $('.Modal .Form').submit(function(e) {
       var $this, request, url;
       e.preventDefault();
       $this = $(this);

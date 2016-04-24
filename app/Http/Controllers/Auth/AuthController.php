@@ -89,7 +89,7 @@ class AuthController extends Controller
 
         Auth::guard($this->getGuard())->login($this->create($request->all()));
 
-        return response()->json(['message' => 'You are logged in!'], 200);
+        return response()->json(['message' => 'You are signed up!'], 200);
     }
 
     public function login(Request $request)
