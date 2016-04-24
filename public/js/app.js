@@ -90,6 +90,14 @@
         return $errorBlock.text($errorMsg);
       });
     };
+    $('.bxslider').bxSlider({
+      auto: true,
+      pause: 5000,
+      mode: 'fade',
+      autoControls: true,
+      controls: false,
+      duration: 1000
+    });
   });
 
 }).call(this);
