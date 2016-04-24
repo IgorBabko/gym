@@ -731,9 +731,13 @@ body {
         flex-basis: 100%;
   }
 }
-Form {
+.Form {
   width: 300px;
   margin-bottom: 30px;
+}
+.Form--subscription {
+  position: relative;
+  margin: 0;
 }
 .bx-wrapper {
   border: none;
