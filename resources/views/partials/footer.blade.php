@@ -13,7 +13,7 @@
             <h2 class="Footer__heading">Customer care</h2>
             <ul class="Footer__list">
                 <li class="Footer__item"><a href="#" class="Footer__link">Terms</a></li>
-                <li class="Footer__item"><a href="#" class="Footer__link">About</a></li>
+                <li class="Footer__item"><a href="/about" class="Footer__link">About</a></li>
                 <li class="Footer__item"><a href="#" class="Footer__link">Contacts</a></li>
             </ul>
         </div>
