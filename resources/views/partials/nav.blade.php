@@ -1,5 +1,5 @@
 <nav class="Nav">
-    <a href="/" class="Logo">G<span class="Logo__middle-letter">Y</span><span class="Logo__last-letter">M</span></a>
+    <a href="/" class="Logo">G<span class="Logo__middle-letter">Y</span>M</a>
     <ul class="Nav__list">
         <li class="Nav__item Search">
             <input type="text" class="Search__input" placeholder="search">

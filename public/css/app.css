@@ -121,9 +121,6 @@ body {
 .Logo__middle-letter {
   color: #d6c06f;
 }
-.Logo__last-letter {
-  color: #ea5050;
-}
 .Logo:hover,
 .Logo:focus {
   color: #fff;
@@ -740,10 +737,11 @@ Form {
 }
 .bx-wrapper {
   border: none;
-  top: -70px;
 }
 .bx-viewport {
-  height: calc(100vh) !important;
+  height: calc(100vh - 65px) !important;
+  height: -o-calc(100vh - 65px) !important;
+  height: -moz-calc(100vh - 65px) !important;
 }
 .bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
   width: 100%;
@@ -756,6 +754,9 @@ Form {
 }
 .bx-wrapper .bx-pager.bx-default-pager a {
   background: #fff;
+}
+.bx-wrapper {
+  margin: 0;
 }
 .bx-wrapper .bx-pager.bx-default-pager a {
   width: 17px;
