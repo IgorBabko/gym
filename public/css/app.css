@@ -523,7 +523,6 @@ a:focus {
   padding: 10px;
   display: inline-block;
   float: right;
-  margin-top: 20px;
 }
 .Button--center {
   float: none;
@@ -751,6 +750,40 @@ a:focus {
 .Form--subscription {
   position: relative;
   margin: 0 auto;
+}
+.Slider {
+  height: 100%;
+}
+.Slider__item {
+  height: 100%;
+}
+.Slider__heading {
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #fff;
+}
+.Slider__info {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #fff;
+  width: 400px;
+}
+.Slider__info--bottom {
+  top: auto;
+  bottom: 0;
+}
+.Slider__info--right {
+  left: auto;
+  right: 0;
+}
+.Slider__button {
+  color: #fff;
+}
+.Slider__description {
+  font-size: 20px;
+  color: #fff;
 }
 .bx-wrapper {
   border: none;
