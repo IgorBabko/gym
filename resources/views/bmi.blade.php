@@ -5,11 +5,12 @@
     <h1 class="Block__heading">Body Mass Index</h1>
     <form method="POST" class="Form" action="{{ url('/metrics/calcBmi') }}">
         {!! csrf_field() !!}
-        <label class="Label Label--inline">
+        <label class="Label">Gender</label>
+        <label class="Label Label--radio">
             <input type="radio" name="gender" class="Radio">
             Male
         </label>
-        <label class="Label Label--inline">
+        <label class="Label Label--radio">
             <input type="radio" name="gender" class="Radio">
             Female
         </label>

@@ -21,9 +21,6 @@
         @yield('content')
         @include('partials.footer')
 
-
-        <span id="niko" class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-
         <script src="/js/jquery.min.js"></script>
         <script src="/js/ohsnap.js"></script>
         <script src="/js/jquery.bxslider.min.js"></script>
