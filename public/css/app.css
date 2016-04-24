@@ -1,5 +1,6 @@
 @import 'https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin,cyrillic';
 body {
+  padding-top: 70px;
   background: #dadada;
 }
 .flexible {
@@ -514,6 +515,9 @@ body {
   float: right;
   margin-top: 20px;
 }
+.Button--center {
+  float: none;
+}
 .Button:hover {
   color: #fff;
   text-decoration: none;
@@ -523,8 +527,8 @@ body {
   text-decoration: none;
 }
 .Button--modal {
-  width: 320px;
-  margin: 40px 0 20px;
+  width: 300px;
+  margin: 20px 0 20px;
   height: 50px;
   font-size: 18px;
   display: block;
@@ -561,11 +565,15 @@ body {
   top: 50%;
   left: 50%;
   max-width: 630px;
-  min-width: 300px;
   z-index: 2000;
   visibility: hidden;
   -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
+}
+.Modal__content:after{
+  content: '';
+  display: table;
+  clear: both;
 }
 .Modal__content {
   display: block;
@@ -604,7 +612,7 @@ body {
 }
 .Modal__reset-password {
   text-align: center;
-  margin: 0 90px;
+  margin-left: 80px;
   display: inline-block;
   color: #000;
 }
@@ -622,7 +630,7 @@ body {
   border: none;
   height: 50px;
   display: block;
-  width: 320px;
+  width: 300px;
   padding: 10px;
   font-size: 18px;
   font-weight: 100;
@@ -677,21 +685,55 @@ body {
   clear: both;
 }
 .Block {
-  margin: 100px;
+  margin: 50px;
   background: #fff;
   padding: 50px;
   box-shadow: 0 0 7px 0px #c7c7c7;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
 }
 .Block__heading {
   color: #000;
   margin-bottom: 30px;
+  -ms-flex-preferred-size: 100%;
+      -webkit-flex-basis: 100%;
+      flex-basis: 100%;
 }
-.Form {
-  float: left;
-  margin-right: 30px;
-}
-.Info {
+.Block__info {
   font-size: 16px;
+  margin-left: 30px;
+  -webkit-flex: 5;
+  -ms-flex: 5;
+      flex: 5;
+}
+@media screen and (max-width: 768px) {
+  .Block {
+    margin: 20px;
+    padding: 30px;
+  }
+  .Block__heading {
+    text-align: center;
+  }
+  .Block__form {
+    margin: 0 0 30px 0;
+  }
+  .Block__info {
+    margin: 0;
+    -ms-flex-preferred-size: 100%;
+        -webkit-flex-basis: 100%;
+        flex-basis: 100%;
+  }
+}
+Form {
+  width: 300px;
+  margin-bottom: 30px;
 }
 body {
   font-family: 'PT Sans', sans-serif;
