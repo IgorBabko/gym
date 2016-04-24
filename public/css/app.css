@@ -3,6 +3,10 @@ body {
   padding-top: 70px;
   background: #dadada;
 }
+a:focus {
+  outline: none;
+  text-decoration: none;
+}
 .flexible {
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -66,6 +70,11 @@ body {
   -ms-flex-align: center;
       align-items: center;
   padding: 0 15px;
+}
+.Nav__link:focus {
+  color: #fff;
+  text-decoration: none;
+  outline: none;
 }
 .Nav__link:hover {
   color: #000;
