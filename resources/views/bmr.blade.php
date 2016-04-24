@@ -3,7 +3,7 @@
 @section ('content')
 <div class="Block">
     <h1 class="Block__heading">Basal metabolic rate</h1>
-    <form method="POST" class="Form" action="{{ url('/metrics/calcBmi') }}">
+    <form method="POST" class="Form" action="{{ url('/metrics/calcBmr') }}">
         {!! csrf_field() !!}
         <label class="Label Label--inline">
             <input type="radio" name="gender" class="Radio">
