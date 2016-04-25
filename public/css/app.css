@@ -49,7 +49,6 @@ a:focus {
   -ms-flex-align: center;
       align-items: center;
   padding: 0 50px;
-  color: #fff;
 }
 .Nav__list {
   display: -webkit-flex;
@@ -80,6 +79,11 @@ a:focus {
 .Nav__link:hover {
   color: #000;
   text-decoration: none;
+  background: #d6c06f;
+}
+.Nav__link--active {
+  background: #d6c06f;
+  color: #000;
 }
 .Nav__item {
   display: -webkit-flex;
@@ -91,10 +95,6 @@ a:focus {
   font-size: 18px;
   font-weight: 100;
   cursor: pointer;
-}
-.Nav__item:not(.Search):hover {
-  background: #d6c06f;
-  color: #000;
 }
 .Nav__item--hamburger {
   display: none;
