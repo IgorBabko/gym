@@ -23,6 +23,7 @@
         <script src="/js/jquery.min.js"></script>
         <script src="/js/ohsnap.js"></script>
         <script src="/js/jquery.bxslider.min.js"></script>
+        <script src="/js/scrollmagic.min.js"></script>
         <script src="/js/app.js"></script>
     </body>
 </html>

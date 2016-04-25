@@ -36,5 +36,6 @@ elixir(function(mix) {
         .copy('bower_components/bxslider-4/dist/jquery.bxslider.min.css', 'public/css')
         .copy('bower_components/bxslider-4/dist/jquery.bxslider.min.js', 'public/js')
         .copy('bower_components/bxslider-4/dist/images/bx_loader.gif', 'public/img')
-        .copy('bower_components/bxslider-4/dist/images/controls.png', 'public/img');
+        .copy('bower_components/bxslider-4/dist/images/controls.png', 'public/img')
+        .copy('bower_components/scrollmagic/scrollmagic/minified/scrollmagic.min.js', 'public/js');
 });

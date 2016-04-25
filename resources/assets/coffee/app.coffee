@@ -91,7 +91,7 @@ $ ->
 
     controller = new ScrollMagic.Controller()
 
-    new ScrollMagic.Scene triggerElement: '.Form--question'
+    new ScrollMagic.Scene triggerElement: '.Form--question', triggerHook: '0.1', duration: '100%'
         .setPin '.Form--question'
         .addTo controller
 
