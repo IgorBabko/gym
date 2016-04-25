@@ -576,6 +576,7 @@ a:focus {
   padding: 10px;
   display: inline-block;
   float: right;
+  margin-top: 20px;
 }
 .Button--center {
   float: none;
@@ -698,6 +699,21 @@ a:focus {
   font-weight: 100;
 }
 .Input:focus {
+  outline: none;
+}
+.Textarea {
+  background: #efefef;
+  border: none;
+  height: 50px;
+  display: block;
+  width: 300px;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 100;
+  height: 200px;
+  resize: none;
+}
+.Textarea:focus {
   outline: none;
 }
 .Label {
