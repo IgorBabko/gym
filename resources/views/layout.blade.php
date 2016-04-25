@@ -25,6 +25,7 @@
         <script src="/js/ohsnap.js"></script>
         <script src="/js/jquery.bxslider.min.js"></script>
         <script src="/js/scrollmagic.min.js"></script>
+        <script src="/js/parallax.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.js"></script>
         <script src="/js/app.js"></script>
     </body>

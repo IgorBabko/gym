@@ -97,4 +97,7 @@ $ ->
         .setPin '.Form--question'
         .addTo controller
 
+    $('.sectio--parallax').parallax imageSrc: '/img/parallax.jpg'
+
+
     return

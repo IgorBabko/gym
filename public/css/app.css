@@ -548,6 +548,10 @@ a:focus {
   -ms-flex-align: center;
       align-items: center;
   padding-right: 50px;
+  height: 500px;
+}
+.sectio--parallax {
+  background: transparent;
 }
 .sectio__picture {
   background-image: url("../img/people.jpg");
