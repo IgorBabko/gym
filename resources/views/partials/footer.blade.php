@@ -19,7 +19,7 @@
         </div>
         <div>
             <h2 class="Footer__heading">Our mission</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero dolores facilis natus autem maxime iusto. Consequuntur doloremque recusandae, adipisci cumque!</p>
+            <p>Our main mission is to provide you with lots of tools which will make your life simpler and better, but don’t forget, changes start from yourself. Use our website, be healthy and enjoy your life. We will do our best to help you with it. Best regards!</p>
         </div>
         <div>
             <h2 class="Footer__heading">Join us</h2>
