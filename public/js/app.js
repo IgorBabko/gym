@@ -1,6 +1,6 @@
 (function() {
   $(function() {
-    var flashMessage, isScreenLarge, ref, updateValidErrors;
+    var controller, flashMessage, isScreenLarge, ref, updateValidErrors;
     $('.Nav__item--hamburger').click(function() {
       $('.Nav__list').toggle();
       return $('.search__input').focus().select();
@@ -97,6 +97,13 @@
       controls: false,
       speed: 1500
     });
+    controller = new ScrollMagic.Controller();
+    new ScrollMagic.Scene({
+      triggerElement: resource,
+      triggerHook: '0.9'
+    }).on('enter', function() {
+      return $(resource).addClass('visible');
+    }).addTo(controller);
   });
 
 }).call(this);

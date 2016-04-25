@@ -89,5 +89,10 @@ $ ->
 #        onSlideAfter: ($el) ->
 #            $el.find('.Slider__info').addClass('opaque')
 
-    return
+    controller = new ScrollMagic.Controller()
 
+    new ScrollMagic.Scene triggerElement: '.Form--question'
+        .setPin '.Form--question'
+        .addTo controller
+
+    return
