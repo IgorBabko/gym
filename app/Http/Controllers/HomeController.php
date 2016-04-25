@@ -51,4 +51,9 @@ class HomeController extends Controller
     {
         return view('workout');
     }
+
+    public function ask()
+    {
+        return view('ask');
+    }
 }
