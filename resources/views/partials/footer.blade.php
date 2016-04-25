@@ -6,7 +6,7 @@
             <ul class="Footer__list">
                 <li class="Footer__item"><a href="#" class="Footer__link">FAQ</a></li>
                 <li class="Footer__item"><a href="/ask" class="Footer__link">Ask a question</a></li>
-                <li class="Footer__item"><a href="#" class="Footer__link">Support</a></li>
+                <li class="Footer__item"><a href="/support" class="Footer__link">Support</a></li>
             </ul>
         </div>
         <div>
