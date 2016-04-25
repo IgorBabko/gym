@@ -1,30 +1,21 @@
-@extends ('layout')
-
-@section ('content')
 <div class="Block">
-    <h1 class="Block__heading">Body Mass Index</h1>
-    <form method="post" class="form" action="{{ url('/metrics/calcBmi') }}">
+    <h1 class="Block__heading">Support</h1>
+    <form method="post" class="form" action="{{ url('/support') }}">
         {!! csrf_field() !!}
         <label class="Label">gender</label>
-        <label class="Label Label--radio">
-            <input type="radio" name="coeff" value="88.36" class="Radio">
-            Male
-        </label>
-        <label class="Label Label--radio">
-            <input type="radio" name="coeff" value="447.6" class="Radio">
-            Female
-        </label>
         <label class="Label">
-            Heigh (meters):
+            Name:
             <input type="text" name="height" class="Input">
             <span class="Error"></span>
         </label>
         <label class="Label">
-            Weight (kg):
+            Email:
             <input type="text" name="weight" class="Input">
             <span class="Error"></span>
         </label>
-        {!! csrf_field() !!}
+        <label class="Label">Message</label>
+            <textarea class="Textarea"></textarea>
+        </label>
         <button type="submit" class="Button Button--red">Calculate</button>
     </form>
     <div class="Block__description">

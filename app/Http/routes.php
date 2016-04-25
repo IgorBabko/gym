@@ -13,8 +13,10 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('/about', 'HomeController@about');
+Route::get('/support', 'HomeController@support');
 Route::get('/profile', 'HomeController@profile');
 Route::get('/metrics', 'HomeController@metrics');
+Route::get('/workout', 'HomeController@workout');
 
 Route::get('/metrics/bmi', 'MetricsController@bmi');
 Route::post('/metrics/calcBmi', 'MetricsController@calcBmi');
