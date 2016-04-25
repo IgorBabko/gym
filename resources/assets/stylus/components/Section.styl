@@ -29,11 +29,9 @@
     &__description
         font-size: 18px
 
-
 .sectio
     background: white
     display: flex
-    flex-wrap: wrap
     justify-content: center
     align-items: center
     padding-right: 50px
@@ -42,6 +40,12 @@
     &--parallax
         background: transparent
 
+    &--red
+        padding-left: 50px
+        color: white
+        background: $darkestRed
+        
+
     &__picture
         background-image: url(../img/people.jpg)
         background-repeat: no-repeat
@@ -49,8 +53,14 @@
         background-position: center bottom
         display: inline-block
         flex: 3 
-        min-height: 500px
         height: 500px
+
+        &--food
+            flex-basis: 15%
+            background: url(../img/food2.png)
+            background-repeat: no-repeat
+            background-size: contain
+            background-position: center center
         
     &__content
         font-size: 18px
