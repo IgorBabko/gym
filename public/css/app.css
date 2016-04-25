@@ -872,6 +872,15 @@ a:focus {
 .Slider__description {
   font-size: 20px;
 }
+.Question {
+  color: #000;
+}
+.Question__title {
+  color: #000;
+}
+.Question__text {
+  color: #000;
+}
 .bx-wrapper {
   border: none;
 }
