@@ -39,5 +39,6 @@ elixir(function(mix) {
         .copy('bower_components/bxslider-4/dist/images/controls.png', 'public/img')
         .copy('bower_components/scrollmagic/scrollmagic/minified/scrollmagic.min.js', 'public/js')
         .copy('bower_components/bootstrap-select/dist/js/bootstrap-select.min.js', 'public/js')
-        .copy('bower_components/bootstrap-select/dist/css/bootstrap-select.min.css', 'public/css');
+        .copy('bower_components/bootstrap-select/dist/css/bootstrap-select.min.css', 'public/css')
+        .copy('bower_components/parallax.js/parallax.min.js', 'public/js');
 });
