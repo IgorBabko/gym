@@ -14,6 +14,15 @@
             <input type="email" name="email" class="Input">
             <span class="Error"></span>
         </label>
+        <label class="Label">Choose category:</label>
+        <select name="category" class="selectpicker">
+            <option value="1">item</option>
+            <option value="1">item</option>
+            <option value="1">item</option>
+            <option value="1">item</option>
+            <option value="1">item</option>
+            <option value="1">item</option>
+        </select>
         <label class="Label">Question</label>
         <textarea class="Textarea"></textarea>
         {!! csrf_field() !!}
