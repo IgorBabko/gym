@@ -807,7 +807,7 @@ a:focus {
 }
 .Block__description {
   font-size: 16px;
-  margin-left: 30px;
+  margin-left: 50px;
   -webkit-flex: 5;
   -ms-flex: 5;
       flex: 5;

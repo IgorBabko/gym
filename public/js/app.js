@@ -99,11 +99,10 @@
     });
     controller = new ScrollMagic.Controller();
     new ScrollMagic.Scene({
-      triggerElement: resource,
-      triggerHook: '0.9'
-    }).on('enter', function() {
-      return $(resource).addClass('visible');
-    }).addTo(controller);
+      triggerElement: '.Form--question',
+      triggerHook: '0.1',
+      duration: '100%'
+    }).setPin('.Form--question').addTo(controller);
   });
 
 }).call(this);
