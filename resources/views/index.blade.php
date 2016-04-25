@@ -32,4 +32,11 @@
         </div>
     </li>
 </ul>
+<div class="sectio">
+    <div class="sectio__picture"></div>
+    <div class="sectio__content">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores laudantium ut distinctio quod nesciunt labore reiciendis at placeat culpa ipsum voluptatum debitis voluptates molestiae et, mollitia inventore nostrum fuga, ea incidunt voluptas aperiam tenetur hic alias dolore quas. Incidunt, laborum iusto tenetur unde libero excepturi placeat, molestias quo doloribus sapiente.
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores laudantium ut distinctio quod nesciunt labore reiciendis at placeat culpa ipsum voluptatum debitis voluptates molestiae et, mollitia inventore nostrum fuga, ea incidunt voluptas aperiam tenetur hic alias dolore quas. Incidunt, laborum iusto tenetur unde libero excepturi placeat, molestias quo doloribus sapiente.
+    </div>
+</div>
 @stop

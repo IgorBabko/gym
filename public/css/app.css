@@ -533,6 +533,40 @@ a:focus {
 .Section__description {
   font-size: 18px;
 }
+.sectio {
+  background: #fff;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+      align-items: center;
+  padding-right: 50px;
+}
+.sectio__picture {
+  background-image: url("../img/people.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center bottom;
+  display: inline-block;
+  -webkit-flex: 3;
+  -ms-flex: 3;
+      flex: 3;
+  min-height: 500px;
+  height: 500px;
+}
+.sectio__content {
+  font-size: 18px;
+  -webkit-flex: 4;
+  -ms-flex: 4;
+      flex: 4;
+}
 .Button {
   border: none;
   font-size: 20px;
