@@ -18,6 +18,7 @@ Route::get('/profile', 'HomeController@profile');
 Route::get('/metrics', 'HomeController@metrics');
 Route::get('/workout', 'HomeController@workout');
 Route::get('/ask', 'HomeController@ask');
+Route::get('/support', 'HomeController@support');
 
 Route::get('/metrics/bmi', 'MetricsController@bmi');
 Route::post('/metrics/calcBmi', 'MetricsController@calcBmi');

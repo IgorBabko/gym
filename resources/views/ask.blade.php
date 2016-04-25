@@ -3,7 +3,7 @@
 @section ('content')
 <div class="Block">
     <h1 class="Block__heading" style="text-align: center">Questions list</h1>
-    <form method="post" class="Form Form--question" action="{{ url('/metrics/calcBmi') }}">
+    <form method="post" class="Form Form--question" action="{{ url('/questions') }}">
         <label class="Label">
             Name:
             <input type="text" name="name" class="Input">
@@ -12,18 +12,10 @@
         <label class="Label">
             Email:
             <input type="email" name="email" class="Input">
-            <span class="Error"></span>
+            <span class="error"></span>
         </label>
-        <label class="Label">Choose category:</label>
-        <select name="category" class="selectpicker">
-            <option value="1">item</option>
-            <option value="1">item</option>
-            <option value="1">item</option>
-            <option value="1">item</option>
-            <option value="1">item</option>
-            <option value="1">item</option>
-        </select>
-        <label class="Label">Question</label>
+        <label class="label">Choose category:</label>
+        <label class="label">question</label>
         <textarea class="Textarea"></textarea>
         {!! csrf_field() !!}
         <button type="submit" class="Button Button--red">Ask</button>
