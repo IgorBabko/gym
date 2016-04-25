@@ -81,13 +81,13 @@ $ ->
         autocontrols: true
         controls: false
         speed: 1500
-        onSliderLoad: () ->
+#        onSliderLoad: () ->
             #console.log 'first'
-            console.log $('.Slider__info:first-child')
-        onSlideBefore: ($el) ->
-            $el.find('.Slider__info').removeClass('opaque')
-        onSlideAfter: ($el) ->
-            $el.find('.Slider__info').addClass('opaque')
+#            console.log $('.Slider__info:first-child')
+#        onSlideBefore: ($el) ->
+#            $el.find('.Slider__info').removeClass('opaque')
+#        onSlideAfter: ($el) ->
+#            $el.find('.Slider__info').addClass('opaque')
 
     return
 

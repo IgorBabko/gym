@@ -95,16 +95,7 @@
       mode: 'fade',
       autocontrols: true,
       controls: false,
-      speed: 1500,
-      onSliderLoad: function() {
-        return console.log($('.Slider__info:first-child'));
-      },
-      onSlideBefore: function($el) {
-        return $el.find('.Slider__info').removeClass('opaque');
-      },
-      onSlideAfter: function($el) {
-        return $el.find('.Slider__info').addClass('opaque');
-      }
+      speed: 1500
     });
   });
 

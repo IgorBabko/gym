@@ -32,6 +32,11 @@ class HomeController extends Controller
         return view('about');
     }
 
+    public function support()
+    {
+        return view('support');
+    }
+
     public function profile()
     {
         return view('profile');
@@ -40,5 +45,10 @@ class HomeController extends Controller
     public function metrics()
     {
         return view('metrics');
+    }
+
+    public function workout()
+    {
+        return view('workout');
     }
 }
