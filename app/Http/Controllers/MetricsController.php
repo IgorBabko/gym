@@ -11,24 +11,42 @@ class MetricsController extends Controller
     {
         return view('bmi');
     }
-
-    public function obtainBmi(Request $request)
+    
+    public function bmr()
     {
-        $this->validate($request, [
-            'coeff'  => 'required',
-            'height' => 'required|numeric',
-            'weight' => 'required|numeric',
-        ]);
-
-        $bmi = round($this->calcBmi($request), 2);
-        $message = $this->getBmiMessage($bmi);
-
-        return response()->json(['message' => $message], 200);
+        return view('bmr');
+    }
+    
+    public function water()
+    {
+         return view('water');
     }
 
     protected function calcBmi(Request $request) {
         return $request->input('weight') / 
             ( $request->input('height') * $request->input('height') );
+    }
+
+    protected function calcBmr($request)
+    {
+        $activity_level = $request->input('activity_level') ?? 1;
+
+        if ($request->input('gender') == 'male') {
+            return $activity_level * (88.36 + 13.4 * $request->input('weight')
+                + 4.8 * $request->input('height') - 5.7 * $request->input('age') );
+        } 
+
+        return $activity_level * (447.6 + 9.2 * $request->input('weight')
+                + 3.1 * $request->input('height') - 4.3 * $request->input('age') );
+    }
+
+    public function calcWater($request)
+    {
+        if ($request->input('gender') == 'male') {
+            return $request->input('weight') * 0.04 + $request->input('physical-activity') * 0.6;
+        }
+
+        return $request->input('weight') * 0.03 + $request->input('physical-activity') * 0.4;
     }
 
     protected function getBmiMessage($bmi)
@@ -81,25 +99,6 @@ class MetricsController extends Controller
                         -	You need to add 500 calories to your nutrition';
     }
 
-    public function bmr()
-    {
-        return view('bmr');
-    }
-
-    protected function calcBmr($request)
-    {
-        $activity_level = $request->input('activity_level') ?? 1;
-
-        if ($request->input('gender') == 'male') {
-            return $activity_level * (88.36 + 13.4 * $request->input('weight')
-                + 4.8 * $request->input('height') - 5.7 * $request->input('age') );
-        } 
-
-        return $activity_level * (447.6 + 9.2 * $request->input('weight')
-                + 3.1 * $request->input('height') - 4.3 * $request->input('age') );
-    }
-
-
     protected function getWaterMessage($water)
     {
          return 'We recommend you to drink <span class="highlight">' . $water . '</span> 
@@ -112,6 +111,20 @@ class MetricsController extends Controller
                     <br><br>
                     If your goal is to gain some weight:
                     -	you should drink --------liters----- of water + 750 ml – 1-liter extra';
+    }
+
+    public function obtainBmi(Request $request)
+    {
+        $this->validate($request, [
+            'coeff'  => 'required',
+            'height' => 'required|numeric',
+            'weight' => 'required|numeric',
+        ]);
+
+        $bmi = round($this->calcBmi($request), 2);
+        $message = $this->getBmiMessage($bmi);
+
+        return response()->json(['message' => $message, 'notifyMessage' => 'Your BMI is ' . $bmi], 200);
     }
 
     public function obtainBmr(Request $request)
@@ -127,21 +140,7 @@ class MetricsController extends Controller
         $bmr = round($this->calcBmr($request), 2);
         $message = $this->getBmrMessage($bmr);
 
-        return response()->json(['message' => $message], 200);
-    }
-
-    public function water()
-    {
-         return view('water');
-    }
-
-    public function calcWater($request)
-    {
-        if ($request->input('gender') == 'male') {
-            return $request->input('weight') * 0.04 + $request->input('physical-activity') * 0.6;
-        }
-
-        return $request->input('weight') * 0.03 + $request->input('physical-activity') * 0.4;
+        return response()->json(['message' => $message, 'notifyMessage' => 'Your BMR is ' . $bmr], 200);
     }
 
     protected function obtainWater(Request $request)
@@ -155,6 +154,6 @@ class MetricsController extends Controller
         $water = round($this->calcWater($request), 2);
         $message = $this->getWaterMessage($water);
 
-        return response()->json(['message' => $message], 200);
+        return response()->json(['message' => $message, 'notifyMessage' => 'Your water is:) ' . $water], 200);
     }
 }
