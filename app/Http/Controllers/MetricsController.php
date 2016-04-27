@@ -44,14 +44,12 @@ class MetricsController extends Controller
             $message = 'Your BMI is <span class="highlight">' . $bmi . '</span>, 
                         that means you should gain weight, 
                         because your body mass index is really extremely low, you need to gain ---- kg';
-        } else if ($bmi <= 25.5) {
+        } else if ($bmi <= 25) {
             $message = 'Your BMI is <span class="highlight">' . $bmi . '</span>, 
                         that means your weight is ok, 
                         but we recommend you to gain ---kg---- kilos, 
                         you will look much better, your body structure 
-                        and even your face will get some changes to better side.
-                        So, you should take it serious and take care about your health, 
-                        and we already took care about nutrition and the workout plan for you.';
+                        and even your face will get some changes to better side.';
         } else if ($bmi <= 30) {
             $message = 'Your BMI is <span class="highlight">' . $bmi . '</span>, that means you are overweight, 
                         but don’t worry, it’s ok, we will help you to lose some. 

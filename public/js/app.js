@@ -94,6 +94,7 @@
           });
           return $('.Modal__overlay').trigger('click');
         } else {
+          updateValidErrors($this, {});
           return $this.next().html(response.message);
         }
       });
