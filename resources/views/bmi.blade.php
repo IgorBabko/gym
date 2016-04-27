@@ -1,7 +1,7 @@
 @extends ('layout')
 
 @section ('content')
-<div class="Block">
+<div class="Block Block--flex">
     {!! Breadcrumbs::render('bmi') !!}
     <h1 class="Block__heading">Body Mass Index</h1>
     <form method="POST" class="Form" action="{{ url('/metrics/bmi') }}">
