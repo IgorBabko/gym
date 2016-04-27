@@ -1,37 +1,53 @@
 @extends('layout')
 @section('content')
-<header class="Section Section--header">
-    <div class="Section__content">
-        <h1 class="Section__heading">Lorem ipsum dolor sit amet</h1>
-        <div class="Section__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti reprehenderit, facilis expedita minima fugiat fugit enim debitis ea vero ut modi dolorem in repudiandae illum maxime labore autem eius dicta!</div>
-        <div class="Section__media">
-            <div class="Media">
-                <h2 class="Media__heading">Lorem ipsum</h2>
-                <img src="/img/food1.png" class="Media__picture" alt="food">
-                <div class="Media__body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, eum.</div>
-            </div>
-            <div class="Media">
-                <h2 class="Media__heading">Lorem ipsum</h2>
-                <img src="/img/dumbbells.jpg" class="Media__picture Media__picture--program" alt="program">
-                <div class="Media__body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, eum.</div>
-            </div>
+<ul class="Slider bxslider">
+    <li class="Slider__item">
+        <img src="/img/1.jpg"/>
+        <div class="Slider__info Slider__info--bottom">
+            <h1 class="Slider__heading">Niko Bellic</h1>
+            <p class="Slider__description">
+                lorem ipsum dolor sit amet, consectetur adipisicing elit. fuga magni corporis explicabo esse asperiores, sit at expedita praesentium. error, rerum.
+            </p>
+            <button class="Button Button--red pull-left">more info</button>
         </div>
-        <button class="Button Button--yellow">Let's start</button>
-    </div>
-</header>
-<section class="Section Section--dark">
-    <div class="Section__content">
-        <h1 class="Section__heading">Choose Your gender</h1>
-        <div class="Section__media">
-            <div class="Media Media--gender">
-                <img src="/img/man-dark.png" class="Media__picture Media__picture--man" alt="food">
-                <!-- <button class="Button Button--blue">Male</button> -->
-            </div>
-            <div class="Media Media--gender">
-                <img src="/img/woman1-dark.png" class="Media__picture Media__picture--woman" alt="program">
-                <!-- <button class="Button Button--pink">Female</button> -->
-            </div>
+    </li>
+    <li class="Slider__item">
+        <img src="/img/3.jpg"/>
+        <div class="Slider__info Slider__info--right">
+            <h1 class="Slider__heading">Niko Bellic</h1>
+            <p class="Slider__description">
+                lorem ipsum dolor sit amet, consectetur adipisicing elit. fuga magni corporis explicabo esse asperiores, sit at expedita praesentium. error, rerum.
+            </p>
+            <button class="Button Button--red pull-left">More info</button>
         </div>
+    </li>
+    <li class="Slider__item">
+        <img src="/img/4.jpg"/>
+        <div class="Slider__info Slider__info--top">
+            <h1 class="Slider__heading">Niko Bellic</h1>
+            <p class="Slider__description">
+                lorem ipsum dolor sit amet, consectetur adipisicing elit. fuga magni corporis explicabo esse asperiores, sit at expedita praesentium. error, rerum.
+            </p>
+            <button class="Button Button--red pull-left">More info</button>
+        </div>
+    </li>
+</ul>
+<div class="sectio">
+    <div class="sectio__picture"></div>
+    <div class="sectio__content">
+        <h1 class="sectio__heading">Some header</h1>
+        lorem ipsum dolor sit amet, consectetur adipisicing elit. asperiores laudantium ut distinctio quod nesciunt labore reiciendis at placeat culpa ipsum voluptatum debitis voluptates molestiae et, mollitia inventore nostrum fuga, ea incidunt voluptas aperiam tenetur hic alias dolore quas. incidunt, laborum iusto tenetur unde libero excepturi placeat, molestias quo doloribus sapiente.
+        lorem ipsum dolor sit amet, consectetur adipisicing elit. asperiores laudantium ut distinctio quod nesciunt labore reiciendis at placeat culpa ipsum voluptatum debitis voluptates molestiae et, mollitia inventore nostrum fuga, ea incidunt voluptas aperiam tenetur hic alias dolore quas. incidunt, laborum iusto tenetur unde libero excepturi placeat, molestias quo doloribus sapiente.
     </div>
-</section>
+</div>
+<div class="sectio sectio--red">
+    <div class="sectio__content" style="flex-basis: 30%">
+        <h1 class="sectio__heading">Some header</h1>
+        lorem ipsum dolor sit amet, consectetur adipisicing elit. asperiores laudantium ut distinctio quod nesciunt labore reiciendis at placeat culpa ipsum voluptatum debitis voluptates molestiae et, mollitia inventore nostrum fuga, ea incidunt voluptas aperiam tenetur hic alias dolore quas. incidunt, laborum iusto tenetur unde libero excepturi placeat, molestias quo doloribus sapiente.
+        lorem ipsum dolor sit amet, consectetur adipisicing elit. asperiores laudantium ut distinctio quod nesciunt labore reiciendis at placeat culpa ipsum voluptatum debitis voluptates molestiae et, mollitia inventore nostrum fuga, ea incidunt voluptas aperiam tenetur hic alias dolore quas. incidunt, laborum iusto tenetur unde libero excepturi placeat, molestias quo doloribus sapiente.
+    </div>
+    <div class="sectio__picture sectio__picture--food"></div>
+</div>
+<div class="sectio sectio--parallax">
+</div>
 @stop

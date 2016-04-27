@@ -2,7 +2,7 @@
     <div class="Modal__content">
         <h1 class="Modal__header">Registration</h1>
         <div class="Modal__body">
-            <form method="POST" action="{{ url('/register') }}" class="Modal__form">
+            <form method="POST" action="{{ url('/register') }}" class="Form">
                 <label class="Label">
                     Name:
                     <input type="text" name="name" class="Input">

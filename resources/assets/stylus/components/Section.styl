@@ -6,7 +6,7 @@
     flex-wrap: wrap
     min-height: calc(100vh - 70px)
     padding: 50px
-    
+
     &--header
         min-height: 100vh
         padding: 70px 0 50px
@@ -22,10 +22,46 @@
         color: $gray
         font-weight: bold
         text-transform: uppercase
-        margin-bottom: 50px
     
     &__media
         margin: 20px
     
     &__description
         font-size: 18px
+
+.sectio
+    background: white
+    display: flex
+    justify-content: center
+    align-items: center
+    padding-right: 50px
+    height: 500px
+
+    &--parallax
+        background: transparent
+
+    &--red
+        padding-left: 50px
+        color: white
+        background: $darkestRed
+        
+
+    &__picture
+        background-image: url(../img/people.jpg)
+        background-repeat: no-repeat
+        background-size: contain
+        background-position: center bottom
+        display: inline-block
+        flex: 3 
+        height: 500px
+
+        &--food
+            flex-basis: 15%
+            background: url(../img/food2.png)
+            background-repeat: no-repeat
+            background-size: contain
+            background-position: center center
+        
+    &__content
+        font-size: 18px
+        flex: 4 

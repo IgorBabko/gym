@@ -1,6 +1,6 @@
 (function() {
   $(function() {
-    var flashMessage, isScreenLarge, ref, updateValidErrors;
+    var controller, flashMessage, isScreenLarge, ref, updateValidErrors;
     $('.Nav__item--hamburger').click(function() {
       $('.Nav__list').toggle();
       return $('.search__input').focus().select();
@@ -16,7 +16,6 @@
     $('.Search__input').blur(function() {
       return $(this).removeClass('Search__input--expanded');
     });
-    $('.Search__input').focus();
     isScreenLarge = (ref = window.innerWidth > 768) != null ? ref : {
       "true": false
     };
@@ -35,7 +34,7 @@
       if ($(this).data('type') != null) {
         $modal = $(this).data('type') === 'login' ? $('.Modal--login') : $('.Modal--register');
         setTimeout((function() {
-          return $modal.find('.Modal__form input').first().select();
+          return $modal.find('.Form input').first().select();
         }), 100);
         return $modal.addClass('Modal--visible');
       }
@@ -49,7 +48,7 @@
         color: 'green'
       });
     }
-    $('.Modal__form').submit(function(e) {
+    $('.Modal .Form').submit(function(e) {
       var $this, request, url;
       e.preventDefault();
       $this = $(this);
@@ -90,6 +89,23 @@
         return $errorBlock.text($errorMsg);
       });
     };
+    $('.bxslider').bxSlider({
+      auto: true,
+      pause: 5000,
+      mode: 'fade',
+      autocontrols: true,
+      controls: false,
+      speed: 1500
+    });
+    controller = new ScrollMagic.Controller();
+    new ScrollMagic.Scene({
+      triggerElement: '.Form--question',
+      triggerHook: '0.1',
+      duration: '100%'
+    }).setPin('.Form--question').addTo(controller);
+    $('.sectio--parallax').parallax({
+      imageSrc: '/img/parallax.jpg'
+    });
   });
 
 }).call(this);
