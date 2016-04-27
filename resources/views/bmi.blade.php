@@ -13,6 +13,7 @@
         <label class="Label Label--radio">
             <input type="radio" name="coeff" value="447.6" class="Radio">
             Female
+            <span class="Error"></span>
         </label>
         <label class="Label">
             Heigh (meters):

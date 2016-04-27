@@ -85,7 +85,7 @@
         data: $this.serialize()
       });
       request.done(function(response) {
-        if ($this.closest('.Modal')) {
+        if ($this.closest('.Modal').length !== 0) {
           $('.Nav__item--modal').remove();
           $('.Nav__list').append('<li class="Nav__item"><a href="/profile" class="Nav__link"><span>My profile</span></a></li>');
           $('.Nav__list').append('<li class="Nav__item"><a href="/logout" class="Nav__link"><span>Logout</span></a></li>');
@@ -94,7 +94,7 @@
           });
           return $('.Modal__overlay').trigger('click');
         } else {
-          return console.log('niko niko niko');
+          return $this.next().html(response.message);
         }
       });
       return request.fail(function(response) {
