@@ -5,6 +5,7 @@
             <input type="text" class="Search__input" placeholder="search">
             <span class="glyphicon glyphicon-search Search__button" aria-hidden="true"></span>
         </li>
+        <li class="Nav__item"><a href="/diet" class="Nav__link {{ Request::is('diet*') ? 'Nav__link--active' :  '' }}"><span>Diet</span></a></li>
         <li class="Nav__item"><a href="/workout" class="Nav__link {{ Request::is('workout*') ? 'Nav__link--active' :  '' }}"><span>Workout</span></a></li>
         <li class="Nav__item"><a href="/metrics" class="Nav__link {{ Request::is('metrics*') ? 'Nav__link--active' :  '' }}"><span>Metrics</span></a></li>
         @if (Auth::check())

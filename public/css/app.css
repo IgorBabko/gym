@@ -802,12 +802,21 @@ a:focus {
   margin: 50px;
   background: #fff;
   box-shadow: 0 0 7px 2px #c7c7c7;
+}
+.Block--flex {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
           flex-wrap: wrap;
+}
+.Block__content {
+  font-size: 18px;
+}
+.Block__picture {
+  float: left;
+  margin: 0 30px 30px 0;
 }
 .Block--small {
   margin: 50px auto;
