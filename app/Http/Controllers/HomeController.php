@@ -4,6 +4,7 @@ namespace Gym\Http\Controllers;
 
 use Gym\Http\Requests;
 use Illuminate\Http\Request;
+use Gym\Page;
 
 class HomeController extends Controller
 {
@@ -54,9 +55,10 @@ class HomeController extends Controller
 
     public function page($name)
     {
-        $page = Page::where('name', $name)->first();
+        //dd($name);
+        $text = Page::where('name', $name)->first()->text;
 
-        return view('page', compact($page)); 
+        return view('page', compact('text')); 
     }
 
     public function ask()

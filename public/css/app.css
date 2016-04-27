@@ -167,6 +167,10 @@ a:focus {
   position: absolute;
   right: 30px;
   top: 26px;
+  color: #dadada;
+}
+.Search__button:hover {
+  color: #fff;
 }
 @media screen and (max-width: 768px) {
   .Search {
