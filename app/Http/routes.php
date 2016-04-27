@@ -20,7 +20,7 @@ Route::get('/workout', 'HomeController@workout');
 Route::get('/ask', 'HomeController@ask');
 Route::get('/support', 'HomeController@support');
 
-Route::get('/{name}', 'HomeController@page');
+Route::get('/pages/{name}', 'HomeController@page');
 
 Route::get('/metrics/bmi', 'MetricsController@bmi');
 Route::post('/metrics/bmi', 'MetricsController@obtainBmi');
