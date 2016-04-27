@@ -52,9 +52,11 @@ class HomeController extends Controller
         return view('workout');
     }
 
-    public function diet()
+    public function page($name)
     {
-        return view('diet.muscle_diet'); 
+        $page = Page::where('name', $name)->first();
+
+        return view('page', compact($page)); 
     }
 
     public function ask()
