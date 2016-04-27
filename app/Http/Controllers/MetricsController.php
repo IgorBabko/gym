@@ -7,13 +7,6 @@ use Illuminate\Http\Request;
 
 class MetricsController extends Controller
 {
-    protected $request;
-
-    public function __construct(Request $request)
-    {
-        $this->request = $request;
-    }
-
     public function bmi()
     {
         return view('bmi');
@@ -75,8 +68,17 @@ class MetricsController extends Controller
                         We can propose you just a diet plan without trainings, it’s not good idea, 
                         because it’s could be a bit dangerous for your health.</p>';
         }
-
         return $message;
+    }
+
+    protected function getBmrMessage($bmr)
+    {
+        $message = 'You need to eat <span class="hightlight"' . $bmr . '</span> a day.
+                    If you will follow this way, you will not lose any weight and will not gain also.
+                    If you want to lose some weight:
+                        -	You need to cut 500 calories form your nutrition 
+                    If you want to gain some weight:
+                        -	You need to add 500 calories to your nutrition';
     }
 
     public function bmr()
@@ -84,17 +86,25 @@ class MetricsController extends Controller
         return view('bmr');
     }
 
-    public function calcBmr()
+    protected function calcBmr($request)
     {
-        $activity_level = Request::input('activity_level') ?? 1;
+        $activity_level = $request->input('activity_level') ?? 1;
 
-        if (Request::input('gender') == 'male') {
-            return $activity_level * (88.36 + 13.4 * Request::input('weight')
-                + 4.8 * Request::input('height') - 5.7 * Request::input('age') );
+        if ($request->input('gender') == 'male') {
+            return $activity_level * (88.36 + 13.4 * $request->input('weight')
+                + 4.8 * $request->input('height') - 5.7 * $request->input('age') );
         } 
 
-        return $activity_level * (447.6 + 9.2 * Request::input('weight')
-                + 3.1 * Request::input('height') - 4.3 * Request::input('age') );
+        return $activity_level * (447.6 + 9.2 * $request->input('weight')
+                + 3.1 * $request->input('height') - 4.3 * $request->input('age') );
+    }
+
+    public function obtainBmr(Request $request)
+    {
+        $bmr = round($this->calcBmr($request), 2);
+        $message = $this->getBmrMessage($bmr);
+
+        return response()->json(['message' => $message], 200);
     }
 
     public function water()
