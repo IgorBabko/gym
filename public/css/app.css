@@ -105,6 +105,10 @@ a:focus {
   padding: 23px 20px 0 !important;
   height: 100%;
   font-size: 24px;
+  color: #dadada;
+}
+.Nav__item--hamburger:hover {
+  color: #fff;
 }
 @media screen and (max-width: 768px) {
   .Nav {
