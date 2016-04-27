@@ -1,7 +1,7 @@
 @extends ('layout')
 
 @section ('content')
-<div class="Block">
+<div class="Block Block--flex">
     <h1 class="Block__heading" style="text-align: center">Questions list</h1>
     <form method="post" class="Form Form--question" action="{{ url('/questions') }}">
         <label class="Label">
@@ -14,8 +14,8 @@
             <input type="email" name="email" class="Input">
             <span class="error"></span>
         </label>
-        <label class="label">Choose category:</label>
-        <label class="label">question</label>
+        <!--<label class="Label">Choose category:</label>-->
+        <label class="Label">Question:</label>
         <textarea class="Textarea"></textarea>
         {!! csrf_field() !!}
         <button type="submit" class="Button Button--red">Ask</button>

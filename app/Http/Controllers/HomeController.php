@@ -55,7 +55,6 @@ class HomeController extends Controller
 
     public function page($name)
     {
-        //dd($name);
         $text = Page::where('name', $name)->first()->text;
 
         return view('page', compact('text')); 
