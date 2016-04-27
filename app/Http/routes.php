@@ -27,7 +27,7 @@ Route::get('/metrics/bmr', 'MetricsController@bmr');
 Route::post('/metrics/bmr', 'MetricsController@obtainBmr');
 
 Route::get('/metrics/water', 'MetricsController@water');
-Route::post('/metrics/calcWater', 'MetricsController@calcWater');
+Route::post('/metrics/water', 'MetricsController@obtainWater');
 
 Route::auth();
 

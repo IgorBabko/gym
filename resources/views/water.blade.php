@@ -3,7 +3,7 @@
 @section ('content')
 <div class="Block">
     <h1 class="Block__heading">Water</h1>
-    <form method="POST" class="Form" action="{{ url('/metrics/calcWater') }}">
+    <form method="POST" class="Form" action="{{ url('/metrics/water') }}">
         {!! csrf_field() !!}
         <label class="Label">Gender</label>
         <label class="Label Label--radio">
@@ -13,6 +13,7 @@
         <label class="Label Label--radio">
             <input type="radio" name="gender" value="female" class="Radio">
             Female
+            <span class="Error"></span>
         </label>
         <label class="Label">
             Weight (kg):
@@ -27,8 +28,9 @@
         {!! csrf_field() !!}
         <button type="submit" class="Button Button--red">Calculate</button>
     </form>
-    <div class="Block__info">
-        Разделяют пять типов физической активности: минимальный (никаких физических нагрузок), низкий (физические нагрузки 1-3 раза в неделю), средний (3-5 дней в неделю), высокий (6-7 раз в неделю), очень высокий (тренировки чаще, чем раз в день).
+    <div class="Block__description">
+        <h2>Cannot drink so much water per day, solution</h2>
+        Start to increase drink water step by step, add one glass of water extra every day, and get a habit to drink water once you woke up, 30 min before you start to eat breakfast.
     </div>
 </div>
 @stop

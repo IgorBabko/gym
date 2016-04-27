@@ -99,6 +99,21 @@ class MetricsController extends Controller
                 + 3.1 * $request->input('height') - 4.3 * $request->input('age') );
     }
 
+
+    protected function getWaterMessage($water)
+    {
+         return 'We recommend you to drink <span class="highlight">' . $water . '</span> 
+                    liters of pure water/day except of tea, coffee and some other drinks.
+                    In case you drunk some tea or coffee, you have to compensate it drinking pure water glass.
+                    If your goal is to lose some weight:
+                        -	 you should drink --------liters----- of water + 500- 750 ml extra
+                    But just drink --------liters----------- of water and do nothing more will not 
+                    help that much as special workout plan and special diet plan.
+                    <br><br>
+                    If your goal is to gain some weight:
+                    -	you should drink --------liters----- of water + 750 ml – 1-liter extra';
+    }
+
     public function obtainBmr(Request $request)
     {
         $this->validate($request, [
@@ -120,12 +135,26 @@ class MetricsController extends Controller
          return view('water');
     }
 
-    public function calcWater()
+    public function calcWater($request)
     {
-        if (Request::input('gender') == 'male') {
-            return Request::input('weight') * 0.04 + Request::input('physical-activity') * 0.6;
+        if ($request->input('gender') == 'male') {
+            return $request->input('weight') * 0.04 + $request->input('physical-activity') * 0.6;
         }
 
-        return Request::input('weight') * 0.03 + Request::input('physical-activity') * 0.4;
+        return $request->input('weight') * 0.03 + $request->input('physical-activity') * 0.4;
+    }
+
+    protected function obtainWater(Request $request)
+    {
+        $this->validate($request, [
+            'gender'  => 'required',
+            'weight' => 'required|numeric',
+            'physical-activity' => 'required|integer',
+        ]);
+
+        $water = round($this->calcWater($request), 2);
+        $message = $this->getWaterMessage($water);
+
+        return response()->json(['message' => $message], 200);
     }
 }
