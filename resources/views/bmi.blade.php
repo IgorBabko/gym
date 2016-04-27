@@ -2,6 +2,7 @@
 
 @section ('content')
 <div class="Block">
+    {!! Breadcrumbs::render('bmi') !!}
     <h1 class="Block__heading">Body Mass Index</h1>
     <form method="POST" class="Form" action="{{ url('/metrics/bmi') }}">
         {!! csrf_field() !!}
