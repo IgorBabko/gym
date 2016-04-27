@@ -93,6 +93,7 @@ $ ->
                 $('.Modal__overlay').trigger 'click'
             else
                 updateValidErrors $this, {} 
+                ohSnap response.notifyMessage, color: 'green'
                 $this.next().html response.message
 
         request.fail (response) ->

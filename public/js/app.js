@@ -95,6 +95,9 @@
           return $('.Modal__overlay').trigger('click');
         } else {
           updateValidErrors($this, {});
+          ohSnap(response.notifyMessage, {
+            color: 'green'
+          });
           return $this.next().html(response.message);
         }
       });
