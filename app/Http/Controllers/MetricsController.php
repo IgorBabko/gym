@@ -2,8 +2,8 @@
 
 namespace Gym\Http\Controllers;
 
-use Request;
 use Gym\Http\Requests;
+use Illuminate\Http\Request;
 
 class MetricsController extends Controller
 {
@@ -19,17 +19,23 @@ class MetricsController extends Controller
         return view('bmi');
     }
 
-    public function obtainBmi()
+    public function obtainBmi(Request $request)
     {
-        $bmi = $this->calcBmi();
+        $this->validate($request, [
+            'coeff'  => 'required',
+            'height' => 'required|numeric',
+            'weight' => 'required|numeric',
+        ]);
+
+        $bmi = $this->calcBmi($request);
         $message = $this->getBmiMessage($bmi);
 
         return response()->json(['message' => $message]);
     }
 
-    protected function calcBmi() {
-        return Request::input('weight') / 
-            ( Request::input('height') * Request::input('height') );
+    protected function calcBmi(Request $request) {
+        return $request->input('weight') / 
+            ( $request->input('height') * $request->input('height') );
     }
 
     protected function getBmiMessage()
