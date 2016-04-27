@@ -52,6 +52,11 @@ class HomeController extends Controller
         return view('workout');
     }
 
+    public function diet()
+    {
+        return view('diet'); 
+    }
+
     public function ask()
     {
         return view('ask');
