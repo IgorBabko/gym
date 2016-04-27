@@ -19,10 +19,58 @@ class MetricsController extends Controller
         return view('bmi');
     }
 
-    public function calcBmi()
+    public function obtainBmi()
     {
+        $bmi = $this->calcBmi();
+        $message = $this->getBmiMessage($bmi);
+
+        return response()->json(['message' => $message]);
+    }
+
+    protected function calcBmi() {
         return Request::input('weight') / 
             ( Request::input('height') * Request::input('height') );
+    }
+
+    protected function getBmiMessage()
+    {
+        if ($bmi <= 18.5) {
+            $message = 'Your BMI is ' . $bmi . ', \
+                        that means you should gain weight, \
+                        because your body mass index is really extremely low, you need to gain ---- kg';
+        } else if ($bmi <= 25.5) {
+            $message = 'Your BMI is ' . $bmi . ', \
+                        that means your weight is ok, \
+                        but we recommend you to gain ---kg---- kilos, \
+                        you will look much better, your body structure \
+                        and even your face will get some changes to better side.\
+                        So, you should take it serious and take care about your health, \
+                        and we already took care about nutrition and the workout plan for you.';
+        } else if ($bmi <= 30) {
+            $message = 'Your BMI is ' . $bmi . ', that means you are overweight, \
+                        but don’t worry, it’s ok, we will help you to lose some. \
+                        So, you should take it serious and take care about your health, \
+                        and we already took care about nutrition and the workout plan for you.';
+        } else {
+            $message = 'Your BMI is ' . $bmi . ', \
+                        that means you are heavily overweight, \
+                        but don’t worry, it’s ok, we will help you to lose some.\ 
+                        Overweight and obese individuals are at an increased risk for the following diseases:
+                        <ul>
+                            <li>Coronary heart disease</li>
+                            <li>Dyslipidemia</li>
+                            <li>Type 2 diabetes</li>
+                            <li>Gallbladder disease</li>
+                            <li>Hypertension</li>
+                            <li>Osteoarthritis</li>
+                            <li>Sleep apnea</li>
+                            <li>Stroke</li>
+                        <ul>
+                        <p>In this case, it’s better to set \
+                        an appointment with a profession doctor, and discuss the situation.\
+                        We can propose you just a diet plan without trainings, it’s not good idea, \
+                        because it’s could be a bit dangerous for your health.</p>';
+        }
     }
 
     public function bmr()

@@ -21,7 +21,7 @@ Route::get('/ask', 'HomeController@ask');
 Route::get('/support', 'HomeController@support');
 
 Route::get('/metrics/bmi', 'MetricsController@bmi');
-Route::post('/metrics/calcBmi', 'MetricsController@calcBmi');
+Route::post('/metrics/bmi', 'MetricsController@obtainBmi');
 
 Route::get('/metrics/bmr', 'MetricsController@bmr');
 Route::post('/metrics/calcBmr', 'MetricsController@calcBmr');

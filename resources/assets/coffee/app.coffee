@@ -40,32 +40,6 @@ $ ->
     flashMessage = $('#ohsnap').data('notify')
     if flashMessage? then ohSnap(flashMessage, {color: 'green'})
 
-    $('.Modal .Form').submit (e) ->
-        e.preventDefault()
-
-        $this = $(this)
-
-        if $this.closest('.Modal').hasClass('Modal--register')
-            url = '/register'
-        else
-            url = '/login'
-
-        request = $.ajax
-            url: url
-            method: "POST"
-            data: $this.serialize()
-
-        request.done (response) ->
-            $('.Nav__item--modal').remove()
-            $('.Nav__list').append '<li class="Nav__item"><a href="/profile" class="Nav__link"><span>My profile</span></a></li>'
-            $('.Nav__list').append '<li class="Nav__item"><a href="/logout" class="Nav__link"><span>Logout</span></a></li>'
-            ohSnap response.message, color: 'green'
-            $('.Modal__overlay').trigger 'click'
-
-        request.fail (response) ->
-            ohSnap response.responseJSON.message ? 'Please, fix valid errors', color: 'red'
-            updateValidErrors $this, response.responseJSON
-
     updateValidErrors = ($form, validErrors) ->
         $form.find('input').each (index, input) ->
             $input = $(input)
@@ -99,5 +73,29 @@ $ ->
 
     $('.sectio--parallax').parallax imageSrc: '/img/parallax.jpg'
 
+    # ajax requests for metrics
+    $('.Form').submit (e) ->
+        e.preventDefault()
+
+        $this = $(this)
+
+        request = $.ajax
+            url: $this.attr 'action'
+            method: 'POST'
+            data: $this.serialize()
+
+        request.done (response) ->
+            if $this.closest '.Modal'
+                $('.Nav__item--modal').remove()
+                $('.Nav__list').append '<li class="Nav__item"><a href="/profile" class="Nav__link"><span>My profile</span></a></li>'
+                $('.Nav__list').append '<li class="Nav__item"><a href="/logout" class="Nav__link"><span>Logout</span></a></li>'
+                ohSnap response.message, color: 'green'
+                $('.Modal__overlay').trigger 'click'
+            else
+                console.log 'niko niko niko'
+
+        request.fail (response) ->
+            ohSnap response.responseJSON.message ? 'Please, fix valid errors', color: 'red'
+            updateValidErrors $this, response.responseJSON
 
     return

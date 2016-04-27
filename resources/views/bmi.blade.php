@@ -3,9 +3,9 @@
 @section ('content')
 <div class="Block">
     <h1 class="Block__heading">Body Mass Index</h1>
-    <form method="post" class="form" action="{{ url('/metrics/calcBmi') }}">
+    <form method="POST" class="Form" action="{{ url('/metrics/bmi') }}">
         {!! csrf_field() !!}
-        <label class="Label">gender</label>
+        <label class="Label">Gender:</label>
         <label class="Label Label--radio">
             <input type="radio" name="coeff" value="88.36" class="Radio">
             Male
