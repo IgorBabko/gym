@@ -2,6 +2,7 @@
 
 @section ('content')
 <div class="Block">
+    {!! Breadcrumbs::render('water') !!}
     <h1 class="Block__heading">Water</h1>
     <form method="POST" class="Form" action="{{ url('/metrics/water') }}">
         {!! csrf_field() !!}
