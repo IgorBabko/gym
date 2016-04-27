@@ -54,7 +54,7 @@ class HomeController extends Controller
 
     public function diet()
     {
-        return view('diet'); 
+        return view('diet.muscle_diet'); 
     }
 
     public function ask()
