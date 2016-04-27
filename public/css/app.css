@@ -555,6 +555,10 @@ a:focus {
   color: #fff;
   background: #7d0000;
 }
+.sectio--gray {
+  color: #000;
+  background: #dadada;
+}
 .sectio__picture {
   background-image: url("../img/people.jpg");
   background-repeat: no-repeat;
@@ -574,6 +578,15 @@ a:focus {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
+}
+.sectio__picture--program {
+  -ms-flex-preferred-size: 15%;
+      -webkit-flex-basis: 15%;
+      flex-basis: 15%;
+  background: url("../img/program2.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom center;
 }
 .sectio__content {
   font-size: 18px;
