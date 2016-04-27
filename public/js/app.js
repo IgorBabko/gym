@@ -48,37 +48,6 @@
         color: 'green'
       });
     }
-    $('.Modal .Form').submit(function(e) {
-      var $this, request, url;
-      e.preventDefault();
-      $this = $(this);
-      if ($this.closest('.Modal').hasClass('Modal--register')) {
-        url = '/register';
-      } else {
-        url = '/login';
-      }
-      request = $.ajax({
-        url: url,
-        method: "POST",
-        data: $this.serialize()
-      });
-      request.done(function(response) {
-        $('.Nav__item--modal').remove();
-        $('.Nav__list').append('<li class="Nav__item"><a href="/profile" class="Nav__link"><span>My profile</span></a></li>');
-        $('.Nav__list').append('<li class="Nav__item"><a href="/logout" class="Nav__link"><span>Logout</span></a></li>');
-        ohSnap(response.message, {
-          color: 'green'
-        });
-        return $('.Modal__overlay').trigger('click');
-      });
-      return request.fail(function(response) {
-        var ref1;
-        ohSnap((ref1 = response.responseJSON.message) != null ? ref1 : 'Please, fix valid errors', {
-          color: 'red'
-        });
-        return updateValidErrors($this, response.responseJSON);
-      });
-    });
     updateValidErrors = function($form, validErrors) {
       return $form.find('input').each(function(index, input) {
         var $errorBlock, $errorMsg, $input, fieldName;
@@ -105,6 +74,36 @@
     }).setPin('.Form--question').addTo(controller);
     $('.sectio--parallax').parallax({
       imageSrc: '/img/parallax.jpg'
+    });
+    $('.Form').submit(function(e) {
+      var $this, request;
+      e.preventDefault();
+      $this = $(this);
+      request = $.ajax({
+        url: $this.attr('action'),
+        method: 'POST',
+        data: $this.serialize()
+      });
+      request.done(function(response) {
+        if ($this.closest('.Modal')) {
+          $('.Nav__item--modal').remove();
+          $('.Nav__list').append('<li class="Nav__item"><a href="/profile" class="Nav__link"><span>My profile</span></a></li>');
+          $('.Nav__list').append('<li class="Nav__item"><a href="/logout" class="Nav__link"><span>Logout</span></a></li>');
+          ohSnap(response.message, {
+            color: 'green'
+          });
+          return $('.Modal__overlay').trigger('click');
+        } else {
+          return console.log('niko niko niko');
+        }
+      });
+      return request.fail(function(response) {
+        var ref1;
+        ohSnap((ref1 = response.responseJSON.message) != null ? ref1 : 'Please, fix valid errors', {
+          color: 'red'
+        });
+        return updateValidErrors($this, response.responseJSON);
+      });
     });
   });
 
