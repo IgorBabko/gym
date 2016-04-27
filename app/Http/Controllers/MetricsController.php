@@ -73,7 +73,7 @@ class MetricsController extends Controller
 
     protected function getBmrMessage($bmr)
     {
-        $message = 'You need to eat <span class="hightlight"' . $bmr . '</span> a day.
+         return 'You need to eat <span class="highlight">' . $bmr . '</span> a day.
                     If you will follow this way, you will not lose any weight and will not gain also.
                     If you want to lose some weight:
                         -	You need to cut 500 calories form your nutrition 
@@ -101,6 +101,14 @@ class MetricsController extends Controller
 
     public function obtainBmr(Request $request)
     {
+        $this->validate($request, [
+            'gender'  => 'required',
+            'height' => 'required|numeric',
+            'weight' => 'required|numeric',
+            'age'    => 'required|integer',
+            'activity_level'    => 'required',
+        ]);
+
         $bmr = round($this->calcBmr($request), 2);
         $message = $this->getBmrMessage($bmr);
 
@@ -109,7 +117,7 @@ class MetricsController extends Controller
 
     public function water()
     {
-        return view('water');
+         return view('water');
     }
 
     public function calcWater()
