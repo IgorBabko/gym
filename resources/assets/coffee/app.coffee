@@ -85,14 +85,14 @@ $ ->
             data: $this.serialize()
 
         request.done (response) ->
-            if $this.closest '.Modal'
+            if $this.closest('.Modal').length != 0
                 $('.Nav__item--modal').remove()
                 $('.Nav__list').append '<li class="Nav__item"><a href="/profile" class="Nav__link"><span>My profile</span></a></li>'
                 $('.Nav__list').append '<li class="Nav__item"><a href="/logout" class="Nav__link"><span>Logout</span></a></li>'
                 ohSnap response.message, color: 'green'
                 $('.Modal__overlay').trigger 'click'
             else
-                console.log 'niko niko niko'
+                $this.next().html response.message
 
         request.fail (response) ->
             ohSnap response.responseJSON.message ? 'Please, fix valid errors', color: 'red'

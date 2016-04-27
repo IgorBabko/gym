@@ -31,6 +31,10 @@ a:focus {
 .opaque {
   opacity: 1 !important;
 }
+.highlight {
+  color: #008000;
+  font-weight: bold;
+}
 .Nav {
   z-index: 10000;
   height: 70px;
@@ -716,7 +720,7 @@ a:focus {
   visibility: visible;
 }
 .Input {
-  background: #efefef;
+  background: #e2e2e2;
   border: none;
   height: 50px;
   display: block;
@@ -834,8 +838,9 @@ a:focus {
       flex: 5;
 }
 .Block__description {
-  font-size: 16px;
+  font-size: 20px;
   margin-left: 50px;
+  line-height: 1.5;
   -webkit-flex: 5;
   -ms-flex: 5;
       flex: 5;
