@@ -24,7 +24,7 @@ Route::get('/metrics/bmi', 'MetricsController@bmi');
 Route::post('/metrics/bmi', 'MetricsController@obtainBmi');
 
 Route::get('/metrics/bmr', 'MetricsController@bmr');
-Route::post('/metrics/calcBmr', 'MetricsController@calcBmr');
+Route::post('/metrics/bmr', 'MetricsController@obtainBmr');
 
 Route::get('/metrics/water', 'MetricsController@water');
 Route::post('/metrics/calcWater', 'MetricsController@calcWater');
