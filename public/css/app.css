@@ -957,6 +957,7 @@ a:focus {
   padding: 10px;
   margin: 0;
   background: #f5f5f5;
+  display: inline-block;
 }
 .Breadcrumb__item {
   display: inline-block;
