@@ -64,4 +64,9 @@ class HomeController extends Controller
     {
         return view('ask');
     }
+
+    public function trainingByBodyTypes()
+    {
+        return view('training_by_body_types');
+    }
 }

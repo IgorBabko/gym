@@ -17,6 +17,7 @@ Route::get('/support', 'HomeController@support');
 Route::get('/profile', 'HomeController@profile');
 Route::get('/metrics', 'HomeController@metrics');
 Route::get('/workout', 'HomeController@workout');
+Route::get('/workout/training_by_body_types', 'HomeController@trainingByBodyTypes');
 Route::get('/ask', 'HomeController@ask');
 Route::get('/support', 'HomeController@support');
 
