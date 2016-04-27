@@ -24,14 +24,14 @@ Breadcrumbs::register('metrics', function($breadcrumbs)
 Breadcrumbs::register('bmi', function($breadcrumbs)
 {
     $breadcrumbs->parent('metrics');
-    $breadcrumbs->push('BMI', '/metrics/bmi');
+    $breadcrumbs->push('Bmi', '/metrics/bmi');
 });
 
 // Home > Metrics > BMR 
 Breadcrumbs::register('bmr', function($breadcrumbs)
 {
     $breadcrumbs->parent('metrics');
-    $breadcrumbs->push('BMR', '/metrics/bmr');
+    $breadcrumbs->push('Bmr', '/metrics/bmr');
 });
 
 // Home > Metrics > Water 

@@ -2,6 +2,7 @@
 
 @section ('content')
 <div class="Block">
+    {!! Breadcrumbs::render('bmr') !!}
     <h1 class="Block__heading">Basal metabolic rate</h1>
     <form method="POST" class="Form" action="{{ url('/metrics/bmr') }}">
         {!! csrf_field() !!}
