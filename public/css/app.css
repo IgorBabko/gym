@@ -608,7 +608,7 @@ a:focus {
 }
 .Button {
   border: none;
-  font-size: 20px;
+  font-size: 24px;
   color: #fff;
   transition: background 0.1s ease-in-out;
   cursor: pointer;
@@ -616,6 +616,8 @@ a:focus {
   display: inline-block;
   float: right;
   margin-top: 20px;
+  width: 150px;
+  height: 70px;
 }
 .Button--center {
   float: none;
