@@ -1,7 +1,7 @@
 @extends ('layout')
 
 @section ('content')
-<div class="Block">
+<div class="Block Block--flex">
     {!! Breadcrumbs::render('water') !!}
     <h1 class="Block__heading">Water</h1>
     <form method="POST" class="Form" action="{{ url('/metrics/water') }}">
