@@ -95,6 +95,7 @@ $ ->
                 updateValidErrors $this, {} 
                 ohSnap response.notifyMessage, color: 'green'
                 $this.next().html response.message
+                $('html, body').animate scrollTop: $('.Block').position().top , 'slow'
 
         request.fail (response) ->
             ohSnap response.responseJSON.message ? 'Please, fix valid errors', color: 'red'

@@ -98,7 +98,10 @@
           ohSnap(response.notifyMessage, {
             color: 'green'
           });
-          return $this.next().html(response.message);
+          $this.next().html(response.message);
+          return $('html, body').animate({
+            scrollTop: $('.Block').position().top
+          }, 'slow');
         }
       });
       return request.fail(function(response) {

@@ -450,8 +450,8 @@ a:focus {
   clear: left;
 }
 .Media--workout {
-  width: calc(99.99% * 1/2 - (30px - 30px * 1/2));
-  height: 600px;
+  width: calc(99.99% * 1/3 - (30px - 30px * 1/3));
+  height: 575px;
 }
 .Media--workout:nth-child(1n){
   float: left;
@@ -461,12 +461,70 @@ a:focus {
 .Media--workout:last-child{
   margin-right: 0;
 }
-.Media--workout:nth-child(2n){
+.Media--workout:nth-child(3n){
   margin-right: 0;
   float: right;
 }
-.Media--workout:nth-child(2n + 1){
+.Media--workout:nth-child(3n + 1){
   clear: left;
+}
+.Media--diet {
+  width: calc(99.99% * 1/4 - (30px - 30px * 1/4));
+}
+.Media--diet:nth-child(1n){
+  float: left;
+  margin-right: 30px;
+  clear: none;
+}
+.Media--diet:last-child{
+  margin-right: 0;
+}
+.Media--diet:nth-child(4n){
+  margin-right: 0;
+  float: right;
+}
+.Media--diet:nth-child(4n + 1){
+  clear: left;
+}
+@media screen and (max-width: 1200px) {
+  .Media {
+    width: calc(99.99% * 1/3 - (30px - 30px * 1/3));
+  }
+  .Media:nth-child(1n){
+    float: left;
+    margin-right: 30px;
+    clear: none;
+  }
+  .Media:last-child{
+    margin-right: 0;
+  }
+  .Media:nth-child(3n){
+    margin-right: 0;
+    float: right;
+  }
+  .Media:nth-child(3n + 1){
+    clear: left;
+  }
+}
+@media screen and (max-width: 994px) {
+  .Media {
+    width: calc(99.99% * 1/2 - (30px - 30px * 1/2));
+  }
+  .Media:nth-child(1n){
+    float: left;
+    margin-right: 30px;
+    clear: none;
+  }
+  .Media:last-child{
+    margin-right: 0;
+  }
+  .Media:nth-child(2n){
+    margin-right: 0;
+    float: right;
+  }
+  .Media:nth-child(2n + 1){
+    clear: left;
+  }
 }
 @media screen and (max-width: 768px) {
   .Media {
@@ -615,9 +673,10 @@ a:focus {
   padding: 10px;
   display: inline-block;
   float: right;
-  margin-top: 20px;
-  width: 150px;
-  height: 70px;
+  min-width: 150px;
+  min-height: 70px;
+  width: 100%;
+  padding-top: 20px;
 }
 .Button--center {
   float: none;
@@ -996,6 +1055,24 @@ a:focus {
 }
 body {
   font-family: 'PT Sans', sans-serif;
+}
+.diet__list li {
+  width: calc(99.99% * 1/4 - (30px - 30px * 1/4));
+}
+.diet__list li:nth-child(1n){
+  float: left;
+  margin-right: 30px;
+  clear: none;
+}
+.diet__list li:last-child{
+  margin-right: 0;
+}
+.diet__list li:nth-child(4n){
+  margin-right: 0;
+  float: right;
+}
+.diet__list li:nth-child(4n + 1){
+  clear: left;
 }
 
 /*# sourceMappingURL=app.css.map */
