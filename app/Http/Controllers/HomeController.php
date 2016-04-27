@@ -27,8 +27,33 @@ class HomeController extends Controller
         return view('index');
     }
 
+    public function about()
+    {
+        return view('about');
+    }
+
+    public function support()
+    {
+        return view('support');
+    }
+
     public function profile()
     {
         return view('profile');
+    }
+
+    public function metrics()
+    {
+        return view('metrics');
+    }
+
+    public function workout()
+    {
+        return view('workout');
+    }
+
+    public function ask()
+    {
+        return view('ask');
     }
 }

@@ -1,0 +1,25 @@
+{
+  "name": "gym",
+  "description": "",
+  "main": "",
+  "authors": [
+    "emerge <i.i.babko@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/IgorBabko/gym",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bxslider-4": "bx-slider.js#^4.2.5",
+    "scrollmagic": "^2.0.5",
+    "bootstrap-select": "^1.10.0",
+    "parallax.js": "^1.4.2"
+  }
+}

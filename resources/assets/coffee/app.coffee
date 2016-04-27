@@ -14,8 +14,6 @@ $ ->
     $('.Search__input').blur ->
         $(this).removeClass 'Search__input--expanded'
 
-    $('.Search__input').focus()
-
     isScreenLarge = window.innerWidth > 768 ? true : false
     $(window).resize ->
 
@@ -31,7 +29,7 @@ $ ->
         if $(this).data('type')?
             $modal = if $(this).data('type') == 'login' then $('.Modal--login') else $('.Modal--register')
             setTimeout ( ->
-                $modal.find('.Modal__form input').first().select()
+                $modal.find('.Form input').first().select()
             ), 100
             $modal.addClass 'Modal--visible'
 
@@ -42,7 +40,7 @@ $ ->
     flashMessage = $('#ohsnap').data('notify')
     if flashMessage? then ohSnap(flashMessage, {color: 'green'})
 
-    $('.Modal__form').submit (e) ->
+    $('.Modal .Form').submit (e) ->
         e.preventDefault()
 
         $this = $(this)
@@ -76,5 +74,30 @@ $ ->
             $errorMsg = if validErrors[fieldName] then validErrors[fieldName][0] else ''
             $errorBlock.text($errorMsg)
 
-    return
+    $('.bxslider').bxSlider
+        auto: true
+        pause: 5000
+        mode: 'fade'
+        autocontrols: true
+        controls: false
+        speed: 1500
+#        onSliderLoad: () ->
+            #console.log 'first'
+#            console.log $('.Slider__info:first-child')
+#        onSlideBefore: ($el) ->
+#            $el.find('.Slider__info').removeClass('opaque')
+#        onSlideAfter: ($el) ->
+#            $el.find('.Slider__info').addClass('opaque')
 
+    controller = new ScrollMagic.Controller()
+    new ScrollMagic.Scene
+            triggerElement: '.Form--question'
+            triggerHook: '0.1'
+            duration: '100%'
+        .setPin '.Form--question'
+        .addTo controller
+
+    $('.sectio--parallax').parallax imageSrc: '/img/parallax.jpg'
+
+
+    return

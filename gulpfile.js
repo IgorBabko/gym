@@ -23,7 +23,8 @@ elixir(function(mix) {
             use: [
                 postStylus( [ 'autoprefixer', 'lost', 'rucksack-css' ] )
             ]
-        });
+        })
+        .livereload();
 
     mix
         .copy('node_modules/jquery/dist/jquery.min.js', 'public/js/jquery.min.js')
@@ -31,5 +32,13 @@ elixir(function(mix) {
         .copy('node_modules/bootstrap/dist/css/bootstrap.min.css', 'public/css/bootstrap.min.css')
         .copy('node_modules/bootstrap/dist/js/bootstrap.min.js', 'public/js/bootstrap.min.js')
         .copy('node_modules/font-awesome/css/font-awesome.css', 'public/css/font-awesome.css')
-        .copy('node_modules/font-awesome/fonts', 'public/fonts');
+        .copy('node_modules/font-awesome/fonts', 'public/fonts')
+        .copy('bower_components/bxslider-4/dist/jquery.bxslider.min.css', 'public/css')
+        .copy('bower_components/bxslider-4/dist/jquery.bxslider.min.js', 'public/js')
+        .copy('bower_components/bxslider-4/dist/images/bx_loader.gif', 'public/img')
+        .copy('bower_components/bxslider-4/dist/images/controls.png', 'public/img')
+        .copy('bower_components/scrollmagic/scrollmagic/minified/scrollmagic.min.js', 'public/js')
+        .copy('bower_components/bootstrap-select/dist/js/bootstrap-select.min.js', 'public/js')
+        .copy('bower_components/bootstrap-select/dist/css/bootstrap-select.min.css', 'public/css')
+        .copy('bower_components/parallax.js/parallax.min.js', 'public/js');
 });

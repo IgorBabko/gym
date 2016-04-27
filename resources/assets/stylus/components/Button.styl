@@ -1,16 +1,28 @@
 .Button
     border: none
-    font-size: 28px
+    font-size: 20px
     color: white
-    //padding: 15px
-    //margin: 15px
     transition: background 0.1s ease-in-out
     cursor: pointer
+    padding: 10px
+    display: inline-block
+    float: right
+    margin-top: 20px
 
+    &--center
+        float: none 
+
+    &:hover
+        color: white
+        text-decoration: none
+
+    &:focus
+        color: white
+        text-decoration: none
 
     &--modal
-        width: 320px 
-        margin: 40px 0 20px
+        width: 300px 
+        margin: 20px 0 20px
         height: 50px
         font-size: 18px
         display: block
@@ -20,29 +32,20 @@
 
     &--red
         background: $red
-        border-bottom: 5px solid $darkestRed
         &:hover
             background: $darkRed
         
     &--pink
         background: $pink
-        border-bottom: 5px solid $darkestPink
         &:hover
             background: $darkPink
     
     &--blue
         background: $blue
-        border-bottom: 5px solid $darkestBlue
         &:hover
             background: $darkBlue
     
     &--yellow
         background: $yellow
-        border-bottom: 5px solid $darkestYellow
-
         &:hover
             background: $darkYellow
-
-        &:active
-            border: none
-            //margin-top: 20px 
