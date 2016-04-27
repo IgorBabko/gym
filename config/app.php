@@ -156,6 +156,10 @@ return [
         Gym\Providers\EventServiceProvider::class,
         Gym\Providers\RouteServiceProvider::class,
 
+        /*
+         * Vendor Service Providers ...
+         */
+        DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
     ],
 
     /*
@@ -202,6 +206,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
 
+        // Vendor
+        'Breadcrumbs' => DaveJamesMiller\Breadcrumbs\Facade::class,
     ],
 
 ];
