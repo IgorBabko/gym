@@ -11,7 +11,8 @@
         "nicolaslopezj/searchable": "^1.7",
         "acacha/admin-lte-template-laravel": "^2.0",
         "barryvdh/laravel-ide-helper": "^2.1",
-        "barryvdh/laravel-debugbar": "^2.2"
+        "barryvdh/laravel-debugbar": "^2.2",
+        "laravelcollective/html": "~5.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
