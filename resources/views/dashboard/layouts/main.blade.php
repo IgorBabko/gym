@@ -39,12 +39,12 @@ desired effect
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
 
-        @include('dashboard.partials.contentheader')
+        @include('dashboard.partials.contentheader', ['contentHeader' => $contentHeader])
 
         <!-- Main content -->
         <section class="content">
             <!-- Your Page Content Here -->
-            @yield('main-content')
+            @yield('content')
         </section><!-- /.content -->
     </div><!-- /.content-wrapper -->
 
