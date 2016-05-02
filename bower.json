@@ -20,6 +20,7 @@
     "bxslider-4": "bx-slider.js#^4.2.5",
     "scrollmagic": "^2.0.5",
     "bootstrap-select": "^1.10.0",
-    "parallax.js": "^1.4.2"
+    "parallax.js": "^1.4.2",
+    "AdminLTE": "admin-lte#^2.3.3"
   }
 }
