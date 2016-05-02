@@ -12,4 +12,9 @@ class DashboardController extends Controller
     {
         return view('dashboard.layouts.main');
     } 
+
+    public function pages()
+    {
+        return view('dashboard.pages.pages');
+    }
 }
