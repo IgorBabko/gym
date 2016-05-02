@@ -5,6 +5,7 @@ namespace Gym\Http\Controllers;
 use Illuminate\Http\Request;
 
 use Gym\Http\Requests;
+use Gym\Page;
 
 class DashboardController extends Controller
 {
@@ -15,6 +16,8 @@ class DashboardController extends Controller
 
     public function pages()
     {
-        return view('dashboard.pages.pages');
+        $pages = Page::paginate(10);
+
+        return view('dashboard.pages.pages', compact('pages'));
     }
 }
