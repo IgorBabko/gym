@@ -19,3 +19,12 @@ $factory->define(Gym\User::class, function (Faker\Generator $faker) {
         'remember_token' => str_random(10),
     ];
 });
+
+$factory->define(Gym\Page::class, function (Faker\Generator $faker) {
+    return [
+        'type' => 'diet',
+        'name' => $faker->word(2),
+        'description' => $faker->sentence,
+        'text' => $faker->paragraph(3),
+    ];
+});

@@ -53,6 +53,13 @@ class HomeController extends Controller
         return view('workout');
     }
 
+    public function diet()
+    {
+        $pages = Page::where('type', 'diet')->get();
+        
+        return view('diet', compact('pages'));
+    }
+
     public function page($name)
     {
         $text = Page::where('name', $name)->first()->text;
@@ -68,5 +75,12 @@ class HomeController extends Controller
     public function trainingByBodyTypes()
     {
         return view('training_by_body_types');
+    }
+
+    public function search(Request $request)
+    {
+        $pages = Page::search($request->input('name'))->get();
+
+        return view('search', compact('pages'));
     }
 }
