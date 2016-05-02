@@ -23,6 +23,10 @@ Route::get('/ask', 'HomeController@ask');
 Route::get('/support', 'HomeController@support');
 Route::get('/search', 'HomeController@search');
 
+
+// dashboard
+Route::get('/dashboard', 'DashboardController@index');
+
 Route::get('/pages/{name}', 'HomeController@page');
 
 Route::get('/metrics/bmi', 'MetricsController@bmi');
