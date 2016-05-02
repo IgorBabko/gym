@@ -79,7 +79,8 @@ class HomeController extends Controller
 
     public function search(Request $request)
     {
-        $pagesNames = Page::search($request->input('name'))->lists('name');
-        return view('search', compact('pagesNames'));
+        $pages = Page::search($request->input('name'))->get();
+
+        return view('search', compact('pages'));
     }
 }
