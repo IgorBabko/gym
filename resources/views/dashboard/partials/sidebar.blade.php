@@ -34,7 +34,7 @@
             <li class="header">HEADER</li>
             <!-- Optionally, you can add icons to the links -->
             <li class="{{ request()->is('dashboard') ? 'active' : '' }}"><a href="{{ route('dashboard') }}"><i class='fa fa-link'></i> <span>Home</span></a></li>
-            <li class="{{ request()->is('dashboard/pages*') ? 'active' : '' }}"><a href="{{ route('dashboard_pages') }}"><i class='fa fa-link'></i> <span>Pages</span></a></li>
+            <li class="{{ request()->is('dashboard/pages*') ? 'active' : '' }}"><a href="{{ route('dashboard.pages.index') }}"><i class='fa fa-link'></i> <span>Pages</span></a></li>
             <li><a href="#"><i class='fa fa-link'></i> <span>Another Link</span></a></li>
             <li class="treeview">
                 <a href="#"><i class='fa fa-link'></i> <span>Multilevel</span> <i class="fa fa-angle-left pull-right"></i></a>

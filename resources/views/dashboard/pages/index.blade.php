@@ -5,7 +5,7 @@
         <h1>
             @yield('contentheader_title', 'Pages')
             <small>@yield('contentheader_description')</small>
-            <a href="{{ route('dashboard_pages_create') }}" class="btn btn-success"><i class="fa fa-plus"></i>Add</a>
+            <a href="{{ route('dashboard.pages.create') }}" class="btn btn-success"><i class="fa fa-plus"></i>Add</a>
         </h1>
         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
