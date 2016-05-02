@@ -19,7 +19,7 @@ class Page extends Model
     protected $searchable = [
         'columns' => [
             'name' => 10,
-            'text' => 10,
+            //'text' => 10,
         ],
     ];
 }
