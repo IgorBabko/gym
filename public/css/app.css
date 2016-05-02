@@ -3,15 +3,13 @@ body {
   padding-top: 70px;
   background: #dadada;
 }
-a:focus {
-  color: #fff;
-  outline: none;
-  text-decoration: none;
-}
 .flexible {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+}
+.darkend {
+  color: #c0c0c0;
 }
 .centered {
   -webkit-justify-content: center;
@@ -397,6 +395,7 @@ a:focus {
   width: calc(99.99% * 1/2 - (30px - 30px * 1/2));
   margin: 20px 0;
   padding: 20px;
+  font-size: 20px;
 }
 .Media:nth-child(1n){
   float: left;
