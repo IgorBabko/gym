@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use Gym\Http\Requests;
 use Gym\Http\Controllers\Controller;
+use Gym\Page;
 
 class PagesController extends Controller
 {
@@ -16,7 +17,9 @@ class PagesController extends Controller
      */
     public function index()
     {
-        return view('dashboard.pages.index'); 
+        $pages = Page::paginate(10);
+
+        return view('dashboard.pages.index', compact('pages')); 
     }
 
     /**

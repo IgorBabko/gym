@@ -25,9 +25,8 @@ Route::get('/search', 'HomeController@search');
 
 
 // dashboard
-Route::get('/dashboard', ['as' => 'dashboard', 'uses' => 'DashboardController@index']);
-Route::get('/dashboard/pages', ['as' => 'dashboard_pages', 'uses' => 'PagesController@index']);
-Route::get('/dashboard/pages/{id}', ['as' => 'dashboard_pages', 'uses' => 'PagesController@index']);
+Route::get('/dashboard', ['as' => 'dashboard', 'uses' => 'Dashboard\DashboardController@index']);
+Route::get('/dashboard/pages', ['as' => 'dashboard_pages', 'uses' => 'Dashboard\PagesController@index']);
 
 
 // metrics
