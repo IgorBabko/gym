@@ -868,7 +868,6 @@ a:focus {
 }
 .Block {
   padding: 50px;
-  margin: 50px;
   background: #fff;
   box-shadow: 0 0 7px 2px #c7c7c7;
 }
@@ -889,6 +888,15 @@ a:focus {
 .Block__picture {
   float: left;
   margin: 0 40px 40px 0;
+  max-width: 400px;
+}
+@media screen and (max-width: 768px) {
+  .Block__picture {
+    display: block;
+    float: none;
+    margin: 0 auto 30px;
+    width: 300px;
+  }
 }
 .Block--small {
   margin: 50px auto;
@@ -925,7 +933,6 @@ a:focus {
 }
 @media screen and (max-width: 768px) {
   .Block {
-    margin: 20px;
     padding: 30px;
   }
   .Block--small {
