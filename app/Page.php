@@ -9,11 +9,14 @@ use Cviebrock\EloquentSluggable\SluggableTrait;
 
 class Page extends Model implements SluggableInterface
 {
-    use SearchableTrait, SluggableTrait;
+    use SearchableTrait;
+    use SluggableTrait;
 
     protected $sluggable = [
         'build_from' => 'name',
         'save_to'    => 'slug',
+        'unique' => true,
+        'on_update' => true,
     ];
 
     protected $guarded = [];

@@ -3,6 +3,7 @@
 namespace Gym\Http\Requests;
 
 use Gym\Http\Requests\Request;
+use Gym\Page;
 
 class PageFormRequest extends Request
 {
@@ -24,7 +25,7 @@ class PageFormRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'required|string',
+            'name' => 'required|string|unique:pages',
             'description' => 'required|string',
             'text' => 'required|string'
         ];

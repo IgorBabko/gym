@@ -7,13 +7,13 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
+        "cviebrock/eloquent-sluggable": "dev-master",
         "davejamesmiller/laravel-breadcrumbs": "^3.0",
         "nicolaslopezj/searchable": "^1.7",
         "acacha/admin-lte-template-laravel": "^2.0",
         "barryvdh/laravel-ide-helper": "^2.1",
         "barryvdh/laravel-debugbar": "^2.2",
-        "laravelcollective/html": "~5.0",
-        "cviebrock/eloquent-sluggable": "^3.1"
+        "laravelcollective/html": "~5.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

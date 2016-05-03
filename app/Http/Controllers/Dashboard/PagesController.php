@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use Gym\Http\Requests;
 use Gym\Http\Controllers\Controller;
 use Gym\Page;
+use Gym\Http\Requests\PageFormRequest;
+use Illuminate\Support\Str;
 
 class PagesController extends Controller
 {
@@ -68,8 +70,8 @@ class PagesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Gym\Page  $page
+     * @param  Gym\Http\Requests\PageFormRequest $request
      * @return \Illuminate\Http\Response
      */
     public function update(Page $page, PageFormRequest $request)

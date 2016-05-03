@@ -21,8 +21,7 @@
         </div>
         <!-- /.box-header -->
         <!-- form start -->
-        {{ Form::model( $page, [ 'route' => [ 'dashboard.pages.update', $page->slug ] ] ) }}
-        <form role="form">
+        {{ Form::model( $page, [ 'route' => [ 'dashboard.pages.update', $page->slug ], 'method' => 'PUT' ] ) }}
             <div class="box-body">
                 <div class="form-group">
                     {{ Form::label('name', 'Name') }}
@@ -42,7 +41,6 @@
             <div class="box-footer">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
-        </form>
         {{ Form::close() }}
     </div>
 </div>

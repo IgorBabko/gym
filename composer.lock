@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "90904d33626e961c7ec5710f683ec64b",
-    "content-hash": "b5aad5357807cc354dd0dac357ede105",
+    "hash": "41f81dc82265e8021a67e55f8047c488",
+    "content-hash": "90d9ba6e75f64c4a8be783ea549a6806",
     "packages": [
         {
             "name": "acacha/admin-lte-template-laravel",
@@ -295,16 +295,16 @@
         },
         {
             "name": "cviebrock/eloquent-sluggable",
-            "version": "3.1.4",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/cviebrock/eloquent-sluggable.git",
-                "reference": "5d40a334ec02c32b9c7d33f9023b5da75eb27d7d"
+                "reference": "60f13310e03d6227b939281ab402c3a6d04c191d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cviebrock/eloquent-sluggable/zipball/5d40a334ec02c32b9c7d33f9023b5da75eb27d7d",
-                "reference": "5d40a334ec02c32b9c7d33f9023b5da75eb27d7d",
+                "url": "https://api.github.com/repos/cviebrock/eloquent-sluggable/zipball/60f13310e03d6227b939281ab402c3a6d04c191d",
+                "reference": "60f13310e03d6227b939281ab402c3a6d04c191d",
                 "shasum": ""
             },
             "require": {
@@ -341,7 +341,7 @@
                 "laravel",
                 "slug"
             ],
-            "time": "2016-01-03 21:24:10"
+            "time": "2016-05-01 22:12:05"
         },
         {
             "name": "davejamesmiller/laravel-breadcrumbs",
@@ -3551,7 +3551,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "cviebrock/eloquent-sluggable": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
