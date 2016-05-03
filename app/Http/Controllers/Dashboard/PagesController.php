@@ -82,7 +82,9 @@ class PagesController extends Controller
     {
         $page->update($request->all());
 
-        return redirect()->route('dashboard.pages.index');
+        return redirect()
+            ->route('dashboard.pages.index')
+            ->with('success', 'Page has been updated successfully!');
     }
 
     /**
