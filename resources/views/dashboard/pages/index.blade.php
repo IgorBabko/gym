@@ -22,6 +22,9 @@
                 <div class="box-body">
                   <p>{{ $page->description }}</p>
                   <a href="/dashboard/pages/{{ $page->slug }}/edit" class="btn btn-primary"><i class="fa fa-edit"></i>Edit</a>
+                  {{ Form::open( [ 'route' => ['dashboard.pages.destroy', $page->slug ], 'method' => 'DELETE', 'class' => 'delete-page-button' ] ) }}
+                      <button class="btn btn-danger"><i class="fa fa-remove"></i>Delete</a>
+                  {{ Form::close() }}
                 </div>
               </div>
             </div>
