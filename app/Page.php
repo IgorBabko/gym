@@ -16,7 +16,7 @@ class Page extends Model implements SluggableInterface
         'save_to'    => 'slug',
     ];
 
-    protected $fillable = ['name', 'text'];
+    protected $guarded = [];
 
     /**
      * Searchable rules.
