@@ -1,7 +1,7 @@
 .Nav
     z-index: 10000
     height: 70px
-    background: rgba($darkestGray, 0.9) 
+    background: rgba(#18171d, 0.95) 
     position: fixed
     top: 0
     left: 0
@@ -32,13 +32,17 @@
             outline: none
 
         &:hover
-            color: black
+            color: white//black
             text-decoration: none
-            background: $yellow
+            background: #36363E//$yellow
+            border-top: 7px solid #a10d1c
+            box-shadow: -1px -3px 3px black
 
         &--active
-            background: $yellow
-            color: black
+            background: #36363E//$yellow
+            color: white//black
+            border-top: 7px solid #a10d1c
+            box-shadow:t -3px 3px 5px 2px black
 
     &__item
         display: flex

@@ -1,6 +1,5 @@
 @import 'https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic&subset=latin,cyrillic';
 body {
-  padding-top: 70px;
   background: #dadada;
 }
 .flexible {
@@ -36,7 +35,7 @@ body {
 .Nav {
   z-index: 10000;
   height: 70px;
-  background: rgba(50,50,50,0.9);
+  background: rgba(24,23,29,0.95);
   position: fixed;
   top: 0;
   left: 0;
@@ -79,13 +78,17 @@ body {
   outline: none;
 }
 .Nav__link:hover {
-  color: #000;
+  color: #fff;
   text-decoration: none;
-  background: #d6c06f;
+  background: #36363e;
+  border-top: 7px solid #a10d1c;
+  box-shadow: -1px -3px 3px #000;
 }
 .Nav__link--active {
-  background: #d6c06f;
-  color: #000;
+  background: #36363e;
+  color: #fff;
+  border-top: 7px solid #a10d1c;
+  box-shadow: t -3px 3px 5px 2px #000;
 }
 .Nav__item {
   display: -webkit-flex;
@@ -869,6 +872,7 @@ body {
   padding: 50px;
   background: #fff;
   box-shadow: 0 0 7px 2px #c7c7c7;
+  margin: 50px;
 }
 .Block--flex {
   display: -webkit-flex;
@@ -932,6 +936,7 @@ body {
 }
 @media screen and (max-width: 768px) {
   .Block {
+    margin: 20px;
     padding: 30px;
   }
   .Block--small {
@@ -1033,9 +1038,7 @@ body {
   border: none;
 }
 .bx-viewport {
-  height: calc(100vh - 65px) !important;
-  height: -o-calc(100vh - 65px) !important;
-  height: -moz-calc(100vh - 65px) !important;
+  height: 100vh !important;
 }
 .bx-wrapper .bx-controls-autoi,
 .bx-wrapper .bx-pager {
