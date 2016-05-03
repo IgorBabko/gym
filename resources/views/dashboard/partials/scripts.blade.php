@@ -7,6 +7,12 @@
 <!-- AdminLTE App -->
 <script src="{{ asset('/js/app_dashboard.min.js') }}" type="text/javascript"></script>
 
+<!-- Code Mirror -->
+<script src="{{ asset('/js/codemirror.js') }}" type="text/javascript"></script>
+
+<!-- App -->
+<script src="{{ asset('/js/app_dashboard_custom.js') }}" type="text/javascript"></script>
+
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
       Both of these plugins are recommended to enhance the
       user experience. Slimscroll is required when using the
