@@ -25,7 +25,7 @@ class PageFormRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'required|alpha_num_space|unique:pages',
+            'name' => 'required|alpha_num_space|unique:pages,name,'.request()->input('id'),
             'description' => 'required|string',
             'text' => 'required|string'
         ];
