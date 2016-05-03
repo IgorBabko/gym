@@ -28,8 +28,8 @@ class Page extends Model implements SluggableInterface
      */
     protected $searchable = [
         'columns' => [
-            'name' => 10,
-            //'text' => 10,
+            //'name' => 10,
+            'text' => 10,
         ],
     ];
 
