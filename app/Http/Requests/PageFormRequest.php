@@ -25,9 +25,22 @@ class PageFormRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'required|string|unique:pages',
+            'name' => 'required|alpha_num_space|unique:pages',
             'description' => 'required|string',
             'text' => 'required|string'
+        ];
+    }
+
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'alpha_num_space' => 'Name field should contain letters, digits and spaces.',
         ];
     }
 }
