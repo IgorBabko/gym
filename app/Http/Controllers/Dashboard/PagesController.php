@@ -44,7 +44,9 @@ class PagesController extends Controller
     {
         Page::create($request->all());
 
-        return redirect()->route('dashboard.pages.index');
+        return redirect()
+            ->route('dashboard.pages.index')
+            ->with('success', 'Page has been created successfully!');
     }
 
     /**

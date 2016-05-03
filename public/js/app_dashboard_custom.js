@@ -1,10 +1,12 @@
 (function() {
   $(function() {
     var editor, textarea;
-    textarea = document.querySelector('textarea');
-    editor = CodeMirror.fromTextArea(textarea, {
-      lineNumbers: true
-    });
+    if (document.querySelector('textarea')) {
+      textarea = document.querySelector('textarea');
+      editor = CodeMirror.fromTextArea(textarea, {
+        lineNumbers: true
+      });
+    }
   });
 
 }).call(this);
