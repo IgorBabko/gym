@@ -92,8 +92,14 @@ $ ->
                 ohSnap response.message, color: 'green'
                 $('.Modal__overlay').trigger 'click'
             else
-                updateValidErrors $this, {} 
-                ohSnap response.notifyMessage, color: 'green'
+                updateValidErrors $this, {}
+                messages = response.notifyMessage
+                messages = [messages] if typeof messages is 'string'
+                
+                console.log messages
+                for message in messages
+                    ohSnap message, color: 'green'
+
                 $this.next().html response.message
                 $('html, body').animate scrollTop: $('.Block').position().top , 'slow'
 

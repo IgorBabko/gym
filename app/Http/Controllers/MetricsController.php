@@ -54,11 +54,11 @@ class MetricsController extends Controller
         if ($bmi <= 18.5) {
             $message = 'Your BMI is <span class="highlight">' . $bmi . '</span>, 
                         that means you should gain weight, 
-                        because your body mass index is really extremely low, you need to gain <span class="highlight">' . $missingWeight . '</span> kilos';
+                        because your body mass index is really extremely low, you need to gain <span class="highlight">' . $missingWeight . '</span> kg';
         } else if ($bmi <= 25) {
             $message = 'Your BMI is <span class="highlight">' . $bmi . '</span>, 
                         that means your weight is ok, 
-                        but we recommend you to gain <span class="highlight">' . $missingWeight . '</span> kilos, 
+                        but we recommend you to gain <span class="highlight">' . $missingWeight . '</span> kg, 
                         you will look much better, your body structure 
                         and even your face will get some changes to better side.';
         } else if ($bmi <= 30) {
@@ -127,7 +127,16 @@ class MetricsController extends Controller
 
         $message = $this->getBmiMessage($bmi, $missingWeight);
 
-        return response()->json(['message' => $message, 'notifyMessage' => 'Your BMI is ' . $bmi], 200);
+        return response()
+            ->json(
+                [
+                    'message' => $message, 'notifyMessage' => [
+                        'Your BMI is ' . $bmi . ' kg',
+                        'You need to gain ' . $missingWeight . ' kg'
+                    ] 
+                ],
+                200
+            );
     }
 
     public function obtainBmr(Request $request)
