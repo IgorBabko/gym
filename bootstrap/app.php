@@ -43,7 +43,7 @@ $app->singleton(
 
 $app->singleton(
     'router',
-    cviebrock\eloquentsluggable\sluggablerouter::class
+    Cviebrock\EloquentSluggable\SluggableRouter::class
 );
 
 /*
