@@ -72,9 +72,11 @@ class PagesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Page $page, PageFormRequest $request)
     {
-        //
+        $page->update($request->all());
+
+        return redirect()->route('dashboard.pages.index');
     }
 
     /**
