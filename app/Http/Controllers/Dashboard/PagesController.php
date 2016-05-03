@@ -37,12 +37,14 @@ class PagesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  Gym\Http\Requests\PageFormRequest $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PageFormRequest $request)
     {
-        //
+        Page::create($request->all());
+
+        return redirect()->route('dashboard.pages.index');
     }
 
     /**
