@@ -21,7 +21,7 @@
                 </div>
                 <div class="box-body">
                   <p>{{ $page->description }}</p>
-                  <a href="/dashboard/pages/{{ $page->name }}" class="btn btn-primary"><i class="fa fa-edit"></i>Edit</a>
+                  <a href="/dashboard/pages/{{ $page->name }}/edit" class="btn btn-primary"><i class="fa fa-edit"></i>Edit</a>
                 </div>
               </div>
             </div>

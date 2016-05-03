@@ -25,8 +25,6 @@ Route::get('/search', 'HomeController@search');
 
 
 // dashboard
-
-// dashboard pages resource
 Route::group(['namespace' => 'Dashboard', 'prefix' => 'dashboard'], function () {
 
     Route::get('/', ['as' => 'dashboard', 'uses' => 'DashboardController@index']);

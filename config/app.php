@@ -161,6 +161,7 @@ return [
          */
         DaveJamesMiller\Breadcrumbs\ServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        Cviebrock\EloquentSluggable\SluggableServiceProvider::class,
 
         /*
          * Acacha AdminLTE template provider

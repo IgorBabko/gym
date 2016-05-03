@@ -4,10 +4,17 @@ namespace Gym;
 
 use Illuminate\Database\Eloquent\Model;
 use Nicolaslopezj\Searchable\SearchableTrait;
+use Cviebrock\EloquentSluggable\SluggableInterface;
+use Cviebrock\EloquentSluggable\SluggableTrait;
 
-class Page extends Model
+class Page extends Model implements SluggableInterface
 {
-    use SearchableTrait;
+    use SearchableTrait, SluggableTrait;
+
+    protected $sluggable = [
+        'build_from' => 'name',
+        'save_to'    => 'slug',
+    ];
 
     protected $fillable = ['name', 'text'];
 
