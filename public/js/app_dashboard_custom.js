@@ -7,6 +7,11 @@
         lineNumbers: true
       });
     }
+    $('.delete-page-button').click(function(e) {
+      var pageSlug;
+      pageSlug = $(this).data('slug');
+      return $('.confirm-delete-form').attr('action', "/dashboard/pages/" + pageSlug);
+    });
   });
 
 }).call(this);
