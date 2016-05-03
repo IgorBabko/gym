@@ -49,16 +49,16 @@ class MetricsController extends Controller
         return $request->input('weight') * 0.03 + $request->input('physical-activity') * 0.4;
     }
 
-    protected function getBmiMessage($bmi)
+    protected function getBmiMessage($bmi, $missingWeight)
     {
         if ($bmi <= 18.5) {
             $message = 'Your BMI is <span class="highlight">' . $bmi . '</span>, 
                         that means you should gain weight, 
-                        because your body mass index is really extremely low, you need to gain ---- kg';
+                        because your body mass index is really extremely low, you need to gain <span class="highlight">' . $missingWeight . '</span> kilos';
         } else if ($bmi <= 25) {
             $message = 'Your BMI is <span class="highlight">' . $bmi . '</span>, 
                         that means your weight is ok, 
-                        but we recommend you to gain ---kg---- kilos, 
+                        but we recommend you to gain <span class="highlight">' . $missingWeight . '</span> kilos, 
                         you will look much better, your body structure 
                         and even your face will get some changes to better side.';
         } else if ($bmi <= 30) {
@@ -122,7 +122,10 @@ class MetricsController extends Controller
         ]);
 
         $bmi = round($this->calcBmi($request), 2);
-        $message = $this->getBmiMessage($bmi);
+
+        $missingWeight = round($this->calcMissingWeight($request, $bmi), 2);
+
+        $message = $this->getBmiMessage($bmi, $missingWeight);
 
         return response()->json(['message' => $message, 'notifyMessage' => 'Your BMI is ' . $bmi], 200);
     }
@@ -155,5 +158,14 @@ class MetricsController extends Controller
         $message = $this->getWaterMessage($water);
 
         return response()->json(['message' => $message, 'notifyMessage' => 'Your water is:) ' . $water], 200);
+    }
+
+    public function calcMissingWeight(Request $request, $bmi)
+    {
+        $maximumHealthyWeight = 25;
+        $missingIndex = $maximumHealthyWeight - $bmi;
+
+        $missingIndexPercent = 100 * $missingIndex / $bmi;
+        return $missingIndexPercent * $request->input('weight') / 100;
     }
 }
