@@ -23,17 +23,22 @@
         <!-- form start -->
         {{ Form::model( $page, [ 'route' => [ 'dashboard.pages.update', $page->slug ], 'method' => 'PUT' ] ) }}
             <div class="box-body">
-                <div class="form-group">
+                <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
                     {{ Form::label('name', 'Name') }}
-                    {{ Form::text('name', null, ['class' => 'form-control']) }}
+                    {{ Form::text('name', old('name') ?? null, ['class' => 'form-control']) }}
+                    <span class="help-block">{{ $errors->first('name') ?? '' }}</span>
                 </div>
-                <div class="form-group">
+                <div class="form-group {{ $errors->has('description') ? 'has-error' : '' }}">
                     {{ Form::label('descripion', 'Description') }}
-                    {{ Form::text('description', null, ['class' => 'form-control']) }}
+                    {{ Form::text('description', old('description') ?? null, ['class' => 'form-control']) }}
+                    <span class="help-block">{{ $errors->first('description') ?? '' }}</span>
                 </div>
-                <div class="form-group">
+                </div>
+                <div class="form-group {{ $errors->has('text') ? 'has-error' : '' }}">
                     {{ Form::label('text', 'Text') }}
-                    {{ Form::textarea('text', null, ['class' => 'form-control']) }}
+                    {{ Form::textarea('text', old('text') ?? null, ['class' => 'form-control']) }}
+                    <span class="help-block">{{ $errors->first('text') ?? '' }}</span>
+                </div>
                 </div>
             </div>
             <!-- /.box-body -->
