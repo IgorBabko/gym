@@ -41,10 +41,10 @@ $app->singleton(
     Gym\Exceptions\Handler::class
 );
 
-//$app->singleton(
-//    'router',
-//    cviebrock\eloquentsluggable\sluggablerouter::class
-//);
+$app->singleton(
+    'router',
+    cviebrock\eloquentsluggable\sluggablerouter::class
+);
 
 /*
 |--------------------------------------------------------------------------
