@@ -21,6 +21,9 @@
     <!-- Code Mirror -->
     <link href="{{ asset('css/codemirror.css') }}" rel="stylesheet" type="text/css" />
 
+    <!-- App dashboard custom -->
+    <link href="{{ asset('css/app_dashboard_custom.css') }}" rel="stylesheet" type="text/css" />
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>

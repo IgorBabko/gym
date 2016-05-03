@@ -5,7 +5,6 @@
     editor = CodeMirror.fromTextArea(textarea, {
       lineNumbers: true
     });
-    console.log('dashboard');
   });
 
 }).call(this);

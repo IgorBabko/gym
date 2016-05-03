@@ -25,6 +25,11 @@ elixir(function(mix) {
                 postStylus( [ 'autoprefixer', 'lost', 'rucksack-css' ] )
             ]
         })
+        .stylus('app_dashboard_custom.styl', null, {
+            use: [
+                postStylus( [ 'autoprefixer', 'lost', 'rucksack-css' ] )
+            ]
+        })
         .livereload();
 
     mix
