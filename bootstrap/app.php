@@ -41,6 +41,11 @@ $app->singleton(
     Gym\Exceptions\Handler::class
 );
 
+$app->singleton(
+    'router',
+    Cviebrock\EloquentSluggable\SluggableRouter::class
+);
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application
