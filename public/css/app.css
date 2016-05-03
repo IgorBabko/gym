@@ -872,7 +872,7 @@ body {
   padding: 50px;
   background: #fff;
   box-shadow: 0 0 7px 2px #c7c7c7;
-  margin: 50px;
+  margin: 120px 50px 50px;
 }
 .Block--flex {
   display: -webkit-flex;
