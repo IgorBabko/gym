@@ -1,5 +1,8 @@
 .Footer
-    background: $darkGray
+    background-image: url('../img/mainbg.png')
+    position: absolute
+    left: 0
+    bottom: 0
     color: $lightestGray
     text-align: center
 
@@ -22,8 +25,9 @@
             color: white
     
     &__content
+        
+        padding: 10px
         clear: fix
-        padding: 50px
         > div
             text-align: left
             lost-column: 1/1
@@ -33,13 +37,16 @@
                 lost-column: 1/4
 
     p
-        font-size: 16px
+        font-size: 14px
 
     &__copyright
         display: inline-block
         padding: 5px 10px
-        background: $red
-        color: white
-        font-size: 22px
+        //background: #3A5795
+        color: #D9B573
+        margin-left: 80px
+        font-weight: bold
+        font-size: 16px
+        margin-left: 55px
         margin-top: 10px
         text-transform: uppercase

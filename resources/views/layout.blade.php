@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="/css/jquery.bxslider.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.css">
         <link rel="stylesheet" href="/css/app.css">
+        <link rel="shortcut icon" href="../img/icon_gym.gif" type="image/gif">
         @if ( Config::get('app.debug') )
         <script type="text/javascript">
         document.write('<script src="//localhost:35729/livereload.js?snipver=1" type="text/javascript"><\/script>')

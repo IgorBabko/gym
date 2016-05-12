@@ -1,8 +1,8 @@
 @extends ('layout')
 
 @section ('content')
-<div class="Block">
-    <h1 class="Block__heading" style="text-align: center">Support</h1>
+<div class="Block Block--flex">
+    <h1 class="Block__heading" style="text-align: center">Welcome to Support section</h1>
     <form method="post" class="Form" action="{{ url('/support') }}">
         <label class="Label">
             Name:
@@ -19,8 +19,10 @@
         {!! csrf_field() !!}
         <button type="submit" class="Button Button--red">Send</button>
     </form>
-    <div class="Block__description">
-        loremf josd fnldf kl jfldjfosdjfiojwe ne kj eljoj wnkew lkwne pwo poew ion welnl weieo wio joiw pwen ioewj ioj ijiwo joiwejio jiojew ioej oij iowejoi jojoijoijoijiojoidfiojio jdio   jd jfod jf djf odjf iodj jie fjoiwe fjiowefj io fjwe jiod jojdfoi djof 
+      <div class="Block__description">
+        <br>
+        <p>Detected any bag or any trouble with our web site, just describe the problem and our team will fix it as soon as possible.</p>
+           
     </div>
 </div>
 @stop

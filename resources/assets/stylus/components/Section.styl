@@ -4,7 +4,7 @@
     justify-content: center
     align-items: center
     flex-wrap: wrap
-    min-height: calc(100vh - 70px)
+    //min-height: calc(100vh - 70px)
     padding: 50px
 
     &--header
@@ -35,7 +35,7 @@
     justify-content: center
     align-items: center
     padding-right: 50px
-    height: 500px
+    height: 700px
 
     &--parallax
         background: transparent
@@ -43,11 +43,11 @@
     &--red
         padding-left: 50px
         color: white
-        background: $darkestRed
+        background: #131619
 
     &--gray
         color: black 
-        background: $lightestGray
+        background: white
         
 
     &__picture
@@ -57,11 +57,18 @@
         background-position: center bottom
         display: inline-block
         flex: 3 
-        height: 500px
+        height: 700px
 
         &--food
             flex-basis: 15%
             background: url(../img/food2.png)
+            background-repeat: no-repeat
+            background-size: contain
+            background-position: center center
+
+        &--coach
+            flex-basis: 15%
+            background: url(../img/coach.png)
             background-repeat: no-repeat
             background-size: contain
             background-position: center center

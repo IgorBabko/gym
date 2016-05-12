@@ -12,28 +12,24 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('/terms', 'HomeController@terms');
 Route::get('/about', 'HomeController@about');
+Route::get('/faq', 'HomeController@faq');
 Route::get('/support', 'HomeController@support');
 Route::get('/profile', 'HomeController@profile');
 Route::get('/metrics', 'HomeController@metrics');
+Route::get('/nutrition', 'HomeController@nutrition');
+Route::get('/motivation', 'HomeController@motivation');
 Route::get('/workout', 'HomeController@workout');
-Route::get('/diet', 'HomeController@diet');
 Route::get('/workout/training_by_body_types', 'HomeController@trainingByBodyTypes');
+Route::get('/nutrition/nutrition_by_body_types', 'HomeController@nutritionByBodyTypes');
+
+Route::get('/workout/burnFat', 'HomeController@burnFat');
+Route::get('/workout/buildMuscle', 'HomeController@buildMuscle');
+
 Route::get('/ask', 'HomeController@ask');
 Route::get('/support', 'HomeController@support');
-Route::get('/search', 'HomeController@search');
 
-
-// dashboard
-Route::group(['namespace' => 'Dashboard', 'prefix' => 'dashboard'], function () {
-
-    Route::get('/', ['as' => 'dashboard', 'uses' => 'DashboardController@index']);
-
-    Route::resource('pages', 'PagesController', ['parameters' => 'singular']);
-
-});
-
-// metrics
 Route::get('/pages/{name}', 'HomeController@page');
 
 Route::get('/metrics/bmi', 'MetricsController@bmi');

@@ -2,13 +2,13 @@
 
 namespace Gym\Http\Controllers\Auth;
 
-use Auth;
-use Gym\Http\Controllers\Controller;
 use Gym\User;
-use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
-use Illuminate\Foundation\Auth\ThrottlesLogins;
-use Illuminate\Http\Request;
 use Validator;
+use Gym\Http\Controllers\Controller;
+use Illuminate\Foundation\Auth\ThrottlesLogins;
+use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Auth;
+use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
@@ -21,7 +21,7 @@ class AuthController extends Controller
     | authentication of existing users. By default, this controller uses
     | a simple trait to add these behaviors. Why don't you explore it?
     |
-     */
+    */
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
@@ -51,8 +51,8 @@ class AuthController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name'     => 'required|max:255',
-            'email'    => 'required|email|max:255|unique:users',
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
         ]);
     }
@@ -66,8 +66,8 @@ class AuthController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name'     => $data['name'],
-            'email'    => $data['email'],
+            'name' => $data['name'],
+            'email' => $data['email'],
             'password' => bcrypt($data['password']),
         ]);
     }
@@ -103,9 +103,9 @@ class AuthController extends Controller
 
         if ($throttles && $lockedOut = $this->hasTooManyLoginAttempts($request)) {
             $this->fireLockoutEvent($request);
-
+            
             $seconds = $this->secondsRemainingOnLockout($request);
-            return response()->json(['message' => 'Too many login attempts. Please try again in ' . $seconds . ' seconds.'], 422);
+            return response()->json(['message' => 'Too many login attempts. Please try again in '.$seconds.' seconds.'], 422);
         }
 
         $credentials = $this->getCredentials($request);
@@ -126,7 +126,7 @@ class AuthController extends Controller
         // If the login attempt was unsuccessful we will increment the number of attempts
         // to login and redirect the user back to the login form. Of course, when this
         // user surpasses their maximum number of attempts they will get locked out.
-        if ($throttles && !$lockedOut) {
+        if ($throttles && ! $lockedOut) {
             $this->incrementLoginAttempts($request);
         }
 
@@ -143,6 +143,6 @@ class AuthController extends Controller
         Auth::guard($this->getGuard())->logout();
 
         return redirect(property_exists($this, 'redirectAfterLogout') ? $this->redirectAfterLogout : '/')
-            ->with('notify', 'You are now logged out');
+                ->with('notify', 'You are now logged out');
     }
 }

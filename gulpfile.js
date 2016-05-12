@@ -19,13 +19,7 @@ elixir(function(mix) {
 
     mix
         .coffee('app.coffee')
-        .coffee('app_dashboard_custom.coffee')
         .stylus('app.styl', null, {
-            use: [
-                postStylus( [ 'autoprefixer', 'lost', 'rucksack-css' ] )
-            ]
-        })
-        .stylus('app_dashboard_custom.styl', null, {
             use: [
                 postStylus( [ 'autoprefixer', 'lost', 'rucksack-css' ] )
             ]
@@ -46,7 +40,5 @@ elixir(function(mix) {
         .copy('bower_components/scrollmagic/scrollmagic/minified/scrollmagic.min.js', 'public/js')
         .copy('bower_components/bootstrap-select/dist/js/bootstrap-select.min.js', 'public/js')
         .copy('bower_components/bootstrap-select/dist/css/bootstrap-select.min.css', 'public/css')
-        .copy('bower_components/parallax.js/parallax.min.js', 'public/js')
-        .copy('node_modules/codemirror/lib/codemirror.css', 'public/css')
-        .copy('node_modules/codemirror/lib/codemirror.js', 'public/js');
+        .copy('bower_components/parallax.js/parallax.min.js', 'public/js');
 });

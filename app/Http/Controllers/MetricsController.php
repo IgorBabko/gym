@@ -67,24 +67,23 @@ class MetricsController extends Controller
                         So, you should take it serious and take care about your health, 
                         and we already took care about nutrition and the workout plan for you.';
         } else {
-            $message = 'Your BMI is <span class="hightlight">' . $bmi . '</span>, 
-                        that means you are heavily overweight, 
-                        but don’t worry, it’s ok, we will help you to lose some. 
+            $message = 'Your BMI is <span class="highlightRed">' . $bmi . '</span>, 
+                        that means you are <span class="highlightRed">heavily overweight</span>. 
                         Overweight and obese individuals are at an increased risk for the following diseases:
+                        <br><br>
                         <ul>
-                            <li>Coronary heart disease</li>
-                            <li>Dyslipidemia</li>
-                            <li>Type 2 diabetes</li>
-                            <li>Gallbladder disease</li>
-                            <li>Hypertension</li>
-                            <li>Osteoarthritis</li>
-                            <li>Sleep apnea</li>
-                            <li>Stroke</li>
-                        <ul>
-                        <p>In this case, it’s better to set 
-                        an appointment with a profession doctor, and discuss the situation.
-                        We can propose you just a diet plan without trainings, it’s not good idea, 
-                        because it’s could be a bit dangerous for your health.</p>';
+                            <li><span class="highlightRed">Coronary heart disease</span></li>
+                            <li><span class="highlightRed">Dyslipidemia</span></li>
+                            <li><span class="highlightRed">Type 2 diabetes</span></li>
+                            <li><span class="highlightRed">Gallbladder disease</span></li>
+                            <li><span class="highlightRed">Hypertension</span></li>
+                            <li><span class="highlightRed">Osteoarthritis</span></li>
+                            <li><span class="highlightRed">Sleep apnea</span></li>
+                            <li><span class="highlightRed">Stroke</span></li>
+                        <ul><br>
+                        In this case,  <span class="highlightRed">it’s better to set 
+                        an appointment with a profession doctor, and discuss the situation.</span>
+                        We can propose you just a diet plan without trainings, it’s not good idea to do any kind of sport, because it’s could be very dangerous for your health.';
         }
         return $message;
     }
@@ -137,7 +136,7 @@ class MetricsController extends Controller
         $message = $this->getBmiMessage($bmi, $missingWeight);
 
         if ($bmi > 30) {
-            $mess = 'You are pretty much screwed and need to lose ' . ((-1) * $missingWeight) . ' kg, but don\'t give up. We will help you.';
+            $mess = 'You are pretty much screwed and need to lose ' . ((-1) * $missingWeight) . ' kg, but don\'t give up!';
         } else if ($bmi > 25) {
             $mess = 'You need to lose ' . ((-1) * $missingWeight) . ' kg';
         } else {

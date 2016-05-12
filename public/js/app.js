@@ -85,7 +85,6 @@
         data: $this.serialize()
       });
       request.done(function(response) {
-        var i, len, message, messages;
         if ($this.closest('.Modal').length !== 0) {
           $('.Nav__item--modal').remove();
           $('.Nav__list').append('<li class="Nav__item"><a href="/profile" class="Nav__link"><span>My profile</span></a></li>');
@@ -96,17 +95,9 @@
           return $('.Modal__overlay').trigger('click');
         } else {
           updateValidErrors($this, {});
-          messages = response.notifyMessage;
-          if (typeof messages === 'string') {
-            messages = [messages];
-          }
-          console.log(messages);
-          for (i = 0, len = messages.length; i < len; i++) {
-            message = messages[i];
-            ohSnap(message, {
-              color: 'green'
-            });
-          }
+          ohSnap(response.notifyMessage, {
+            color: 'green'
+          });
           $this.next().html(response.message);
           return $('html, body').animate({
             scrollTop: $('.Block').position().top

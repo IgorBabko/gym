@@ -1,7 +1,7 @@
 .Nav
     z-index: 10000
     height: 70px
-    background: rgba(#18171d, 0.95) 
+    background-image: url('../img/mainbg.png')
     position: fixed
     top: 0
     left: 0
@@ -32,17 +32,13 @@
             outline: none
 
         &:hover
-            color: white//black
+            color: black
             text-decoration: none
-            background: rgba(45, 45, 50, 0.9)//#36363E//$yellow
-            border-top: 7px solid #a10d1c
-            box-shadow: -1px -3px 3px black
+            background: $yellow
 
         &--active
-            background: rgba(45, 45, 50, 0.9)//$yellow
-            color: white//black
-            border-top: 7px solid #a10d1c
-            box-shadow:t -3px 3px 5px 2px black
+            background: $yellow
+            color: black
 
     &__item
         display: flex

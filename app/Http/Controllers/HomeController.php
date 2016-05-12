@@ -2,8 +2,9 @@
 
 namespace Gym\Http\Controllers;
 
-use Gym\Page;
+use Gym\Http\Requests;
 use Illuminate\Http\Request;
+use Gym\Page;
 
 class HomeController extends Controller
 {
@@ -32,6 +33,16 @@ class HomeController extends Controller
         return view('about');
     }
 
+      public function faq()
+    {
+        return view('faq');
+    }
+
+    public function terms()
+    {
+        return view('terms');
+    }
+
     public function support()
     {
         return view('support');
@@ -46,24 +57,25 @@ class HomeController extends Controller
     {
         return view('metrics');
     }
+       public function nutrition()
+    {
+        return view('nutrition');
+    }
+       public function motivation()
+    {
+        return view('motivation');
+    }
 
     public function workout()
     {
         return view('workout');
     }
 
-    public function diet()
-    {
-        $pages = Page::where('type', 'diet')->get();
-
-        return view('diet', compact('pages'));
-    }
-
     public function page($name)
     {
         $text = Page::where('name', $name)->first()->text;
 
-        return view('page', compact('text'));
+        return view('page', compact('text')); 
     }
 
     public function ask()
@@ -75,11 +87,19 @@ class HomeController extends Controller
     {
         return view('training_by_body_types');
     }
-
-    public function search(Request $request)
+    
+     public function nutritionByBodyTypes()
     {
-        $pages = Page::search($request->input('name'))->get();
-
-        return view('search', compact('pages'));
+        return view('nutrition_by_body_types');
     }
+
+     public function burnFat()
+    {
+        return view('burnFat');
+    }
+    public function buildMuscle()
+    {
+        return view('buildMuscle');
+    }
+    
 }
