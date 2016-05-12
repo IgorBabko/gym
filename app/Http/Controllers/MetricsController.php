@@ -29,7 +29,7 @@ class MetricsController extends Controller
 
     protected function calcBmr($request)
     {
-        $activity_level = $request->input('activity_level') ?? 1;
+        $activity_level = $request->input('activity_level') ? $request->input('activity_level') : 1;
 
         if ($request->input('gender') == 'male') {
             return $activity_level * (88.36 + 13.4 * $request->input('weight')
@@ -91,26 +91,35 @@ class MetricsController extends Controller
 
     protected function getBmrMessage($bmr)
     {
-         return 'You need to eat <span class="highlight">' . $bmr . '</span> a day.
-                    If you will follow this way, you will not lose any weight and will not gain also.
-                    If you want to lose some weight:
-                        -	You need to cut 500 calories form your nutrition 
-                    If you want to gain some weight:
-                        -	You need to add 500 calories to your nutrition';
+         return '<strong>You need to eat <span class="highlight">' . $bmr . '</span> calories par day.</strong><br>
+                    <strong>If you will follow this way, you will not lose any weight and will not gain also.</strong><br><br>
+                    <p><strong>If you want to lose some weight:</strong></p>
+                    <ul>
+                            <li><strong><span class="highlight">You need to cut 500 calories from your nutrition</strong></span></li><br>
+                    </ul>
+                      <p><strong>If you want to gain some weight:</strong></p>
+                       <ul>
+                            <li><strong><span class="highlight">You need to add 500 calories to your nutrition </strong></span></li>
+                    </ul>
+                    ';
     }
 
     protected function getWaterMessage($water)
     {
          return 'We recommend you to drink <span class="highlight">' . $water . '</span> 
-                    liters of pure water/day except of tea, coffee and some other drinks.
-                    In case you drunk some tea or coffee, you have to compensate it drinking pure water glass.
-                    If your goal is to lose some weight:
-                        -	 you should drink --------liters----- of water + 500- 750 ml extra
-                    But just drink --------liters----------- of water and do nothing more will not 
-                    help that much as special workout plan and special diet plan.
+                    liters of pure water/day except of tea, coffee and some other drinks.<br>
+                    In case you drunk some tea or coffee, you have to compensate it drinking pure glass of water.<br><br>
+                    <p><strong>If your goal is to lose some weight:</strong></p>
+                    <ul>
+                        <li><span class="highlight">you should drink ' . $water . ' liters of water + 500- 750 ml extra</span>,</li>
+                    </ul>
+                    <span class="highlight">but</span>, just drink <span class="highlight">' . $water . ' </span>liters of water and do nothing more will not help that much as special <span class="highlight">workout plan and special diet plan</span>.
                     <br><br>
-                    If your goal is to gain some weight:
-                    -	you should drink --------liters----- of water + 750 ml – 1-liter extra';
+                    <p><strong>If your goal is to gain some weight:</strong></p>
+                    <ul>
+                        <li><span class="highlight">you should drink ' . $water . ' liters of water + 750 ml – 1 - liter extra</span></li>
+
+                    </ul>';
     }
 
     public function obtainBmi(Request $request)
@@ -122,17 +131,25 @@ class MetricsController extends Controller
         ]);
 
         $bmi = round($this->calcBmi($request), 2);
-
+        
         $missingWeight = round($this->calcMissingWeight($request, $bmi), 2);
 
         $message = $this->getBmiMessage($bmi, $missingWeight);
+
+        if ($bmi > 30) {
+            $mess = 'You are pretty much screwed and need to lose ' . ((-1) * $missingWeight) . ' kg, but don\'t give up. We will help you.';
+        } else if ($bmi > 25) {
+            $mess = 'You need to lose ' . ((-1) * $missingWeight) . ' kg';
+        } else {
+            $mess = 'You need to gain ' . $missingWeight . ' kg';
+        }
 
         return response()
             ->json(
                 [
                     'message' => $message, 'notifyMessage' => [
-                        'Your BMI is ' . $bmi . ' kg',
-                        'You need to gain ' . $missingWeight . ' kg'
+                        'Your BMI is ' . $bmi,
+                        $mess
                     ] 
                 ],
                 200

@@ -80,12 +80,12 @@ body {
 .Nav__link:hover {
   color: #fff;
   text-decoration: none;
-  background: #36363e;
+  background: rgba(45,45,50,0.9);
   border-top: 7px solid #a10d1c;
   box-shadow: -1px -3px 3px #000;
 }
 .Nav__link--active {
-  background: #36363e;
+  background: rgba(45,45,50,0.9);
   color: #fff;
   border-top: 7px solid #a10d1c;
   box-shadow: t -3px 3px 5px 2px #000;
