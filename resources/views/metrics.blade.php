@@ -13,7 +13,7 @@
         </div>
         <div class="Media Media--calc">
             <h2 class="Media__heading" style="color: red">BMR</h2>
-            <div class="Media__body" style="color: green">Basal metabolic rate calculator will help you to calculate calories you need per day.</div>
+            <div class="Media__body" style="color: green">Basal metabolic rate calculator will help you to calculate calories you need each day.</div>
             <img src="/img/caloriesbmr.jpg" style="width: 100%">
             <a href="/metrics/bmr" class="Button Button--red Button--center">Calculate</a>
         </div>

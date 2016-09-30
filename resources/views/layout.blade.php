@@ -21,7 +21,13 @@
         @include('partials.register')
         @include('partials.nav')
         @yield('content')
-        @include('partials.footer')
+        @if (Request::is('/'))
+            <div class="sectio sectio--parallax" style="position: relative; height: 600px">
+                @include('partials.footer', ['class' => 'stick-to-bottom'])
+            </div>
+        @else
+            @include('partials.footer', ['class' => ''])
+        @endif
         <script src="/js/jquery.min.js"></script>
         <script src="/js/ohsnap.js"></script>
         <script src="/js/jquery.bxslider.min.js"></script>
